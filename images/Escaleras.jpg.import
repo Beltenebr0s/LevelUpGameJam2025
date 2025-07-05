@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvvi0l83ecq4q"
-path="res://.godot/imported/Planets_Nebulae_in_space_518424_1080x1920.jpg-e437dbcdaff98f050b45aa8c5bf3dd2d.ctex"
+uid="uid://casuhap670iut"
+path="res://.godot/imported/Escaleras.jpg-d9267af9ba9a105b9ac6fd67ceb08b26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Planets_Nebulae_in_space_518424_1080x1920.jpg"
-dest_files=["res://.godot/imported/Planets_Nebulae_in_space_518424_1080x1920.jpg-e437dbcdaff98f050b45aa8c5bf3dd2d.ctex"]
+source_file="res://images/Escaleras.jpg"
+dest_files=["res://.godot/imported/Escaleras.jpg-d9267af9ba9a105b9ac6fd67ceb08b26.ctex"]
 
 [params]
 

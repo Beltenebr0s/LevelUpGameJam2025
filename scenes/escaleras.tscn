@@ -1,45 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2ji84bo7mt61"]
+[gd_scene load_steps=4 format=3 uid="uid://cknqw6jsupawj"]
 
-[ext_resource type="Script" uid="uid://pbpcflo50d7t" path="res://scripts/escaleras.gd" id="1_ybuyh"]
-[ext_resource type="Texture2D" uid="uid://bvvi0l83ecq4q" path="res://images/Planets_Nebulae_in_space_518424_1080x1920.jpg" id="2_kgs6j"]
-[ext_resource type="Script" uid="uid://ccaf80ghnyu68" path="res://scenes/jugador.gd" id="3_kgs6j"]
+[ext_resource type="Script" uid="uid://pbpcflo50d7t" path="res://scripts/escaleras.gd" id="1_v22oq"]
+[ext_resource type="Texture2D" uid="uid://casuhap670iut" path="res://images/Escaleras.jpg" id="2_vyb2l"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e85j5"]
-size = Vector2(40, 40)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybuyh"]
+size = Vector2(85, 732)
 
 [node name="Escaleras" type="Node2D"]
-script = ExtResource("1_ybuyh")
+script = ExtResource("1_v22oq")
 
 [node name="Fondo1" type="Sprite2D" parent="."]
-position = Vector2(271, 481)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_kgs6j")
+position = Vector2(254, 319)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_vyb2l")
 
 [node name="Fondo2" type="Sprite2D" parent="."]
-position = Vector2(270, -480)
-rotation = 3.14159
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_kgs6j")
+position = Vector2(254, 958)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_vyb2l")
 
 [node name="Fondo3" type="Sprite2D" parent="."]
-position = Vector2(270, 1440)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_kgs6j")
+position = Vector2(254, 1597)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_vyb2l")
 
-[node name="Jugador" type="CharacterBody2D" parent="."]
-position = Vector2(50, 50)
-script = ExtResource("3_kgs6j")
-max_x = 500.0
-max_y = 680.0
+[node name="coliders" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador"]
-position = Vector2(21, 21)
-shape = SubResource("RectangleShape2D_e85j5")
-debug_color = Color(0.862745, 0, 0.0941176, 1)
+[node name="colider_izq" type="CollisionShape2D" parent="coliders"]
+position = Vector2(32.5, 356)
+shape = SubResource("RectangleShape2D_ybuyh")
 
-[node name="ColorRect" type="ColorRect" parent="Jugador"]
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 41.0
-offset_bottom = 41.0
-color = Color(1, 0, 0, 1)
+[node name="colider_dcho" type="CollisionShape2D" parent="coliders"]
+position = Vector2(494, 354)
+shape = SubResource("RectangleShape2D_ybuyh")
