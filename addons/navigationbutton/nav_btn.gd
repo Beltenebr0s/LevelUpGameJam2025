@@ -15,6 +15,6 @@ func on_button_clicked():
 		if (has_transition):
 			transition_to_scene.emit(next_scene)
 		else:
-			get_tree().change_scene_to_packed(next_scene)
+			SceneManager.change_to_scene(next_scene.resource_path)
 	else:
 		print("No tengo siguiente escena :0")
