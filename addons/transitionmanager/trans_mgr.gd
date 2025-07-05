@@ -17,9 +17,9 @@ func connect_all_nav_buttons():
 		if nav_button.has_transition:
 			nav_button.transition_to_scene.connect(play_fadeout_animation)
 	
-func play_fadeout_animation(nextScene : PackedScene):
+func play_fadeout_animation(nextScene : String):
 	await play(fadeout_animation.resource_name)
-	get_tree().change_scene_to_packed(nextScene)
+	SceneManager.change_to_scene(nextScene)
 	
 func play_fadein_animation():
 	await play(fadein_animation.resource_name)

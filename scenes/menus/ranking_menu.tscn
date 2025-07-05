@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://brb6eh8flsoep"]
+[gd_scene load_steps=2 format=3 uid="uid://brb6eh8flsoep"]
 
-[ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_2vgk8"]
-[ext_resource type="PackedScene" uid="uid://dq7n45cxgiq3t" path="res://scenes/menus/main_menu.tscn" id="2_m0327"]
+[ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_rgnid"]
 
 [node name="RankingMenu" type="Control"]
 layout_mode = 3
@@ -38,12 +37,12 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = -75.0
-offset_right = 135.0
-offset_bottom = -15.0
+offset_left = 17.0
+offset_top = -74.0
+offset_right = 141.0
+offset_bottom = -17.0
 grow_vertical = 0
 text = "BACK"
-script = ExtResource("1_2vgk8")
-next_scene = ExtResource("2_m0327")
+script = ExtResource("1_rgnid")
+next_scene_path = "res://scenes/menus/main_menu.tscn"
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
