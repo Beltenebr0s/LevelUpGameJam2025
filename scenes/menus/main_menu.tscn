@@ -1,0 +1,91 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq7n45cxgiq3t"]
+
+[ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://d5cmtqt47mye" path="res://addons/transitionmanager/trans_mgr.gd" id="2_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://brb6eh8flsoep" path="res://scenes/menus/ranking_menu.tscn" id="3_2o76q"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TransitionManager" type="AnimationPlayer" parent="."]
+script = ExtResource("2_ekxnf")
+metadata/_custom_type_script = "uid://d5cmtqt47mye"
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.0
+offset_top = 100.0
+offset_right = 261.0
+offset_bottom = 244.0
+grow_horizontal = 2
+text = "TÍTULO DEL JUEGUITO :)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Botones" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 242.0
+offset_right = 370.0
+offset_bottom = 524.0
+alignment = 1
+
+[node name="Play" type="Button" parent="Botones"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+text = "JUGAR"
+script = ExtResource("1_l6cm7")
+metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
+
+[node name="Ranking" type="Button" parent="Botones"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "RANKING"
+script = ExtResource("1_l6cm7")
+next_scene = ExtResource("3_2o76q")
+metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
+
+[node name="Settings" type="Button" parent="Botones"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "AJUSTES"
+script = ExtResource("1_l6cm7")
+metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
+
+[node name="Creditos" type="Button" parent="Botones"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "CRÉDITOS"
+script = ExtResource("1_l6cm7")
+metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
+
+[node name="Coleccion" type="Button" parent="Botones"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "COLECCIÓN"
+script = ExtResource("1_l6cm7")
+metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
+
+[node name="Salir" type="Button" parent="Botones"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "SALIR"
+script = ExtResource("1_l6cm7")
+metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
