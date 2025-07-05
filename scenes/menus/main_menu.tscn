@@ -51,7 +51,6 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 text = "JUGAR"
 script = ExtResource("1_l6cm7")
-next_scene_path = null
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
 
 [node name="Ranking" type="Button" parent="Botones"]
@@ -67,7 +66,7 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "AJUSTES"
 script = ExtResource("1_l6cm7")
-next_scene_path = null
+next_scene_path = "res://scenes/menus/settings_menu.tscn"
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
 
 [node name="Creditos" type="Button" parent="Botones"]
@@ -75,7 +74,7 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "CRÉDITOS"
 script = ExtResource("1_l6cm7")
-next_scene_path = null
+next_scene_path = "res://scenes/menus/credits_menu.tscn"
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
 
 [node name="Coleccion" type="Button" parent="Botones"]
@@ -83,7 +82,7 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "COLECCIÓN"
 script = ExtResource("1_l6cm7")
-next_scene_path = null
+next_scene_path = "res://scenes/menus/collection_menu.tscn"
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
 
 [node name="Salir" type="Button" parent="Botones"]
@@ -91,5 +90,4 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "SALIR"
 script = ExtResource("1_l6cm7")
-next_scene_path = null
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
