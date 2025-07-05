@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2ji84bo7mt61"]
+
+[ext_resource type="Script" uid="uid://pbpcflo50d7t" path="res://scripts/escaleras.gd" id="1_ybuyh"]
+[ext_resource type="Texture2D" uid="uid://bvvi0l83ecq4q" path="res://images/Planets_Nebulae_in_space_518424_1080x1920.jpg" id="2_kgs6j"]
+
+[node name="Escaleras" type="Node2D"]
+script = ExtResource("1_ybuyh")
+
+[node name="Fondo1" type="Sprite2D" parent="."]
+position = Vector2(270, 480)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_kgs6j")
+
+[node name="Fondo2" type="Sprite2D" parent="."]
+position = Vector2(270, -480)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_kgs6j")
+
+[node name="Fondo3" type="Sprite2D" parent="."]
+position = Vector2(270, 1440)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_kgs6j")
