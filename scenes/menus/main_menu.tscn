@@ -51,6 +51,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 text = "JUGAR"
 script = ExtResource("1_l6cm7")
+next_scene_path = "res://scenes/game_scene.tscn"
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
 
 [node name="Ranking" type="Button" parent="Botones"]
