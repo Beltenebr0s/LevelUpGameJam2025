@@ -23,4 +23,4 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/navigationbutton/plugin.cfg")
+enabled=PackedStringArray("res://addons/navigationbutton/plugin.cfg", "res://addons/transitionmanager/plugin.cfg")
