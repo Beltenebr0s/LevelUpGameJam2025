@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://7xj0vk0ffsjl"]
+
+[ext_resource type="Script" uid="uid://b81mfopb5hcxu" path="res://scripts/obstaculos/obstaculo.gd" id="1_mgfdr"]
+[ext_resource type="Resource" uid="uid://dpxq64k4uow6k" path="res://resources/VecinoNormal.tres" id="2_r1ns0"]
+
+[node name="Obstaculo" type="Sprite2D"]
+script = ExtResource("1_mgfdr")
+obstacleResource = ExtResource("2_r1ns0")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(16.5, 20.5)
+scale = Vector2(1.65, 2.05)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
