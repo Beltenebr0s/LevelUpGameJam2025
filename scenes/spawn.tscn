@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://7auvomxkllwa"]
+
+[ext_resource type="Script" uid="uid://kopk28g8g4fl" path="res://scripts/spawn.gd" id="1_48w1d"]
+[ext_resource type="PackedScene" uid="uid://7xj0vk0ffsjl" path="res://scenes/obstaculos/obstaculo.tscn" id="2_0bbp8"]
+
+[node name="Spawn" type="Marker2D"]
+script = ExtResource("1_48w1d")
+activated = true
+escena_obstaculo = ExtResource("2_0bbp8")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
