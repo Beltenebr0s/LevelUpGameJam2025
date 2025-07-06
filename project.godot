@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneManager="*res://scripts/globals/scene_manager.gd"
-Enums="*res://scripts/globals/enums.gd"
+GlobalVars="*res://scripts/globals/global_variables.gd"
 
 [display]
 

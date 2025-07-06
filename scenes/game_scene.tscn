@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://fqhpfxc8csob"]
+[gd_scene load_steps=6 format=3 uid="uid://fqhpfxc8csob"]
 
 [ext_resource type="Script" uid="uid://cjmn721f77ha2" path="res://scripts/game.gd" id="1_bw6k5"]
 [ext_resource type="PackedScene" uid="uid://c2ji84bo7mt61" path="res://scenes/escaleras.tscn" id="1_onqr8"]
 [ext_resource type="PackedScene" uid="uid://bhi1ycdhp8w1b" path="res://scenes/jugador.tscn" id="2_ycayy"]
 [ext_resource type="PackedScene" uid="uid://7auvomxkllwa" path="res://scenes/spawn.tscn" id="3_ycayy"]
+[ext_resource type="PackedScene" uid="uid://3lqi6qvx3ea6" path="res://scenes/obstaculos/vecino_descendente.tscn" id="5_y3j0m"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_bw6k5")
@@ -27,3 +28,8 @@ tiempo = 10.0
 [node name="Spawn3" parent="Spawns" instance=ExtResource("3_ycayy")]
 position = Vector2(217, 673)
 tiempo = 10.0
+
+[node name="Spawn4" parent="Spawns" instance=ExtResource("3_ycayy")]
+position = Vector2(170, -189)
+escena_obstaculo = ExtResource("5_y3j0m")
+tiempo = 5.0

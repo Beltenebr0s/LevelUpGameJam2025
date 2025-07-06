@@ -1,8 +1,0 @@
-extends Node
-
-enum DireccionObstaculo
-{
-	DIRECCION_ASCENDENTE,
-	DIRECCION_DESCENDENTE,
-	DIRECCION_ESTATICO,
-}

@@ -91,4 +91,5 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "SALIR"
 script = ExtResource("1_l6cm7")
+next_scene_path = "exitgame"
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
