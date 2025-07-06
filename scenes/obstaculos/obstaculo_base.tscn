@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://7xj0vk0ffsjl"]
+
+[ext_resource type="Script" uid="uid://b81mfopb5hcxu" path="res://scripts/obstaculos/obstaculo.gd" id="1_qtk8b"]
+[ext_resource type="PackedScene" uid="uid://dr27ism23xfx1" path="res://scenes/obstaculos/movimientos/MovementHandler.tscn" id="2_enybo"]
+
+[node name="ObstaculoBase" type="Area2D"]
+script = ExtResource("1_qtk8b")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(16.5, 20.5)
+scale = Vector2(1.65, 2.05)
+
+[node name="MovementHandler" parent="." instance=ExtResource("2_enybo")]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

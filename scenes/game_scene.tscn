@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://fqhpfxc8csob"]
+[gd_scene load_steps=5 format=3 uid="uid://fqhpfxc8csob"]
 
 [ext_resource type="PackedScene" uid="uid://c2ji84bo7mt61" path="res://scenes/escaleras.tscn" id="1_onqr8"]
 [ext_resource type="PackedScene" uid="uid://bhi1ycdhp8w1b" path="res://scenes/jugador.tscn" id="2_ycayy"]
-[ext_resource type="PackedScene" uid="uid://7xj0vk0ffsjl" path="res://scenes/obstaculos/obstaculo.tscn" id="3_ycayy"]
+[ext_resource type="PackedScene" uid="uid://bqf48x0tf4yej" path="res://scenes/obstaculos/vecino_ascendente.tscn" id="3_ycayy"]
+[ext_resource type="Resource" uid="uid://dpxq64k4uow6k" path="res://resources/VecinoNormal.tres" id="4_bw6k5"]
 
 [node name="Game_scene" type="Node2D"]
 
@@ -11,5 +12,6 @@
 [node name="Jugador" parent="." instance=ExtResource("2_ycayy")]
 position = Vector2(100, 45)
 
-[node name="Obstaculo" parent="." instance=ExtResource("3_ycayy")]
-position = Vector2(222, 632)
+[node name="VecinoAscendente" parent="." instance=ExtResource("3_ycayy")]
+position = Vector2(210, 761)
+obstacleResource = ExtResource("4_bw6k5")
