@@ -1,5 +1,5 @@
-extends Area2D
 class_name Obstaculo
+extends Area2D
 
 @export var obstacleResource : ObstacleResource
 signal collided_with_player
@@ -14,7 +14,7 @@ func move(delta):
 	$MovementHandler.move(self, obstacleResource.velocidad, delta)
 
 func collision_with_player():
-	print("TODO: pues ver qué hacemos al chocar con el jugador")
+	collided_with_player.emit()
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()

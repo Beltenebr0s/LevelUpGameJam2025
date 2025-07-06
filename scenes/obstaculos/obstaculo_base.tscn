@@ -11,8 +11,7 @@ script = ExtResource("1_qtk8b")
 [node name="Sprite" type="Sprite2D" parent="."]
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(16.5, 20.5)
-scale = Vector2(1.65, 2.05)
+rect = Rect2(0, 0, 20, 20)
 
 [node name="MovementHandler" parent="." instance=ExtResource("2_enybo")]
 
