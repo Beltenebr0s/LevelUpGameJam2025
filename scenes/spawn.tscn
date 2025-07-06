@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://kopk28g8g4fl" path="res://scripts/spawn.gd" id="1_48w1d"]
 [ext_resource type="PackedScene" uid="uid://bqf48x0tf4yej" path="res://scenes/obstaculos/vecino_ascendente.tscn" id="2_48w1d"]
 
-[node name="Spawn" type="Marker2D" groups=["Spawn"]]
+[node name="Spawn" type="Marker2D"]
 script = ExtResource("1_48w1d")
 activated = true
 escena_obstaculo = ExtResource("2_48w1d")
