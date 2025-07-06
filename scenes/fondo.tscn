@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://7a30r3pc2wms"]
+
+[ext_resource type="Texture2D" uid="uid://casuhap670iut" path="res://images/Escaleras.jpg" id="1_5erob"]
+[ext_resource type="Script" uid="uid://cdpropx000lg5" path="res://scripts/fondo.gd" id="2_j6jja"]
+
+[node name="Fondo" type="Sprite2D"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_5erob")
+script = ExtResource("2_j6jja")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(26.6667, 1029.17)
+scale = Vector2(77, 3.58333)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

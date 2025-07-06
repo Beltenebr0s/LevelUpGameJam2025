@@ -1,22 +1,15 @@
 extends Node2D
 @export var scroll_speed: float = 100.0
 
-var background_height: float
-
 func _ready():
-	background_height = $Fondo1.texture.get_height() * $Fondo1.scale.y
+	$Fondo1.volver_al_inicio.connect(restaurar_posicion)
+	$Fondo2.volver_al_inicio.connect(restaurar_posicion)
+	$Fondo3.volver_al_inicio.connect(restaurar_posicion)
 
 func _process(delta):
 	$Fondo1.position.y -= scroll_speed * delta
 	$Fondo2.position.y -= scroll_speed * delta
 	$Fondo3.position.y -= scroll_speed * delta
 
-	if $Fondo1.position.y <= - background_height:
-		$Fondo1.position.y = $Fondo3.position.y + background_height
-
-
-	if $Fondo2.position.y <= - background_height:
-		$Fondo2.position.y= $Fondo1.position.y + background_height
-
-	if $Fondo3.position.y <= - background_height:
-		$Fondo3.position.y = $Fondo2.position.y + background_height
+func restaurar_posicion(fondo : Sprite2D):
+	fondo.position = $Inicio.position
