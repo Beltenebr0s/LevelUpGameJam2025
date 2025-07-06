@@ -2,27 +2,20 @@ class_name Spawn
 extends Marker2D
 
 @export var activated : bool = false
-@export var escena_obstaculo : PackedScene
-@export var tiempo : float = 3
+@export var desp_horizontal : int = 50
+@export var vecinos : Array[PackedScene]
 
 signal obstaculo_creado(nuevo_obstaculo : Obstaculo)
 
 func _ready():
-	$Timer.wait_time = tiempo
-	if activated:
-		$Timer.start()
+	pass
 	
 func spawn_obstacle():
+	var escena_obstaculo = vecinos.pick_random()
 	var obstaculo : Obstaculo = escena_obstaculo.instantiate()
-	obstaculo.position = global_position
+	var hor = Vector2.RIGHT * desp_horizontal
+	var rand = randf_range(-1, 1)
+	obstaculo.position = global_position # + hor * rand
 	obstaculo_creado.emit(obstaculo)
 	add_child(obstaculo)
-
-func _on_timer_timeout():
-	spawn_obstacle()
-
-func start_timer():
-	$Timer.start()
-
-func stop_timer():
-	$Timer.stop()
+	print(		"Spawneado ", obstaculo.name, " en el nodo ", name, " en ", obstaculo.position)

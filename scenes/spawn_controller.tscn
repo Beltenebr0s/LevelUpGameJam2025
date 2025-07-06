@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://1ga6ufyqjdpg"]
+
+[ext_resource type="Script" uid="uid://c42ephqy4r3hj" path="res://scripts/spawn_controller.gd" id="1_gkhyp"]
+
+[node name="SpawnController" type="Node"]
+script = ExtResource("1_gkhyp")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

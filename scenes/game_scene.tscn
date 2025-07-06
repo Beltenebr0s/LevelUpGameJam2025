@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://fqhpfxc8csob"]
+[gd_scene load_steps=10 format=3 uid="uid://fqhpfxc8csob"]
 
 [ext_resource type="Script" uid="uid://cjmn721f77ha2" path="res://scripts/game.gd" id="1_bw6k5"]
 [ext_resource type="PackedScene" uid="uid://c2ji84bo7mt61" path="res://scenes/escaleras.tscn" id="1_onqr8"]
 [ext_resource type="PackedScene" uid="uid://bhi1ycdhp8w1b" path="res://scenes/jugador.tscn" id="2_ycayy"]
 [ext_resource type="PackedScene" uid="uid://7auvomxkllwa" path="res://scenes/spawn.tscn" id="3_ycayy"]
+[ext_resource type="PackedScene" uid="uid://1ga6ufyqjdpg" path="res://scenes/spawn_controller.tscn" id="4_utbpp"]
+[ext_resource type="PackedScene" uid="uid://bqf48x0tf4yej" path="res://scenes/obstaculos/vecino_ascendente.tscn" id="5_rurhu"]
 [ext_resource type="PackedScene" uid="uid://3lqi6qvx3ea6" path="res://scenes/obstaculos/vecino_descendente.tscn" id="5_y3j0m"]
+[ext_resource type="PackedScene" uid="uid://6sdo07oemox5" path="res://scenes/obstaculos/vecino_desdendente_verde.tscn" id="6_b5spy"]
+[ext_resource type="PackedScene" uid="uid://kbil5okodmsw" path="res://scenes/obstaculos/vecino_ascendente_verde.tscn" id="6_kk2rg"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_bw6k5")
@@ -14,22 +18,21 @@ script = ExtResource("1_bw6k5")
 [node name="Jugador" parent="." instance=ExtResource("2_ycayy")]
 position = Vector2(210, 1)
 
-[node name="Spawns" type="Node" parent="."]
+[node name="SpawnController" parent="." instance=ExtResource("4_utbpp")]
 
-[node name="Spawn" parent="Spawns" instance=ExtResource("3_ycayy")]
-position = Vector2(50, 670)
-tiempo = 5.0
+[node name="Spawn" parent="SpawnController" instance=ExtResource("3_ycayy")]
+position = Vector2(156, 47)
+vecinos = Array[PackedScene]([ExtResource("5_y3j0m"), ExtResource("6_b5spy")])
 
-[node name="Spawn2" parent="Spawns" instance=ExtResource("3_ycayy")]
-position = Vector2(139, 673)
+[node name="Spawn2" parent="SpawnController" instance=ExtResource("3_ycayy")]
+position = Vector2(358, 43)
 gizmo_extents = 15.0
-tiempo = 10.0
+vecinos = Array[PackedScene]([ExtResource("5_y3j0m"), ExtResource("6_b5spy")])
 
-[node name="Spawn3" parent="Spawns" instance=ExtResource("3_ycayy")]
-position = Vector2(217, 673)
-tiempo = 10.0
+[node name="Spawn3" parent="SpawnController" instance=ExtResource("3_ycayy")]
+position = Vector2(177, 429)
+vecinos = Array[PackedScene]([ExtResource("5_rurhu"), ExtResource("6_kk2rg")])
 
-[node name="Spawn4" parent="Spawns" instance=ExtResource("3_ycayy")]
-position = Vector2(170, -189)
-escena_obstaculo = ExtResource("5_y3j0m")
-tiempo = 5.0
+[node name="Spawn4" parent="SpawnController" instance=ExtResource("3_ycayy")]
+position = Vector2(375, 427)
+vecinos = Array[PackedScene]([ExtResource("5_rurhu"), ExtResource("6_kk2rg")])
