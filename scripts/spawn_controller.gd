@@ -26,4 +26,3 @@ func _on_timer_timeout():
 func actualizar_dificultad(int_spawns : float, num_spawns : int):
 	intervalo_spawns = int_spawns
 	numero_spawns = num_spawns
-	print(		"Nueva dificultad: ", intervalo_spawns, numero_spawns)

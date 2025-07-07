@@ -10,7 +10,6 @@ func _ready():
 	
 func  _process(delta):
 	score += delta
-	GlobalVars.mult_global += delta / 10
 	
 func conectar_spawns():
 	var spawns_obstaculos = $SpawnController.find_children("*", "Spawn")
@@ -25,5 +24,7 @@ func jugador_chocado():
 	get_tree().paused = true
 	$TransitionManager.play_fadeout_animation(game_over_scene_path)
 
-func _on_niveles_nivel_cambiado(int_spawns: float, num_spawns: int):
-	$SpawnController.actualizar_dificultad(int_spawns, num_spawns)
+func _on_niveles_nivel_cambiado(nuevo_nivel : NivelResource):
+	$SpawnController.actualizar_dificultad(nuevo_nivel.intervaloSpawns, nuevo_nivel.numSpawns)
+	GlobalVars.mult = nuevo_nivel.multVelocidad
+	print(		"Nueva dificultad: ", nuevo_nivel.intervaloSpawns, " - ", nuevo_nivel.numSpawns, " - ", nuevo_nivel.multVelocidad)
