@@ -1,0 +1,184 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmvvmnv37bmya"]
+
+[ext_resource type="Script" uid="uid://dtghof543544s" path="res://scripts/transicion/fade_in.gd" id="1_mmc71"]
+
+[sub_resource type="Animation" id="Animation_758f8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PuertaI:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PuertaD:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(540, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fondo:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 718)]
+}
+
+[sub_resource type="Animation" id="Animation_fl2dd"]
+resource_name = "fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PuertaI:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667, 1.23333, 2.5, 3),
+"transitions": PackedFloat32Array(3.03144, 1, 4.5948, 1, 1),
+"update": 0,
+"values": [Vector2(-270, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, -720), Vector2(0, -720)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PuertaD:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.966667, 1.23333, 2.5, 3),
+"transitions": PackedFloat32Array(3.03144, 1, 4.5948, 1, 1),
+"update": 0,
+"values": [Vector2(540, 0), Vector2(270, 0), Vector2(270, 0), Vector2(270, -720), Vector2(270, -720)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fondo:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.966667, 1.23333, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 4.5948, 1, 1),
+"update": 0,
+"values": [Vector2(0, 720), Vector2(0, 720), Vector2(0, 720), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0p1dc"]
+resource_name = "fade_in"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PuertaI:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.39167, 2.46667),
+"transitions": PackedFloat32Array(1, 4.43828, 0.517633, 1),
+"update": 0,
+"values": [Vector2(0, 720), Vector2(0, 0), Vector2(0, 0), Vector2(-270, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PuertaD:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.39167, 2.46667),
+"transitions": PackedFloat32Array(1, 4.43828, 0.517633, 1),
+"update": 0,
+"values": [Vector2(270, 720), Vector2(270, 0), Vector2(270, 0), Vector2(540, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fondo:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.36667, 2.46667),
+"transitions": PackedFloat32Array(1, 4.43828, 0.517633, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -720), Vector2(0, -720), Vector2(0, -720)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0p1dc"]
+_data = {
+&"RESET": SubResource("Animation_758f8"),
+&"fade_in": SubResource("Animation_0p1dc"),
+&"fade_out": SubResource("Animation_fl2dd")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmc71"]
+bg_color = Color(0.226707, 0.226708, 0.226707, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_deykl"]
+
+[node name="TransitionScene" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_mmc71")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0p1dc")
+}
+
+[node name="PuertaI" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -270.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mmc71")
+
+[node name="PuertaD" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 540.0
+offset_right = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mmc71")
+
+[node name="Fondo" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 718.0
+offset_right = 2.0
+offset_bottom = 718.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_deykl")

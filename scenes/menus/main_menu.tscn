@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq7n45cxgiq3t"]
+[gd_scene load_steps=5 format=3 uid="uid://dq7n45cxgiq3t"]
 
 [ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_l6cm7"]
 [ext_resource type="Theme" uid="uid://cjq5vt88wa8x" path="res://ui/menu_theme.tres" id="2_2o76q"]
+[ext_resource type="PackedScene" uid="uid://cmvvmnv37bmya" path="res://scenes/transicion/transition_scene.tscn" id="2_6bivr"]
 [ext_resource type="Script" uid="uid://d5cmtqt47mye" path="res://addons/transitionmanager/trans_mgr.gd" id="2_ekxnf"]
 
 [node name="MainMenu" type="Control"]
@@ -12,8 +13,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TransitionManager" type="AnimationPlayer" parent="."]
+[node name="TransitionManager" type="AnimationPlayer" parent="." node_paths=PackedStringArray("transition_scene")]
 script = ExtResource("2_ekxnf")
+has_fadein = true
+transition_scene = NodePath("../TransitionScene")
 metadata/_custom_type_script = "uid://d5cmtqt47mye"
 
 [node name="Background" type="Panel" parent="."]
@@ -57,6 +60,7 @@ theme = ExtResource("2_2o76q")
 text = "JUGAR"
 script = ExtResource("1_l6cm7")
 next_scene_path = "res://scenes/game_scene.tscn"
+has_transition = true
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
 
 [node name="Ranking" type="Button" parent="Botones"]
@@ -103,3 +107,6 @@ text = "SALIR"
 script = ExtResource("1_l6cm7")
 next_scene_path = "exitgame"
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
+
+[node name="TransitionScene" parent="." instance=ExtResource("2_6bivr")]
+layout_mode = 1

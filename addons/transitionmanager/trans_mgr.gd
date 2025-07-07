@@ -2,10 +2,9 @@
 extends AnimationPlayer
 
 @export var has_fadein : bool
-@export var fadeout_animation : Animation
-@export var fadein_animation : Animation
+@export var transition_scene : TransitionScene
 
-func _enter_tree():
+func _ready():
 	connect_all_nav_buttons()
 	if (has_fadein):
 		play_fadein_animation()
@@ -18,8 +17,12 @@ func connect_all_nav_buttons():
 			nav_button.transition_to_scene.connect(play_fadeout_animation)
 	
 func play_fadeout_animation(nextScene : String):
-	await play(fadeout_animation.resource_name)
+	print("play fadout")
+	transition_scene.play_anim("fade_out")
+	await transition_scene.transition_finished
 	SceneManager.change_to_scene(nextScene)
 	
 func play_fadein_animation():
-	await play(fadein_animation.resource_name)
+	print("play fadein")
+	transition_scene.play_anim("fade_in")
+	

@@ -22,5 +22,5 @@ func nuevo_obstaculo(obs : Obstaculo):
 	
 func jugador_chocado():
 	GlobalVars.final_score = int(score)
-	await get_tree().create_timer(1.0).timeout
-	SceneManager.change_to_scene(game_over_scene_path)
+	get_tree().paused = true
+	$TransitionManager.play_fadeout_animation(game_over_scene_path)
