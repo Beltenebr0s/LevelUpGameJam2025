@@ -2,7 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://cjq5vt88wa8x" path="res://ui/menu_theme.tres" id="1_7i3iu"]
 [ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_hayap"]
-[ext_resource type="Script" uid="uid://dwr2cbex0m2sv" path="res://scenes/menus/settings_menu.gd" id="1_s2d1y"]
+[ext_resource type="Script" uid="uid://dwr2cbex0m2sv" path="res://scripts/menu/settings_menu.gd" id="1_s2d1y"]
+
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3

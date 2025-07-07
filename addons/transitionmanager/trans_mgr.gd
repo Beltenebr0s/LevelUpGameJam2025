@@ -17,12 +17,10 @@ func connect_all_nav_buttons():
 			nav_button.transition_to_scene.connect(play_fadeout_animation)
 	
 func play_fadeout_animation(nextScene : String):
-	print("play fadout")
 	transition_scene.play_anim("fade_out")
 	await transition_scene.transition_finished
 	SceneManager.change_to_scene(nextScene)
 	
 func play_fadein_animation():
-	print("play fadein")
 	transition_scene.play_anim("fade_in")
 	

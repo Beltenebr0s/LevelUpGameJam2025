@@ -5,7 +5,6 @@ extends Control
 signal transition_finished
 func _enter_tree():
 	player = get_child(0)
-	print(player)
 
 func play_anim(animation_name : String):
 	get_tree().paused = true
