@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://fqhpfxc8csob"]
+[gd_scene load_steps=18 format=3 uid="uid://fqhpfxc8csob"]
 
 [ext_resource type="Script" uid="uid://cjmn721f77ha2" path="res://scripts/game.gd" id="1_bw6k5"]
 [ext_resource type="PackedScene" uid="uid://c2ji84bo7mt61" path="res://scenes/escaleras.tscn" id="1_onqr8"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://3lqi6qvx3ea6" path="res://scenes/obstaculos/vecino_descendente.tscn" id="5_y3j0m"]
 [ext_resource type="PackedScene" uid="uid://6sdo07oemox5" path="res://scenes/obstaculos/vecino_desdendente_verde.tscn" id="6_b5spy"]
 [ext_resource type="PackedScene" uid="uid://kbil5okodmsw" path="res://scenes/obstaculos/vecino_ascendente_verde.tscn" id="6_kk2rg"]
+[ext_resource type="PackedScene" uid="uid://dp6tps6sq2uv7" path="res://scenes/obstaculos/vecino_descendente_amarillo.tscn" id="10_5ay1a"]
 [ext_resource type="Script" uid="uid://d5cmtqt47mye" path="res://addons/transitionmanager/trans_mgr.gd" id="10_tcjrq"]
 [ext_resource type="PackedScene" uid="uid://cmvvmnv37bmya" path="res://scenes/transicion/transition_scene.tscn" id="11_rvs2r"]
 
@@ -57,12 +58,12 @@ vecinos = Array[PackedScene]([ExtResource("5_y3j0m"), ExtResource("6_b5spy")])
 
 [node name="SpawnUC" parent="SpawnController" instance=ExtResource("3_ycayy")]
 position = Vector2(260, -150)
-vecinos = Array[PackedScene]([ExtResource("5_y3j0m"), ExtResource("6_b5spy")])
+vecinos = Array[PackedScene]([ExtResource("6_b5spy"), ExtResource("10_5ay1a")])
 
 [node name="SpawnUR" parent="SpawnController" instance=ExtResource("3_ycayy")]
 position = Vector2(364, -125)
 gizmo_extents = 15.0
-vecinos = Array[PackedScene]([ExtResource("5_y3j0m"), ExtResource("6_b5spy")])
+vecinos = Array[PackedScene]([ExtResource("5_y3j0m"), ExtResource("6_b5spy"), ExtResource("10_5ay1a")])
 
 [node name="SpawnDL" parent="SpawnController" instance=ExtResource("3_ycayy")]
 position = Vector2(156, 845)
@@ -84,7 +85,6 @@ transition_scene = NodePath("../TransitionScene")
 metadata/_custom_type_script = "uid://d5cmtqt47mye"
 
 [node name="TransitionScene" parent="." instance=ExtResource("11_rvs2r")]
-visible = false
 offset_right = 540.0
 offset_bottom = 720.0
 

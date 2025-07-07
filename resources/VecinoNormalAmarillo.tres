@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ObstacleResource" load_steps=3 format=3 uid="uid://cjfa3k1n2tckg"]
+
+[ext_resource type="Script" uid="uid://de0m2dpfd8tdn" path="res://scripts/recursos/ObstacleResource.gd" id="1_ilpfm"]
+[ext_resource type="Texture2D" uid="uid://dt8f5147jl3q5" path="res://images/vecinito amarillo.png" id="2_ilpfm"]
+
+[resource]
+script = ExtResource("1_ilpfm")
+textura = ExtResource("2_ilpfm")
+velocidad = 150
+variacionHorizontal = 10
+peso = 5.0
+metadata/_custom_type_script = "uid://de0m2dpfd8tdn"
