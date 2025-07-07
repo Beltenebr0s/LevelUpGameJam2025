@@ -5,7 +5,7 @@ extends Node2D
 
 func _ready():
 	GlobalVars.is_first_game = false
-	# conectar_spawns()
+	conectar_spawns()
 	score = 0
 	
 func  _process(delta):
@@ -13,7 +13,7 @@ func  _process(delta):
 	GlobalVars.mult_global += delta / 10
 	
 func conectar_spawns():
-	var spawns_obstaculos = $Spawns.get_children()
+	var spawns_obstaculos = $SpawnController.find_children("*", "Spawn")
 	for spawn : Spawn in spawns_obstaculos:
 		spawn.obstaculo_creado.connect(nuevo_obstaculo)
 	
