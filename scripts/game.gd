@@ -24,3 +24,6 @@ func jugador_chocado():
 	GlobalVars.final_score = int(score)
 	get_tree().paused = true
 	$TransitionManager.play_fadeout_animation(game_over_scene_path)
+
+func _on_niveles_nivel_cambiado(int_spawns: float, num_spawns: int):
+	$SpawnController.actualizar_dificultad(int_spawns, num_spawns)

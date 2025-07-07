@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://fqhpfxc8csob"]
+[gd_scene load_steps=17 format=3 uid="uid://fqhpfxc8csob"]
 
 [ext_resource type="Script" uid="uid://cjmn721f77ha2" path="res://scripts/game.gd" id="1_bw6k5"]
 [ext_resource type="PackedScene" uid="uid://c2ji84bo7mt61" path="res://scenes/escaleras.tscn" id="1_onqr8"]
+[ext_resource type="PackedScene" uid="uid://dnvwnpc2r1rhl" path="res://scenes/niveles.tscn" id="2_mw25s"]
 [ext_resource type="PackedScene" uid="uid://bhi1ycdhp8w1b" path="res://scenes/jugador.tscn" id="2_ycayy"]
+[ext_resource type="Script" uid="uid://cms7i7o53f5hh" path="res://scripts/recursos/NivelResource.gd" id="3_tqxxy"]
 [ext_resource type="PackedScene" uid="uid://7auvomxkllwa" path="res://scenes/spawn.tscn" id="3_ycayy"]
 [ext_resource type="PackedScene" uid="uid://1ga6ufyqjdpg" path="res://scenes/spawn_controller.tscn" id="4_utbpp"]
 [ext_resource type="PackedScene" uid="uid://bqf48x0tf4yej" path="res://scenes/obstaculos/vecino_ascendente.tscn" id="5_rurhu"]
@@ -12,8 +14,32 @@
 [ext_resource type="Script" uid="uid://d5cmtqt47mye" path="res://addons/transitionmanager/trans_mgr.gd" id="10_tcjrq"]
 [ext_resource type="PackedScene" uid="uid://cmvvmnv37bmya" path="res://scenes/transicion/transition_scene.tscn" id="11_rvs2r"]
 
+[sub_resource type="Resource" id="Resource_5ay1a"]
+script = ExtResource("3_tqxxy")
+duracion = 10.0
+numSpawns = 1
+intervaloSpawns = 5.0
+metadata/_custom_type_script = "uid://cms7i7o53f5hh"
+
+[sub_resource type="Resource" id="Resource_ldkr4"]
+script = ExtResource("3_tqxxy")
+duracion = 10.0
+numSpawns = 2
+intervaloSpawns = 4.0
+metadata/_custom_type_script = "uid://cms7i7o53f5hh"
+
+[sub_resource type="Resource" id="Resource_liy57"]
+script = ExtResource("3_tqxxy")
+duracion = 5.0
+numSpawns = 4
+intervaloSpawns = 1.0
+metadata/_custom_type_script = "uid://cms7i7o53f5hh"
+
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_bw6k5")
+
+[node name="Niveles" parent="." instance=ExtResource("2_mw25s")]
+niveles = Array[ExtResource("3_tqxxy")]([SubResource("Resource_5ay1a"), SubResource("Resource_ldkr4"), SubResource("Resource_liy57")])
 
 [node name="Escaleras" parent="." instance=ExtResource("1_onqr8")]
 
@@ -21,7 +47,6 @@ script = ExtResource("1_bw6k5")
 position = Vector2(210, 1)
 
 [node name="SpawnController" parent="." instance=ExtResource("4_utbpp")]
-time = 1.0
 
 [node name="Spawn" parent="SpawnController" instance=ExtResource("3_ycayy")]
 position = Vector2(156, -125)
@@ -48,6 +73,7 @@ transition_scene = NodePath("../TransitionScene")
 metadata/_custom_type_script = "uid://d5cmtqt47mye"
 
 [node name="TransitionScene" parent="." instance=ExtResource("11_rvs2r")]
-process_mode = 3
 offset_right = 540.0
 offset_bottom = 720.0
+
+[connection signal="nivel_cambiado" from="Niveles" to="." method="_on_niveles_nivel_cambiado"]

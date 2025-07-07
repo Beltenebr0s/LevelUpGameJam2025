@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnvwnpc2r1rhl"]
+
+[ext_resource type="Script" uid="uid://ln34kwjuxe8q" path="res://scripts/control/niveles.gd" id="1_2swb6"]
+
+[node name="Niveles" type="Node"]
+script = ExtResource("1_2swb6")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ObstacleResource" load_steps=3 format=3 uid="uid://cuqhupl0wn1tk"]
 
-[ext_resource type="Script" uid="uid://de0m2dpfd8tdn" path="res://scripts/obstaculos/ObstacleResource.gd" id="1_te560"]
+[ext_resource type="Script" uid="uid://de0m2dpfd8tdn" path="res://scripts/recursos/ObstacleResource.gd" id="1_te560"]
 [ext_resource type="Texture2D" uid="uid://dgjx7t7i5au8f" path="res://images/vecinito verde.png" id="2_te560"]
 
 [resource]
