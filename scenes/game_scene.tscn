@@ -19,7 +19,7 @@ script = ExtResource("1_bw6k5")
 position = Vector2(210, 1)
 
 [node name="SpawnController" parent="." instance=ExtResource("4_utbpp")]
-time = 0.1
+time = 1.0
 
 [node name="Spawn" parent="SpawnController" instance=ExtResource("3_ycayy")]
 position = Vector2(156, -125)
