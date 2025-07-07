@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://boqjwieb36yip"]
+[gd_scene load_steps=4 format=3 uid="uid://boqjwieb36yip"]
 
 [ext_resource type="Theme" uid="uid://cjq5vt88wa8x" path="res://ui/menu_theme.tres" id="1_7i3iu"]
 [ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_hayap"]
+[ext_resource type="Script" uid="uid://dwr2cbex0m2sv" path="res://scenes/menus/settings_menu.gd" id="1_s2d1y"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_s2d1y")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -31,7 +33,7 @@ offset_right = 261.0
 offset_bottom = 244.0
 grow_horizontal = 2
 theme = ExtResource("1_7i3iu")
-text = "AJUSTES"
+text = "WIN_SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -46,7 +48,44 @@ offset_right = 141.0
 offset_bottom = -17.0
 grow_vertical = 0
 theme = ExtResource("1_7i3iu")
-text = "BACK"
+text = "BUT_BACK"
 script = ExtResource("1_hayap")
 next_scene_path = "res://scenes/menus/main_menu.tscn"
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
+
+[node name="Lang" type="Label" parent="."]
+layout_mode = 2
+offset_left = 82.0
+offset_top = 375.0
+offset_right = 202.0
+offset_bottom = 397.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource("1_7i3iu")
+theme_override_font_sizes/font_size = 15
+text = "LBL_LANGUAGE"
+
+[node name="Es" type="Button" parent="."]
+layout_mode = 2
+offset_left = 224.0
+offset_top = 364.0
+offset_right = 344.0
+offset_bottom = 412.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource("1_7i3iu")
+text = "BUT_ES"
+
+[node name="En" type="Button" parent="."]
+layout_mode = 2
+offset_left = 360.0
+offset_top = 364.0
+offset_right = 480.0
+offset_bottom = 412.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource("1_7i3iu")
+text = "BUT_EN"
+
+[connection signal="pressed" from="Es" to="." method="_on_es_pressed"]
+[connection signal="pressed" from="En" to="." method="_on_en_pressed"]

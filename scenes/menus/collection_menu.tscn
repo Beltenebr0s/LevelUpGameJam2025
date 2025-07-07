@@ -31,7 +31,7 @@ offset_right = 261.0
 offset_bottom = 244.0
 grow_horizontal = 2
 theme = ExtResource("1_ol3b5")
-text = "COLECCIÓN"
+text = "WIN_COLLECTION"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -46,7 +46,7 @@ offset_right = 141.0
 offset_bottom = -17.0
 grow_vertical = 0
 theme = ExtResource("1_ol3b5")
-text = "BACK"
+text = "BUT_BACK"
 script = ExtResource("1_pmeyo")
 next_scene_path = "res://scenes/menus/main_menu.tscn"
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c5fr153pcsqir"
+
+[deps]
+
+files=["res://ui/diccionario.es.translation", "res://ui/diccionario.en.translation"]
+
+source_file="res://ui/diccionario.csv"
+dest_files=["res://ui/diccionario.es.translation", "res://ui/diccionario.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0
