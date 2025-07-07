@@ -19,20 +19,21 @@ script = ExtResource("1_bw6k5")
 position = Vector2(210, 1)
 
 [node name="SpawnController" parent="." instance=ExtResource("4_utbpp")]
+time = 0.1
 
 [node name="Spawn" parent="SpawnController" instance=ExtResource("3_ycayy")]
-position = Vector2(156, 47)
+position = Vector2(156, -125)
 vecinos = Array[PackedScene]([ExtResource("5_y3j0m"), ExtResource("6_b5spy")])
 
 [node name="Spawn2" parent="SpawnController" instance=ExtResource("3_ycayy")]
-position = Vector2(358, 43)
+position = Vector2(364, -125)
 gizmo_extents = 15.0
 vecinos = Array[PackedScene]([ExtResource("5_y3j0m"), ExtResource("6_b5spy")])
 
 [node name="Spawn3" parent="SpawnController" instance=ExtResource("3_ycayy")]
-position = Vector2(177, 429)
+position = Vector2(156, 845)
 vecinos = Array[PackedScene]([ExtResource("5_rurhu"), ExtResource("6_kk2rg")])
 
 [node name="Spawn4" parent="SpawnController" instance=ExtResource("3_ycayy")]
-position = Vector2(375, 427)
+position = Vector2(364, 845)
 vecinos = Array[PackedScene]([ExtResource("5_rurhu"), ExtResource("6_kk2rg")])

@@ -15,6 +15,10 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_up"):
 		direction.y -= 1
 
+	if Input.is_action_just_pressed("invincible"):
+		print("invencible")
+		$CollisionShape2D.disabled = true
+
 	direction = direction.normalized()
 	velocity = direction * speed
 	move_and_slide()

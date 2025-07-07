@@ -2,10 +2,12 @@ class_name Obstaculo
 extends Area2D
 
 @export var obstacleResource : ObstacleResource
+@export var variacionHorizontal : int = 50
 signal collided_with_player
 
 func _ready():
 	$Sprite.texture = obstacleResource.textura
+	position += Vector2.RIGHT * obstacleResource.variacionHorizontal * randfn(0, 0.3)
 	
 func _process(delta):
 	move(delta)
