@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="ObstacleResource" load_steps=3 format=3 uid="uid://dpxq64k4uow6k"]
 
 [ext_resource type="Script" uid="uid://de0m2dpfd8tdn" path="res://scripts/recursos/ObstacleResource.gd" id="1_gxw1w"]
-[ext_resource type="Texture2D" uid="uid://bqhv1nuvkha5d" path="res://images/vecinito.png" id="2_hrk8i"]
+[ext_resource type="Texture2D" uid="uid://p4f307ht6ufg" path="res://images/vecino_normal.png" id="2_hrk8i"]
 
 [resource]
 script = ExtResource("1_gxw1w")
 textura = ExtResource("2_hrk8i")
-velocidad = 75
+velocidad = 50
 variacionHorizontal = 60
 peso = 1.0
 desbloqueado = false

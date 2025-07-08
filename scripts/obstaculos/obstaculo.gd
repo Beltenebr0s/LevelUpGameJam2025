@@ -2,7 +2,6 @@ class_name Obstaculo
 extends Area2D
 
 @export var obstacleResource : ObstacleResource
-@export var variacionHorizontal : int = 50
 signal collided_with_player
 
 func _ready():
@@ -13,7 +12,7 @@ func _process(delta):
 	move(delta)
 	
 func move(delta):
-	$MovementHandler.move(self, obstacleResource.velocidad, delta)
+	$MovementHandler.move(self, obstacleResource, delta)
 
 func collision_with_player():
 	print(		"Colisión con el jugador!")

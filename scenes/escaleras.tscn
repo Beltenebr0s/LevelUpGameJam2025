@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2ji84bo7mt61"]
+[gd_scene load_steps=5 format=3 uid="uid://c2ji84bo7mt61"]
 
 [ext_resource type="Script" uid="uid://pbpcflo50d7t" path="res://scripts/escaleras.gd" id="1_v22oq"]
 [ext_resource type="PackedScene" uid="uid://7a30r3pc2wms" path="res://scenes/fondo.tscn" id="2_ybuyh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybuyh"]
 size = Vector2(85, 732)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgs6j"]
+size = Vector2(546, 74)
 
 [node name="Escaleras" type="Node2D"]
 script = ExtResource("1_v22oq")
@@ -33,3 +36,11 @@ shape = SubResource("RectangleShape2D_ybuyh")
 [node name="colider_dcho" type="CollisionShape2D" parent="coliders"]
 position = Vector2(494, 354)
 shape = SubResource("RectangleShape2D_ybuyh")
+
+[node name="colider_arriba" type="CollisionShape2D" parent="coliders"]
+position = Vector2(263, -32)
+shape = SubResource("RectangleShape2D_kgs6j")
+
+[node name="colider_abajo" type="CollisionShape2D" parent="coliders"]
+position = Vector2(264, 723)
+shape = SubResource("RectangleShape2D_kgs6j")

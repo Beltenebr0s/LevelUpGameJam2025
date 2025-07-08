@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ObstacleResource" load_steps=3 format=3 uid="uid://begiit13dgxek"]
+
+[ext_resource type="Script" uid="uid://de0m2dpfd8tdn" path="res://scripts/recursos/ObstacleResource.gd" id="1_jk0p2"]
+[ext_resource type="Texture2D" uid="uid://bfraefhu825w7" path="res://images/vecinas_blabla.png" id="2_jk0p2"]
+
+[resource]
+script = ExtResource("1_jk0p2")
+textura = ExtResource("2_jk0p2")
+velocidad = 50
+variacionHorizontal = 30
+peso = 1.0
+metadata/_custom_type_script = "uid://de0m2dpfd8tdn"

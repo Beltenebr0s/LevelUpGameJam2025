@@ -3,6 +3,7 @@ extends Node
 @onready var is_first_game : bool = true
 @onready var final_score : int = 0
 @onready var mult : float = 1
+@onready var scroll_speed : float = 100
 @onready var lista_vecinos : Array[ObstacleResource]
 
 func add_vecino(vecino_nuevo):

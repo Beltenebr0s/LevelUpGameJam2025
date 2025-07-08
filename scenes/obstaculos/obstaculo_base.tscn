@@ -6,8 +6,7 @@
 [node name="ObstaculoBase" type="Area2D"]
 script = ExtResource("1_qtk8b")
 
-[node name="Collider" type="CollisionShape2D" parent="."]
-debug_color = Color(0, 0.6, 0.701961, 0.462745)
+[node name="Collider" type="CollisionPolygon2D" parent="."]
 
 [node name="Sprite" type="Sprite2D" parent="."]
 

@@ -24,12 +24,14 @@ func crear_lista_pesos():
 	for vecino in vecinos:
 		vecino_instanciado = vecino.instantiate()
 		peso_max += vecino_instanciado.obstacleResource.peso
+		vecino_instanciado.free()
 	for vecino in vecinos:
 		vecino_instanciado = vecino.instantiate()
 		if len(lista_pesos) == 0:
 			lista_pesos.append(vecino_instanciado.obstacleResource.peso / peso_max)
 		else:
 			lista_pesos.append(lista_pesos[len(lista_pesos) - 1] + vecino_instanciado.obstacleResource.peso / peso_max)
+		vecino_instanciado.free()
 	print(lista_pesos)
 
 func escoger_vecino():
