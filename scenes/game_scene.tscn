@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://fqhpfxc8csob"]
+[gd_scene load_steps=32 format=3 uid="uid://fqhpfxc8csob"]
 
 [ext_resource type="Script" uid="uid://cjmn721f77ha2" path="res://scripts/game.gd" id="1_bw6k5"]
 [ext_resource type="PackedScene" uid="uid://c2ji84bo7mt61" path="res://scenes/escaleras.tscn" id="1_onqr8"]
@@ -16,6 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://da23cebour86w" path="res://scenes/obstaculos/asc_vecino_normal.tscn" id="10_tqxxy"]
 [ext_resource type="PackedScene" uid="uid://bry00ywvtt5km" path="res://scenes/obstaculos/asc_vecinas_blabla.tscn" id="11_ldkr4"]
 [ext_resource type="PackedScene" uid="uid://cmvvmnv37bmya" path="res://scenes/transicion/transition_scene.tscn" id="11_rvs2r"]
+[ext_resource type="Script" uid="uid://btdc8ta42w1bt" path="res://scripts/menu/pause_menu.gd" id="17_77hjl"]
+[ext_resource type="Theme" uid="uid://cjq5vt88wa8x" path="res://ui/menu_theme.tres" id="18_6aqbo"]
+[ext_resource type="PackedScene" uid="uid://boqjwieb36yip" path="res://scenes/menus/settings_menu.tscn" id="18_ro0ie"]
+[ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="19_ro0ie"]
 
 [sub_resource type="Resource" id="Resource_5ay1a"]
 script = ExtResource("3_tqxxy")
@@ -151,8 +155,64 @@ has_fadein = true
 transition_scene = NodePath("../TransitionScene")
 metadata/_custom_type_script = "uid://d5cmtqt47mye"
 
-[node name="TransitionScene" parent="." instance=ExtResource("11_rvs2r")]
+[node name="PauseMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("18_6aqbo")
+script = ExtResource("17_77hjl")
+settings_menu = ExtResource("18_ro0ie")
+
+[node name="Background" type="Panel" parent="PauseMenu"]
+layout_mode = 1
 offset_right = 540.0
 offset_bottom = 720.0
 
+[node name="Title" type="Label" parent="PauseMenu"]
+layout_mode = 1
+offset_right = 540.0
+offset_bottom = 172.0
+text = "WIN_PAUSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Botones" type="VBoxContainer" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 319.0
+offset_right = 370.0
+offset_bottom = 547.0
+theme = ExtResource("18_6aqbo")
+alignment = 1
+
+[node name="Play" type="Button" parent="PauseMenu/Botones"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme = ExtResource("18_6aqbo")
+text = "BUT_RESUME"
+
+[node name="Settings" type="Button" parent="PauseMenu/Botones"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("18_6aqbo")
+text = "BUT_SETTINGS"
+
+[node name="Salir" type="Button" parent="PauseMenu/Botones"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("18_6aqbo")
+text = "BUT_EXIT"
+script = ExtResource("19_ro0ie")
+next_scene_path = "res://scenes/menus/main_menu.tscn"
+has_transition = true
+metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
+
+[node name="TransitionScene" parent="." instance=ExtResource("11_rvs2r")]
+offset_right = 540.0
+offset_bottom = 720.0
+metadata/_edit_use_anchors_ = true
+
 [connection signal="nivel_cambiado" from="Niveles" to="." method="_on_niveles_nivel_cambiado"]
+[connection signal="pressed" from="PauseMenu/Botones/Play" to="PauseMenu" method="_on_play_pressed"]
+[connection signal="pressed" from="PauseMenu/Botones/Settings" to="PauseMenu" method="_on_settings_pressed"]

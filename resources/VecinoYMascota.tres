@@ -7,7 +7,7 @@
 script = ExtResource("1_y588m")
 textura = ExtResource("2_y588m")
 velocidad = 25
-variablidadVelocidadMax = 0.2
+variablidadVelocidadMax = 0.5
 velocidadHorizontal = 0
 variacionHorizontal = 10
 peso = 0.5

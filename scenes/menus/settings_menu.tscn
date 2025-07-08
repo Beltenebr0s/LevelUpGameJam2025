@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_hayap"]
 [ext_resource type="Script" uid="uid://dwr2cbex0m2sv" path="res://scripts/menu/settings_menu.gd" id="1_s2d1y"]
 
-
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -16,23 +15,14 @@ script = ExtResource("1_s2d1y")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 540.0
+offset_bottom = 720.0
 theme = ExtResource("1_7i3iu")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -260.0
-offset_top = 100.0
-offset_right = 261.0
-offset_bottom = 244.0
-grow_horizontal = 2
+offset_right = 540.0
+offset_bottom = 167.0
 theme = ExtResource("1_7i3iu")
 text = "WIN_SETTINGS"
 horizontal_alignment = 1
@@ -40,14 +30,10 @@ vertical_alignment = 1
 
 [node name="NavigationButton" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 17.0
-offset_top = -74.0
-offset_right = 141.0
-offset_bottom = -17.0
-grow_vertical = 0
+offset_left = 12.0
+offset_top = 650.0
+offset_right = 136.0
+offset_bottom = 707.0
 theme = ExtResource("1_7i3iu")
 text = "BUT_BACK"
 script = ExtResource("1_hayap")

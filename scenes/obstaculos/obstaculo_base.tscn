@@ -4,11 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://dr27ism23xfx1" path="res://scenes/obstaculos/movimientos/MovementHandler.tscn" id="2_enybo"]
 
 [node name="ObstaculoBase" type="Area2D"]
+y_sort_enabled = true
 script = ExtResource("1_qtk8b")
 
 [node name="Collider" type="CollisionPolygon2D" parent="."]
 
 [node name="Sprite" type="Sprite2D" parent="."]
+y_sort_enabled = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 rect = Rect2(0, 0, 20, 20)

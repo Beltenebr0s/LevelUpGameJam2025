@@ -7,6 +7,7 @@ func _ready():
 	GlobalVars.is_first_game = false
 	conectar_spawns()
 	score = 0
+	$PauseMenu.visible = false
 	
 func  _process(delta):
 	score += delta

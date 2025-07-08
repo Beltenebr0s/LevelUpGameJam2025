@@ -4,6 +4,9 @@ class_name NavigationButton
 
 @export var next_scene_path: String
 @export var has_transition: bool
+
+var navegacion_funcional : bool = true
+
 signal transition_to_scene(next : String)
 
 func _enter_tree():
@@ -11,7 +14,7 @@ func _enter_tree():
 	pressed.connect(on_button_clicked)
 
 func on_button_clicked():
-	if (next_scene_path != ""):
+	if (next_scene_path != "") and navegacion_funcional:
 		if (has_transition):
 			transition_to_scene.emit(next_scene_path)
 		else:
