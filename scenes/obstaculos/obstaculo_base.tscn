@@ -9,7 +9,7 @@ script = ExtResource("1_qtk8b")
 
 [node name="Collider" type="CollisionPolygon2D" parent="."]
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

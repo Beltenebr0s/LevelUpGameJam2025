@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbafi1t0g56b6"]
+[gd_scene load_steps=6 format=3 uid="uid://cbafi1t0g56b6"]
 
 [ext_resource type="Script" uid="uid://6n15hklxcwc7" path="res://scripts/globals/audio.gd" id="1_6n3bj"]
+
+[sub_resource type="AudioStream" id="AudioStream_6n3bj"]
+
+[sub_resource type="AudioStream" id="AudioStream_bwtr5"]
+
+[sub_resource type="AudioStream" id="AudioStream_f5a2e"]
+
+[sub_resource type="AudioStream" id="AudioStream_hlm5c"]
 
 [node name="Audio" type="Node"]
 process_mode = 3
@@ -15,9 +23,13 @@ script = ExtResource("1_6n3bj")
 [node name="Menus" type="Node" parent="SFX"]
 
 [node name="BotonSelect" type="AudioStreamPlayer" parent="SFX/Menus"]
+stream = SubResource("AudioStream_6n3bj")
 
 [node name="BotonDown" type="AudioStreamPlayer" parent="SFX/Menus"]
+stream = SubResource("AudioStream_bwtr5")
 
 [node name="BotonPressed" type="AudioStreamPlayer" parent="SFX/Menus"]
+stream = SubResource("AudioStream_f5a2e")
 
 [node name="Ascensor" type="AudioStreamPlayer" parent="SFX/Menus"]
+stream = SubResource("AudioStream_hlm5c")

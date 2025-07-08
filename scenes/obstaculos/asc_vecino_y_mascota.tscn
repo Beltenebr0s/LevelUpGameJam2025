@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhy8gr8gs1f10"]
+[gd_scene load_steps=6 format=3 uid="uid://dhy8gr8gs1f10"]
 
 [ext_resource type="PackedScene" uid="uid://7xj0vk0ffsjl" path="res://scenes/obstaculos/obstaculo_base.tscn" id="1_f7fx6"]
 [ext_resource type="Resource" uid="uid://c48i8cf7le3o7" path="res://resources/VecinoYMascota.tres" id="2_nc6b8"]
 [ext_resource type="Texture2D" uid="uid://dv3jk3kogg22u" path="res://images/vecino_y_mascota.png" id="3_mt15y"]
 [ext_resource type="Script" uid="uid://v1gmka2s0wld" path="res://scripts/obstaculos/movimiento/movimiento_ascendente.gd" id="4_f7fx6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f7fx6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mt15y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="ascVecinoYMascota" instance=ExtResource("1_f7fx6")]
 obstacleResource = ExtResource("2_nc6b8")
@@ -11,9 +22,9 @@ obstacleResource = ExtResource("2_nc6b8")
 [node name="Collider" parent="." index="0"]
 polygon = PackedVector2Array(-44, -36, -34, -36, -27, -20, -26, 11, -25, 16, -12, 27, 3, 27, 14, 20, 23, 7, 31, -21, 40, -35, 33, -49, 33, -52, 36, -48, 41, -52, 48, -50, 51, -42, 59, -49, 48, -34, 54, -24, 54, -18, 51, -9, 51, -9, 49, -2, 46, -1, 42, -4, 39, -11, 36, -21, 33, -20, 24, 8, 15, 21, 3, 29, -12, 28, -26, 18, -23, 26, -24, 48, -21, 54, -24, 63, -33, 63, -41, 76, -49, 76, -52, 70, -56, 44, -56, 25, -53, 15, -59, 1, -59, -6, -55, -14, -49, -15, -51, -20)
 
-[node name="Sprite" parent="." index="1"]
-scale = Vector2(0.118217, 0.118217)
-texture = ExtResource("3_mt15y")
+[node name="AnimatedSprite" parent="." index="1"]
+scale = Vector2(0.236434, 0.236434)
+sprite_frames = SubResource("SpriteFrames_f7fx6")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="2"]
 position = Vector2(-60, -54)

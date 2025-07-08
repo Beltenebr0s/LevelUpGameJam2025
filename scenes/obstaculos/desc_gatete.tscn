@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://btv867av8wwp8"]
+[gd_scene load_steps=6 format=3 uid="uid://btv867av8wwp8"]
 
 [ext_resource type="PackedScene" uid="uid://7xj0vk0ffsjl" path="res://scenes/obstaculos/obstaculo_base.tscn" id="1_c2225"]
 [ext_resource type="Resource" uid="uid://bbhwwqf6uw3a0" path="res://resources/Gatete.tres" id="2_nr346"]
 [ext_resource type="Texture2D" uid="uid://v15773xw3gps" path="res://images/Gatete.png" id="3_5vqqv"]
 [ext_resource type="Script" uid="uid://bdav6o5ethxi1" path="res://scripts/obstaculos/movimiento/movimiento_zigzag_desc.gd" id="4_nr346"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nr346"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5vqqv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="descGatete" instance=ExtResource("1_c2225")]
 obstacleResource = ExtResource("2_nr346")
@@ -11,9 +22,9 @@ obstacleResource = ExtResource("2_nr346")
 [node name="Collider" parent="." index="0"]
 polygon = PackedVector2Array(-4, -33, -6, -25, -1, -26, 3, -23, 5, -17, 10, -1, 9, 9, 12, 14, 11, 20, 5, 31, -3, 31, -9, 19, -10, 13, -8, 8, -8, -1, -3, -17, -4, -22, -8, -23, -9, -28, -6, -33)
 
-[node name="Sprite" parent="." index="1"]
-scale = Vector2(0.109005, 0.109005)
-texture = ExtResource("3_5vqqv")
+[node name="AnimatedSprite" parent="." index="1"]
+scale = Vector2(0.208531, 0.208531)
+sprite_frames = SubResource("SpriteFrames_nr346")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="2"]
 position = Vector2(-18, -33)

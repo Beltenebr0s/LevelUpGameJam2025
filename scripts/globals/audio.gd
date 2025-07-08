@@ -52,14 +52,18 @@ func mute_sfx(_toggled_on : bool):
 	AudioServer.set_bus_mute(sfx_bus, sfx_muted)
 
 func play_boton_select():
+	pass
 	print("FUI SELECCIONADO")
-	boton_select.play()
+	#boton_select.play()
 
 func play_boton_down():
-	boton_down.play()
+	pass
+	#boton_down.play()
 
 func play_boton_pressed():
-	boton_pressed.play()
+	pass
+	#boton_pressed.play()
 
 func play_ascensor():
-	ascensor.play()
+	pass
+	#ascensor.play()

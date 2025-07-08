@@ -1,13 +1,28 @@
-[gd_resource type="Resource" script_class="ObstacleResource" load_steps=4 format=3 uid="uid://begiit13dgxek"]
+[gd_resource type="Resource" script_class="ObstacleResource" load_steps=6 format=3 uid="uid://begiit13dgxek"]
 
 [ext_resource type="Script" uid="uid://de0m2dpfd8tdn" path="res://scripts/recursos/ObstacleResource.gd" id="1_jk0p2"]
 [ext_resource type="Texture2D" uid="uid://bfraefhu825w7" path="res://images/vecinas_blabla.png" id="2_jk0p2"]
 [ext_resource type="Texture2D" uid="uid://uhci4slvq0n7" path="res://images/ui/ui_vecinas_blabla.png" id="3_bjbwo"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk0p2"]
+atlas = ExtResource("2_jk0p2")
+region = Rect2(0, 0, 522, 665)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjbwo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk0p2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [resource]
 script = ExtResource("1_jk0p2")
-textura = ExtResource("2_jk0p2")
 textura_ui = ExtResource("3_bjbwo")
+animaciones = Array[SpriteFrames]([SubResource("SpriteFrames_bjbwo")])
 velocidad = 50
 variablidadVelocidadMax = 0.0
 velocidadHorizontal = 0

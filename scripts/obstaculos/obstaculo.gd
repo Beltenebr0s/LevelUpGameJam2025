@@ -5,7 +5,7 @@ extends Area2D
 signal collided_with_player
 
 func _ready():
-	$Sprite.texture = obstacleResource.textura
+	$AnimatedSprite.sprite_frames = obstacleResource.animaciones.pick_random()
 	position += Vector2.RIGHT * obstacleResource.variacionHorizontal * randfn(0, 0.3)
 	
 func _process(delta):
