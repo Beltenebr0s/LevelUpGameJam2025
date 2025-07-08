@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbafi1t0g56b6"]
+
+[ext_resource type="Script" uid="uid://6n15hklxcwc7" path="res://scripts/globals/audio.gd" id="1_6n3bj"]
+
+[node name="Audio" type="Node"]
+process_mode = 3
+script = ExtResource("1_6n3bj")
+
+[node name="Musica" type="Node" parent="."]
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="InGame" type="Node" parent="SFX"]
+
+[node name="Menus" type="Node" parent="SFX"]
+
+[node name="BotonSelect" type="AudioStreamPlayer" parent="SFX/Menus"]
+
+[node name="BotonDown" type="AudioStreamPlayer" parent="SFX/Menus"]
+
+[node name="BotonPressed" type="AudioStreamPlayer" parent="SFX/Menus"]
+
+[node name="Ascensor" type="AudioStreamPlayer" parent="SFX/Menus"]

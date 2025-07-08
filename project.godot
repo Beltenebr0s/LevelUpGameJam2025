@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SceneManager="*res://scripts/globals/scene_manager.gd"
 GlobalVars="*res://scripts/globals/global_variables.gd"
+Audio="*res://scripts/globals/audio.gd"
 
 [display]
 

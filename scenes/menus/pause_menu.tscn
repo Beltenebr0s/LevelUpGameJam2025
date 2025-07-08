@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvgjlparf85st"]
+
+[ext_resource type="Theme" uid="uid://cjq5vt88wa8x" path="res://ui/menu_theme.tres" id="1_2wrho"]
+[ext_resource type="Script" uid="uid://btdc8ta42w1bt" path="res://scripts/menu/pause_menu.gd" id="2_gh0u6"]
+[ext_resource type="PackedScene" uid="uid://boqjwieb36yip" path="res://scenes/menus/settings_menu.tscn" id="3_eyfc8"]
+[ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="4_xiui8"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_2wrho")
+script = ExtResource("2_gh0u6")
+settings_menu = ExtResource("3_eyfc8")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+offset_right = 540.0
+offset_bottom = 720.0
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+offset_right = 540.0
+offset_bottom = 172.0
+text = "WIN_PAUSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Botones" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 319.0
+offset_right = 370.0
+offset_bottom = 547.0
+theme = ExtResource("1_2wrho")
+alignment = 1
+
+[node name="Play" type="Button" parent="Botones"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme = ExtResource("1_2wrho")
+text = "BUT_RESUME"
+
+[node name="Settings" type="Button" parent="Botones"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_2wrho")
+text = "BUT_SETTINGS"
+
+[node name="Salir" type="Button" parent="Botones"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_2wrho")
+text = "BUT_EXIT"
+script = ExtResource("4_xiui8")
+next_scene_path = "res://scenes/menus/main_menu.tscn"
+has_transition = true
+metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
+
+[connection signal="pressed" from="Botones/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Botones/Settings" to="." method="_on_settings_pressed"]

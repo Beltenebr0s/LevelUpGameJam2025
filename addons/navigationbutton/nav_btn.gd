@@ -12,6 +12,9 @@ signal transition_to_scene(next : String)
 func _enter_tree():
 	add_to_group("NavButton")
 	pressed.connect(on_button_clicked)
+	mouse_entered.connect(Audio.play_boton_select)
+	button_down.connect(Audio.play_boton_down)
+	pressed.connect(Audio.play_boton_pressed)
 
 func on_button_clicked():
 	if (next_scene_path != "") and navegacion_funcional:
