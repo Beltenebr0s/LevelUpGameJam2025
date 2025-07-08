@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dq7n45cxgiq3t"]
+[gd_scene load_steps=11 format=3 uid="uid://dq7n45cxgiq3t"]
 
 [ext_resource type="Script" uid="uid://dxykayybwmndo" path="res://scripts/menu/main_menu.gd" id="1_imvie"]
 [ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_l6cm7"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cmvvmnv37bmya" path="res://scenes/transicion/transition_scene.tscn" id="2_6bivr"]
 [ext_resource type="Script" uid="uid://d5cmtqt47mye" path="res://addons/transitionmanager/trans_mgr.gd" id="2_ekxnf"]
 [ext_resource type="Resource" uid="uid://dpxq64k4uow6k" path="res://resources/VecinoNormal.tres" id="3_50h1w"]
-[ext_resource type="Resource" uid="uid://cuqhupl0wn1tk" path="res://resources/VecinoNormalVerde.tres" id="4_euy4r"]
-[ext_resource type="Resource" uid="uid://cjfa3k1n2tckg" path="res://resources/VecinoNormalAmarillo.tres" id="5_50h1w"]
+[ext_resource type="Resource" uid="uid://bbhwwqf6uw3a0" path="res://resources/Gatete.tres" id="6_88kup"]
+[ext_resource type="Resource" uid="uid://begiit13dgxek" path="res://resources/VecinasBlabla.tres" id="7_bh4e2"]
+[ext_resource type="Resource" uid="uid://c48i8cf7le3o7" path="res://resources/VecinoYMascota.tres" id="8_3w8rc"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -18,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_imvie")
-censoVecinos = Array[ExtResource("2_1hnlc")]([ExtResource("3_50h1w"), ExtResource("4_euy4r"), ExtResource("5_50h1w")])
+censoVecinos = Array[ExtResource("2_1hnlc")]([ExtResource("3_50h1w"), ExtResource("6_88kup"), ExtResource("7_bh4e2"), ExtResource("8_3w8rc")])
 
 [node name="TransitionManager" type="AnimationPlayer" parent="." node_paths=PackedStringArray("transition_scene")]
 script = ExtResource("2_ekxnf")

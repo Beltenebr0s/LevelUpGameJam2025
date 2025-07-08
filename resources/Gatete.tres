@@ -1,13 +1,17 @@
-[gd_resource type="Resource" script_class="ObstacleResource" load_steps=3 format=3 uid="uid://bbhwwqf6uw3a0"]
+[gd_resource type="Resource" script_class="ObstacleResource" load_steps=4 format=3 uid="uid://bbhwwqf6uw3a0"]
 
 [ext_resource type="Script" uid="uid://de0m2dpfd8tdn" path="res://scripts/recursos/ObstacleResource.gd" id="1_gf108"]
 [ext_resource type="Texture2D" uid="uid://v15773xw3gps" path="res://images/Gatete.png" id="2_gf108"]
+[ext_resource type="Texture2D" uid="uid://dufyj8e7uonj1" path="res://images/ui/ui_gatete.png" id="3_av8lk"]
 
 [resource]
 script = ExtResource("1_gf108")
 textura = ExtResource("2_gf108")
+textura_ui = ExtResource("3_av8lk")
 velocidad = 50
+variablidadVelocidadMax = 0.0
 velocidadHorizontal = 150
 variacionHorizontal = 60
 peso = 1.0
+desbloqueado = false
 metadata/_custom_type_script = "uid://de0m2dpfd8tdn"
