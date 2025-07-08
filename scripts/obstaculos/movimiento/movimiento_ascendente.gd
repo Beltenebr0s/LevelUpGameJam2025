@@ -2,7 +2,5 @@ class_name MovimientoAscendente
 extends BaseObstacleMovement
 
 func move(cuerpo_obstaculo : Area2D, obstaculo : ObstacleResource, delta : float) -> void:
-	var dir = Vector2.UP
-	var movV = dir * obstaculo.velocidad * GlobalVars.mult * delta
-	var movEscalera = dir * GlobalVars.scroll_speed * delta
-	cuerpo_obstaculo.position += movV + movEscalera
+	cuerpo_obstaculo.position += calcular_movV_asc(obstaculo) * delta
+	cuerpo_obstaculo.position += calcular_mov_escalera() * delta
