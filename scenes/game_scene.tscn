@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://fqhpfxc8csob"]
+[gd_scene load_steps=20 format=3 uid="uid://fqhpfxc8csob"]
 
 [ext_resource type="Script" uid="uid://cjmn721f77ha2" path="res://scripts/game.gd" id="1_bw6k5"]
 [ext_resource type="PackedScene" uid="uid://c2ji84bo7mt61" path="res://scenes/escaleras.tscn" id="1_onqr8"]
@@ -6,8 +6,7 @@
 [ext_resource type="Script" uid="uid://cms7i7o53f5hh" path="res://scripts/recursos/NivelResource.gd" id="3_tqxxy"]
 [ext_resource type="PackedScene" uid="uid://7auvomxkllwa" path="res://scenes/spawn.tscn" id="3_ycayy"]
 [ext_resource type="PackedScene" uid="uid://1ga6ufyqjdpg" path="res://scenes/spawn_controller.tscn" id="4_utbpp"]
-[ext_resource type="Script" uid="uid://ccaf80ghnyu68" path="res://scripts/jugador.gd" id="5_5ay1a"]
-[ext_resource type="Texture2D" uid="uid://5k4d1tkogqaw" path="res://images/Prota-spritesheet.png" id="6_ldkr4"]
+[ext_resource type="PackedScene" uid="uid://bhi1ycdhp8w1b" path="res://scenes/jugador.tscn" id="5_liy57"]
 [ext_resource type="PackedScene" uid="uid://dpnj3vojdm5v2" path="res://scenes/obstaculos/desc_vecino_y_mascota.tscn" id="8_rvs2r"]
 [ext_resource type="PackedScene" uid="uid://cv705y01obmlf" path="res://scenes/obstaculos/desc_vecino_dibujo.tscn" id="9_5ay1a"]
 [ext_resource type="PackedScene" uid="uid://dhy8gr8gs1f10" path="res://scenes/obstaculos/asc_vecino_y_mascota.tscn" id="9_tqxxy"]
@@ -42,59 +41,6 @@ intervaloSpawns = 5.0
 multVelocidad = 1.2
 metadata/_custom_type_script = "uid://cms7i7o53f5hh"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_28edd"]
-atlas = ExtResource("6_ldkr4")
-region = Rect2(0, 0, 548, 798)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k64kw"]
-atlas = ExtResource("6_ldkr4")
-region = Rect2(548, 0, 548, 798)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qimn5"]
-atlas = ExtResource("6_ldkr4")
-region = Rect2(1096, 0, 548, 798)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gynwn"]
-atlas = ExtResource("6_ldkr4")
-region = Rect2(1644, 0, 548, 798)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xm55e"]
-atlas = ExtResource("6_ldkr4")
-region = Rect2(2192, 0, 548, 798)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qimqe"]
-atlas = ExtResource("6_ldkr4")
-region = Rect2(2740, 0, 548, 798)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_l5m57"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_28edd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k64kw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qimn5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gynwn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xm55e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qimqe")
-}],
-"loop": true,
-"name": &"walking",
-"speed": 10.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e85j5"]
-size = Vector2(40, 96)
-
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_bw6k5")
 
@@ -103,20 +49,8 @@ niveles = Array[ExtResource("3_tqxxy")]([SubResource("Resource_5ay1a"), SubResou
 
 [node name="Escaleras" parent="." instance=ExtResource("1_onqr8")]
 
-[node name="Jugador" type="CharacterBody2D" parent="."]
-position = Vector2(265, 172)
-script = ExtResource("5_5ay1a")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Jugador"]
-scale = Vector2(0.136861, 0.136861)
-sprite_frames = SubResource("SpriteFrames_l5m57")
-animation = &"walking"
-autoplay = "walking"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador"]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_e85j5")
-debug_color = Color(0.862745, 0, 0.0941176, 0.172549)
+[node name="Jugador" parent="." instance=ExtResource("5_liy57")]
+position = Vector2(259, 188)
 
 [node name="SpawnController" parent="." instance=ExtResource("4_utbpp")]
 
