@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://fqhpfxc8csob"]
+[gd_scene load_steps=21 format=3 uid="uid://fqhpfxc8csob"]
 
 [ext_resource type="Script" uid="uid://cjmn721f77ha2" path="res://scripts/game.gd" id="1_bw6k5"]
 [ext_resource type="PackedScene" uid="uid://c2ji84bo7mt61" path="res://scenes/escaleras.tscn" id="1_onqr8"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bry00ywvtt5km" path="res://scenes/obstaculos/asc_vecinas_blabla.tscn" id="11_ldkr4"]
 [ext_resource type="PackedScene" uid="uid://cmvvmnv37bmya" path="res://scenes/transicion/transition_scene.tscn" id="11_rvs2r"]
 [ext_resource type="PackedScene" uid="uid://bvgjlparf85st" path="res://scenes/menus/pause_menu.tscn" id="16_mwyo0"]
+[ext_resource type="Texture2D" uid="uid://b6nn2qfjm32v8" path="res://images/ui/pausa.png" id="17_mwyo0"]
 
 [sub_resource type="Resource" id="Resource_5ay1a"]
 script = ExtResource("3_tqxxy")
@@ -87,10 +88,21 @@ transition_scene = NodePath("../TransitionScene")
 metadata/_custom_type_script = "uid://d5cmtqt47mye"
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_mwyo0")]
+scale = Vector2(1.00245, 0.995503)
 
 [node name="TransitionScene" parent="." instance=ExtResource("11_rvs2r")]
 offset_right = 540.0
 offset_bottom = 720.0
 metadata/_edit_use_anchors_ = true
 
+[node name="PauseButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 495.0
+offset_top = 50.0
+offset_right = 535.0
+offset_bottom = 90.0
+texture_normal = ExtResource("17_mwyo0")
+
 [connection signal="nivel_cambiado" from="Niveles" to="." method="_on_niveles_nivel_cambiado"]
+[connection signal="transition_finished" from="TransitionScene" to="." method="_on_transition_scene_transition_finished"]
+[connection signal="pressed" from="PauseButton" to="PauseMenu" method="_on_pause_button_pressed"]

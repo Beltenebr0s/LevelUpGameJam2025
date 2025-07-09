@@ -29,3 +29,7 @@ func _on_niveles_nivel_cambiado(nuevo_nivel : NivelResource):
 	$SpawnController.actualizar_dificultad(nuevo_nivel.intervaloSpawns, nuevo_nivel.numSpawns)
 	GlobalVars.mult = nuevo_nivel.multVelocidad
 	print(		"Nueva dificultad: ", nuevo_nivel.intervaloSpawns, " - ", nuevo_nivel.numSpawns, " - ", nuevo_nivel.multVelocidad)
+
+
+func _on_transition_scene_transition_finished():
+	$PauseButton.show()

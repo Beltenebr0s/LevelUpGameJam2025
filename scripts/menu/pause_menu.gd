@@ -17,6 +17,7 @@ func pause():
 func resume():
 	get_tree().paused = false
 	process_mode = Node.PROCESS_MODE_INHERIT
+	get_parent().get_node("PauseButton").show()
 	visible = false
 
 func _on_settings_pressed():
@@ -26,3 +27,8 @@ func _on_settings_pressed():
 
 func _on_play_pressed():
 	resume()
+
+
+func _on_pause_button_pressed():
+	pause()
+	get_parent().get_node("PauseButton").hide()
