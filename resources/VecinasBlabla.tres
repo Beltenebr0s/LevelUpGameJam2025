@@ -21,8 +21,8 @@ animations = [{
 
 [resource]
 script = ExtResource("1_jk0p2")
-textura_ui = ExtResource("3_bjbwo")
 animaciones = Array[SpriteFrames]([SubResource("SpriteFrames_bjbwo")])
+textura_ui = ExtResource("3_bjbwo")
 velocidad = 50
 variablidadVelocidadMax = 0.0
 velocidadHorizontal = 0
