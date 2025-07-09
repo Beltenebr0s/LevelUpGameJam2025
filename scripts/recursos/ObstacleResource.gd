@@ -1,7 +1,7 @@
 class_name ObstacleResource
 extends Resource
 
-@export var animaciones: Array[SpriteFrames]
+@export var animacion: SpriteFrames
 @export var textura_ui: Texture
 @export var velocidad : int
 @export var variablidadVelocidadMax : float

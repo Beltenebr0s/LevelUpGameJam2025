@@ -29,6 +29,7 @@ stream = ExtResource("2_hlm5c")
 
 [node name="BotonSelect" type="AudioStreamPlayer" parent="SFX/Menus"]
 stream = ExtResource("3_wdljl")
+max_polyphony = 3
 
 [node name="BotonDown" type="AudioStreamPlayer" parent="SFX/Menus"]
 stream = SubResource("AudioStream_bwtr5")

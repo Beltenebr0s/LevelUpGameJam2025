@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://7xj0vk0ffsjl" path="res://scenes/obstaculos/obstaculo_base.tscn" id="1_e8hxb"]
 [ext_resource type="Resource" uid="uid://dpxq64k4uow6k" path="res://resources/VecinoNormal.tres" id="2_c0pkp"]
-[ext_resource type="Texture2D" uid="uid://p4f307ht6ufg" path="res://images/vecino_normal.png" id="3_qf8qi"]
+[ext_resource type="Texture2D" uid="uid://ctwbdaq2ytc35" path="res://images/original colours/Vecino_normal.png" id="3_c0pkp"]
 [ext_resource type="Script" uid="uid://v1gmka2s0wld" path="res://scripts/obstaculos/movimiento/movimiento_ascendente.gd" id="4_c0pkp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c0pkp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_qf8qi")
+"texture": ExtResource("3_c0pkp")
 }],
 "loop": true,
 "name": &"default",
@@ -23,7 +23,7 @@ obstacleResource = ExtResource("2_c0pkp")
 polygon = PackedVector2Array(-12, -76, -2, -79, 9, -76, 12, -69, 20, -68, 17, -50, 12, -43, 25, -34, 34, -11, 25, 1, 26, 12, 22, 17, 20, 44, 15, 47, 15, 91, -26, 91, -25, 48, -30, 45, -31, 15, -32, 10, -31, 0, -34, -12, -28, -32, -15, -43, -18, -50, -22, -67, -14, -67)
 
 [node name="AnimatedSprite" parent="." index="1"]
-scale = Vector2(0.289157, 0.289157)
+scale = Vector2(0.144578, 0.144578)
 sprite_frames = SubResource("SpriteFrames_c0pkp")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="2"]

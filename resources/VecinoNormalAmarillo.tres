@@ -1,22 +1,9 @@
-[gd_resource type="Resource" script_class="ObstacleResource" load_steps=4 format=3 uid="uid://cjfa3k1n2tckg"]
+[gd_resource type="Resource" script_class="ObstacleResource" load_steps=2 format=3 uid="uid://cjfa3k1n2tckg"]
 
 [ext_resource type="Script" uid="uid://de0m2dpfd8tdn" path="res://scripts/recursos/ObstacleResource.gd" id="1_ilpfm"]
-[ext_resource type="Texture2D" uid="uid://dt8f5147jl3q5" path="res://images/vecinito amarillo.png" id="2_ilpfm"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ilpfm"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_ilpfm")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [resource]
 script = ExtResource("1_ilpfm")
-animaciones = Array[SpriteFrames]([SubResource("SpriteFrames_ilpfm")])
 velocidad = 150
 variablidadVelocidadMax = 0.0
 velocidadHorizontal = 0

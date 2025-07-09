@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://7xj0vk0ffsjl"]
+[gd_scene load_steps=5 format=3 uid="uid://7xj0vk0ffsjl"]
 
+[ext_resource type="Shader" uid="uid://bsyxvstqjjqqd" path="res://shaders/color_change.gdshader" id="1_enybo"]
 [ext_resource type="Script" uid="uid://b81mfopb5hcxu" path="res://scripts/obstaculos/obstaculo.gd" id="1_qtk8b"]
 [ext_resource type="PackedScene" uid="uid://dr27ism23xfx1" path="res://scenes/obstaculos/movimientos/MovementHandler.tscn" id="2_enybo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_enybo"]
+shader = ExtResource("1_enybo")
 
 [node name="ObstaculoBase" type="Area2D"]
 y_sort_enabled = true
@@ -11,6 +15,7 @@ script = ExtResource("1_qtk8b")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
+material = SubResource("ShaderMaterial_enybo")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 rect = Rect2(0, 0, 20, 20)

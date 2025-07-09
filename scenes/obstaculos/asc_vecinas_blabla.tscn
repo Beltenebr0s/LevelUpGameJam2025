@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://7xj0vk0ffsjl" path="res://scenes/obstaculos/obstaculo_base.tscn" id="1_hc17s"]
 [ext_resource type="Resource" uid="uid://begiit13dgxek" path="res://resources/VecinasBlabla.tres" id="2_7f5u1"]
-[ext_resource type="Texture2D" uid="uid://bfraefhu825w7" path="res://images/vecinas_blabla.png" id="3_170t8"]
+[ext_resource type="Texture2D" uid="uid://dl8npukcxtl6v" path="res://images/original colours/vecinas_blabla.png" id="3_7f5u1"]
 [ext_resource type="Script" uid="uid://cn0ky0vdxpsr5" path="res://scripts/obstaculos/movimiento/movimiento_estatico.gd" id="4_7f5u1"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7f5u1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_170t8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_170t8")
+"texture": ExtResource("3_7f5u1")
 }],
 "loop": true,
 "name": &"default",
@@ -23,8 +23,8 @@ obstacleResource = ExtResource("2_7f5u1")
 polygon = PackedVector2Array(-11, -57, 8, -83, 26, -89, 53, -66, 36, -38, 36, -38, 50, -11, 58, 75, 68, 77, 71, 87, -46, 88, -51, 55, -68, 19, -55, -25, -19, -43)
 
 [node name="AnimatedSprite" parent="." index="1"]
-scale = Vector2(0.268199, 0.268199)
-sprite_frames = SubResource("SpriteFrames_7f5u1")
+scale = Vector2(0.136015, 0.136015)
+sprite_frames = SubResource("SpriteFrames_170t8")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="2"]
 position = Vector2(-70, -90)

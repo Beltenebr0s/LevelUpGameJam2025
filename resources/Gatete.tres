@@ -1,18 +1,14 @@
-[gd_resource type="Resource" script_class="ObstacleResource" load_steps=6 format=3 uid="uid://bbhwwqf6uw3a0"]
+[gd_resource type="Resource" script_class="ObstacleResource" load_steps=5 format=3 uid="uid://bbhwwqf6uw3a0"]
 
+[ext_resource type="Texture2D" uid="uid://w4fq1hwvb4gi" path="res://images/original colours/Gatete.png" id="1_av8lk"]
 [ext_resource type="Script" uid="uid://de0m2dpfd8tdn" path="res://scripts/recursos/ObstacleResource.gd" id="1_gf108"]
-[ext_resource type="Texture2D" uid="uid://v15773xw3gps" path="res://images/Gatete.png" id="2_gf108"]
 [ext_resource type="Texture2D" uid="uid://dufyj8e7uonj1" path="res://images/ui/ui_gatete.png" id="3_av8lk"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gf108"]
-atlas = ExtResource("2_gf108")
-region = Rect2(0, 0, 211, 357)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_av8lk"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gf108"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gf108")
+"texture": ExtResource("1_av8lk")
 }],
 "loop": true,
 "name": &"default",
@@ -21,7 +17,7 @@ animations = [{
 
 [resource]
 script = ExtResource("1_gf108")
-animaciones = Array[SpriteFrames]([SubResource("SpriteFrames_av8lk")])
+animacion = SubResource("SpriteFrames_gf108")
 textura_ui = ExtResource("3_av8lk")
 velocidad = 50
 variablidadVelocidadMax = 0.0

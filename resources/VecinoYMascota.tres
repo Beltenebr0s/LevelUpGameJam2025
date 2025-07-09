@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="ObstacleResource" load_steps=5 format=3 uid="uid://c48i8cf7le3o7"]
 
+[ext_resource type="Texture2D" uid="uid://b8sb8k8tb7vwb" path="res://images/original colours/vecino_y_mascota.png" id="1_843fj"]
 [ext_resource type="Script" uid="uid://de0m2dpfd8tdn" path="res://scripts/recursos/ObstacleResource.gd" id="1_y588m"]
-[ext_resource type="Texture2D" uid="uid://dv3jk3kogg22u" path="res://images/vecino_y_mascota.png" id="2_y588m"]
 [ext_resource type="Texture2D" uid="uid://1h4c52nanoep" path="res://images/ui/ui_vecino_y_mascota.png" id="3_843fj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y588m"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_y588m")
+"texture": ExtResource("1_843fj")
 }],
 "loop": true,
 "name": &"default",
@@ -17,7 +17,7 @@ animations = [{
 
 [resource]
 script = ExtResource("1_y588m")
-animaciones = Array[SpriteFrames]([SubResource("SpriteFrames_y588m")])
+animacion = SubResource("SpriteFrames_y588m")
 textura_ui = ExtResource("3_843fj")
 velocidad = 25
 variablidadVelocidadMax = 0.5

@@ -1,18 +1,14 @@
-[gd_resource type="Resource" script_class="ObstacleResource" load_steps=6 format=3 uid="uid://dpxq64k4uow6k"]
+[gd_resource type="Resource" script_class="ObstacleResource" load_steps=5 format=3 uid="uid://dpxq64k4uow6k"]
 
 [ext_resource type="Script" uid="uid://de0m2dpfd8tdn" path="res://scripts/recursos/ObstacleResource.gd" id="1_gxw1w"]
-[ext_resource type="Texture2D" uid="uid://p4f307ht6ufg" path="res://images/vecino_normal.png" id="2_hrk8i"]
+[ext_resource type="Texture2D" uid="uid://ctwbdaq2ytc35" path="res://images/original colours/Vecino_normal.png" id="1_i1ofb"]
 [ext_resource type="Texture2D" uid="uid://cfos6enfy4wpb" path="res://images/ui/ui_vecino_normal.png" id="3_i1ofb"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hrk8i"]
-atlas = ExtResource("2_hrk8i")
-region = Rect2(0, 0, 249, 665)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_i1ofb"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hrk8i"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hrk8i")
+"texture": ExtResource("1_i1ofb")
 }],
 "loop": true,
 "name": &"default",
@@ -21,7 +17,7 @@ animations = [{
 
 [resource]
 script = ExtResource("1_gxw1w")
-animaciones = Array[SpriteFrames]([SubResource("SpriteFrames_i1ofb")])
+animacion = SubResource("SpriteFrames_hrk8i")
 textura_ui = ExtResource("3_i1ofb")
 velocidad = 50
 variablidadVelocidadMax = 0.0
