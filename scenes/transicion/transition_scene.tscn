@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmvvmnv37bmya"]
+[gd_scene load_steps=10 format=3 uid="uid://cmvvmnv37bmya"]
 
 [ext_resource type="Script" uid="uid://dtghof543544s" path="res://scripts/transicion/fade_in.gd" id="1_mmc71"]
+[ext_resource type="Texture2D" uid="uid://c3d6jvfcr1k6s" path="res://images/puerta_ascensor.png" id="2_csdcn"]
 
 [sub_resource type="Animation" id="Animation_758f8"]
 length = 0.001
@@ -66,7 +67,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1.2, 1.39167, 2.46667),
 "transitions": PackedFloat32Array(1, 4.43828, 0.517633, 1),
 "update": 0,
-"values": [Vector2(270, 720), Vector2(270, 0), Vector2(270, 0), Vector2(540, 0)]
+"values": [Vector2(0, 720), Vector2(0, 0), Vector2(0, 0), Vector2(270, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -106,7 +107,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.966667, 1.23333, 2.5, 3),
 "transitions": PackedFloat32Array(3.03144, 1, 4.5948, 1, 1),
 "update": 0,
-"values": [Vector2(540, 0), Vector2(270, 0), Vector2(270, 0), Vector2(270, -720), Vector2(270, -720)]
+"values": [Vector2(270, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, -720), Vector2(0, -720)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -128,10 +129,14 @@ _data = {
 &"fade_out": SubResource("Animation_fl2dd")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmc71"]
-bg_color = Color(0.226707, 0.226708, 0.226707, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tjva"]
+texture = ExtResource("2_csdcn")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_deykl"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ixpny"]
+texture = ExtResource("2_csdcn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csdcn"]
+bg_color = Color(0.321728, 0.321728, 0.321728, 1)
 
 [node name="TransitionScene" type="Control"]
 process_mode = 3
@@ -157,18 +162,16 @@ anchor_bottom = 1.0
 offset_right = -270.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_mmc71")
+theme_override_styles/panel = SubResource("StyleBoxTexture_6tjva")
 
 [node name="PuertaD" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
 offset_left = 540.0
-offset_right = 270.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_mmc71")
+offset_right = 810.0
+offset_bottom = 720.0
+scale = Vector2(-1, 1)
+pivot_offset = Vector2(270, -2)
+theme_override_styles/panel = SubResource("StyleBoxTexture_ixpny")
 
 [node name="Fondo" type="Panel" parent="."]
 layout_mode = 1
@@ -181,4 +184,4 @@ offset_right = 2.0
 offset_bottom = 718.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_deykl")
+theme_override_styles/panel = SubResource("StyleBoxFlat_csdcn")
