@@ -8,3 +8,4 @@ func _ready():
 func _on_submit_pressed() -> void:
 	if $LineEdit.text != "":
 		SilentWolf.Scores.save_score($LineEdit.text, GlobalVars.final_score)
+		$Submit.disabled = true
