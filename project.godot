@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 SceneManager="*res://scripts/globals/scene_manager.gd"
 GlobalVars="*res://scripts/globals/global_variables.gd"
 Audio="*res://scripts/globals/audio.gd"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 
@@ -29,7 +30,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/navigationbutton/plugin.cfg", "res://addons/transitionmanager/plugin.cfg")
+enabled=PackedStringArray("res://addons/navigationbutton/plugin.cfg", "res://addons/silent_wolf/plugin.cfg", "res://addons/transitionmanager/plugin.cfg")
 
 [input]
 
