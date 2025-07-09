@@ -1,20 +1,25 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbafi1t0g56b6"]
 
 [ext_resource type="Script" uid="uid://6n15hklxcwc7" path="res://scripts/globals/audio.gd" id="1_6n3bj"]
-
-[sub_resource type="AudioStream" id="AudioStream_6n3bj"]
+[ext_resource type="AudioStream" uid="uid://dj66fl3sy7enb" path="res://sound/elevator_music.mp3" id="2_hlm5c"]
+[ext_resource type="AudioStream" uid="uid://bofcx4252i3rv" path="res://sound/button_hover.mp3" id="3_wdljl"]
+[ext_resource type="AudioStream" uid="uid://duij71qm5lfvo" path="res://sound/button_click.mp3" id="4_dl6it"]
 
 [sub_resource type="AudioStream" id="AudioStream_bwtr5"]
 
-[sub_resource type="AudioStream" id="AudioStream_f5a2e"]
-
-[sub_resource type="AudioStream" id="AudioStream_hlm5c"]
-
-[node name="Audio" type="Node"]
+[node name="Audio" type="Node" node_paths=PackedStringArray("musica", "boton_select", "boton_down", "boton_pressed", "ascensor")]
 process_mode = 3
 script = ExtResource("1_6n3bj")
+musica = NodePath("Musica")
+boton_select = NodePath("SFX/Menus/BotonSelect")
+boton_down = NodePath("SFX/Menus/BotonDown")
+boton_pressed = NodePath("SFX/Menus/BotonPressed")
+ascensor = NodePath("Ascensor")
 
 [node name="Musica" type="Node" parent="."]
+
+[node name="Ascensor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_hlm5c")
 
 [node name="SFX" type="Node" parent="."]
 
@@ -23,13 +28,10 @@ script = ExtResource("1_6n3bj")
 [node name="Menus" type="Node" parent="SFX"]
 
 [node name="BotonSelect" type="AudioStreamPlayer" parent="SFX/Menus"]
-stream = SubResource("AudioStream_6n3bj")
+stream = ExtResource("3_wdljl")
 
 [node name="BotonDown" type="AudioStreamPlayer" parent="SFX/Menus"]
 stream = SubResource("AudioStream_bwtr5")
 
 [node name="BotonPressed" type="AudioStreamPlayer" parent="SFX/Menus"]
-stream = SubResource("AudioStream_f5a2e")
-
-[node name="Ascensor" type="AudioStreamPlayer" parent="SFX/Menus"]
-stream = SubResource("AudioStream_hlm5c")
+stream = ExtResource("4_dl6it")

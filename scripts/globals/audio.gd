@@ -18,10 +18,11 @@ var sfx_bus = AudioServer.get_bus_index("SFX")
 
 var tween : Tween
 
-@onready var boton_select = $SFX/Menus/BotonSelect
-@onready var boton_down = $SFX/Menus/BotonDown
-@onready var boton_pressed = $SFX/Menus/BotonPressed
-@onready var ascensor = $SFX/Menus/Ascensor
+@export var musica : Node
+@export var boton_select : AudioStreamPlayer
+@export var boton_down  : AudioStreamPlayer
+@export var boton_pressed : AudioStreamPlayer
+@export var ascensor : AudioStreamPlayer
 
 func _ready():
 	ratio = (abs(vol_max) + abs(vol_min))/100
@@ -52,18 +53,14 @@ func mute_sfx(_toggled_on : bool):
 	AudioServer.set_bus_mute(sfx_bus, sfx_muted)
 
 func play_boton_select():
-	pass
 	print("FUI SELECCIONADO")
-	#boton_select.play()
+	boton_select.play()
 
 func play_boton_down():
-	pass
-	#boton_down.play()
+	boton_down.play()
 
 func play_boton_pressed():
-	pass
-	#boton_pressed.play()
+	boton_pressed.play()
 
 func play_ascensor():
-	pass
-	#ascensor.play()
+	ascensor.play()
