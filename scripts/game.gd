@@ -23,6 +23,7 @@ func nuevo_obstaculo(obs : Obstaculo):
 func jugador_chocado():
 	GlobalVars.final_score = int(score)
 	get_tree().paused = true
+	$PauseButton.hide()
 	$TransitionManager.play_fadeout_animation(game_over_scene_path)
 
 func _on_niveles_nivel_cambiado(nuevo_nivel : NivelResource):
