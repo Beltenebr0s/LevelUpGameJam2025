@@ -3,6 +3,11 @@ class_name Player
 @export var speed: float = 200.0
 
 
+func game_over():
+	print("HOLA??")
+	$AnimationPlayer.play("fall")
+	await $AnimationPlayer.animation_finished
+
 func _physics_process(delta):
 	var direction = Vector2.ZERO
 

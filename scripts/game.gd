@@ -21,6 +21,7 @@ func nuevo_obstaculo(obs : Obstaculo):
 	obs.collided_with_player.connect(jugador_chocado)
 	
 func jugador_chocado():
+	await $Jugador.game_over()
 	GlobalVars.final_score = int(score)
 	get_tree().paused = true
 	$PauseButton.hide()
