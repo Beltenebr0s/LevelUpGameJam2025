@@ -1,0 +1,160 @@
+[gd_scene load_steps=6 format=3 uid="uid://y11mdjs23286"]
+
+[ext_resource type="Texture2D" uid="uid://chrcbsd0xlp0q" path="res://images/ui/cartel_piso.png" id="1_ahhtf"]
+[ext_resource type="Script" uid="uid://c38liydd3qqpu" path="res://scripts/hud.gd" id="1_oo0fn"]
+
+[sub_resource type="Animation" id="Animation_oo0fn"]
+resource_name = "next_level"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nivel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.3, 1.63333, 1.93333),
+"transitions": PackedFloat32Array(2.54912, 1, 2.82843, 1),
+"update": 0,
+"values": [Vector2(0, -155), Vector2(0, 0), Vector2(0, 0), Vector2(0, -155)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nivel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4, 1.53333, 1.63333, 1.93333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.1, 1), Vector2(0.1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(0.1, 1), Vector2(0.1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nivel/LblTxt:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.366667, 1.4, 1.53333, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nivel/LblNum:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.366667, 1.4, 1.53333, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false, false]
+}
+
+[sub_resource type="Animation" id="Animation_5ysmq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nivel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nivel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nivel/LblTxt:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6fi6k"]
+_data = {
+&"RESET": SubResource("Animation_5ysmq"),
+&"next_level": SubResource("Animation_oo0fn")
+}
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oo0fn")
+
+[node name="UiAnimations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6fi6k")
+}
+
+[node name="Nivel" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -155.0
+offset_right = 135.0
+offset_bottom = -16.0
+texture = ExtResource("1_ahhtf")
+expand_mode = 1
+
+[node name="LblTxt" type="Label" parent="Nivel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = -55.0
+offset_right = 47.5
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 13
+text = "LBL_FLOOR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LblNum" type="Label" parent="Nivel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = -24.0
+offset_right = 48.5
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1

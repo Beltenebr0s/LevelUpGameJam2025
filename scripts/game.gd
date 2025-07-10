@@ -29,6 +29,7 @@ func jugador_chocado():
 func _on_niveles_nivel_cambiado(nuevo_nivel : NivelResource):
 	$SpawnController.actualizar_dificultad(nuevo_nivel.intervaloSpawns, nuevo_nivel.numSpawns)
 	GlobalVars.mult = nuevo_nivel.multVelocidad
+	$HUD.next_level(nuevo_nivel.id_nivel)
 	print(		"Nueva dificultad: ", nuevo_nivel.intervaloSpawns, " - ", nuevo_nivel.numSpawns, " - ", nuevo_nivel.multVelocidad)
 
 

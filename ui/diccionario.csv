@@ -24,3 +24,4 @@ LBL_SCORE_MSG, Si quieres puedes enviar tu puntuación a la clasificación globa
 LEDIT_SCORE, Introduce un nombre, Enter name
 LBL_MSG_SUCCESS, ¡Hecho!, Done!
 LBL_MSG_FAIL, Algo ha ido mal..., Something went wrong...
+LBL_FLOOR, PISO, FLOOR
