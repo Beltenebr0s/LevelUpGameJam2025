@@ -22,3 +22,5 @@ LBL_SCORE, Tu puntuación, Your score
 BUT_SUBMIT, ENVIAR, SUBMIT
 LBL_SCORE_MSG, Si quieres puedes enviar tu puntuación a la clasificación global, You can send your score to the global leaderboard if you want
 LEDIT_SCORE, Introduce un nombre, Enter name
+LBL_MSG_SUCCESS, ¡Hecho!, Done!
+LBL_MSG_FAIL, Algo ha ido mal..., Something went wrong...
