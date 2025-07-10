@@ -8,6 +8,7 @@ func _ready():
 	conectar_spawns()
 	score = 0
 	$PauseMenu.visible = false
+	$HUD.next_level(100)
 	
 func  _process(delta):
 	score += delta
