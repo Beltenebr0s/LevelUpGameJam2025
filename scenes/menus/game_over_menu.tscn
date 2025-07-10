@@ -156,6 +156,7 @@ offset_right = 130.0
 offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_ufkiq")
 placeholder_text = "LEDIT_SCORE"
 
 [connection signal="pressed" from="Submit" to="." method="_on_submit_pressed"]
