@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3rc43t61briw"]
+[gd_scene load_steps=6 format=3 uid="uid://c3rc43t61briw"]
 
 [ext_resource type="Theme" uid="uid://cjq5vt88wa8x" path="res://ui/menu_theme.tres" id="1_ol3b5"]
 [ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_pmeyo"]
 [ext_resource type="PackedScene" uid="uid://cbwn4hua78p0g" path="res://scenes/menus/galeria.tscn" id="3_c0v2r"]
+[ext_resource type="Script" uid="uid://d5cmtqt47mye" path="res://addons/transitionmanager/trans_mgr.gd" id="4_jk3h3"]
+[ext_resource type="PackedScene" uid="uid://cmvvmnv37bmya" path="res://scenes/transicion/transition_scene.tscn" id="5_ehaqg"]
 
 [node name="ColeccionMenu" type="Control"]
 layout_mode = 3
@@ -50,9 +52,19 @@ theme = ExtResource("1_ol3b5")
 text = "BUT_BACK"
 script = ExtResource("1_pmeyo")
 next_scene_path = "res://scenes/menus/main_menu.tscn"
+has_transition = true
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
 
 [node name="Galeria" parent="." instance=ExtResource("3_c0v2r")]
 layout_mode = 1
 offset_top = -123.0
 offset_bottom = 245.0
+
+[node name="TransitionManager" type="AnimationPlayer" parent="." node_paths=PackedStringArray("transition_scene")]
+script = ExtResource("4_jk3h3")
+has_fadein = true
+transition_scene = NodePath("../TransitionScene")
+metadata/_custom_type_script = "uid://d5cmtqt47mye"
+
+[node name="TransitionScene" parent="." instance=ExtResource("5_ehaqg")]
+layout_mode = 1

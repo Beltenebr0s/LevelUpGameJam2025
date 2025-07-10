@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dytwwjwue0hul"]
+[gd_scene load_steps=5 format=3 uid="uid://dytwwjwue0hul"]
 
 [ext_resource type="Theme" uid="uid://cjq5vt88wa8x" path="res://ui/menu_theme.tres" id="1_536xp"]
 [ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_fdc8g"]
+[ext_resource type="Script" uid="uid://d5cmtqt47mye" path="res://addons/transitionmanager/trans_mgr.gd" id="3_d74go"]
+[ext_resource type="PackedScene" uid="uid://cmvvmnv37bmya" path="res://scenes/transicion/transition_scene.tscn" id="4_325oc"]
 
 [node name="CreditsMenu" type="Control"]
 layout_mode = 3
@@ -49,4 +51,14 @@ theme = ExtResource("1_536xp")
 text = "BUT_BACK"
 script = ExtResource("1_fdc8g")
 next_scene_path = "res://scenes/menus/main_menu.tscn"
+has_transition = true
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
+
+[node name="TransitionManager" type="AnimationPlayer" parent="." node_paths=PackedStringArray("transition_scene")]
+script = ExtResource("3_d74go")
+has_fadein = true
+transition_scene = NodePath("../TransitionScene")
+metadata/_custom_type_script = "uid://d5cmtqt47mye"
+
+[node name="TransitionScene" parent="." instance=ExtResource("4_325oc")]
+layout_mode = 1

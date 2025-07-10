@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://boqjwieb36yip"]
+[gd_scene load_steps=6 format=3 uid="uid://boqjwieb36yip"]
 
 [ext_resource type="Theme" uid="uid://cjq5vt88wa8x" path="res://ui/menu_theme.tres" id="1_7i3iu"]
 [ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_hayap"]
 [ext_resource type="Script" uid="uid://dwr2cbex0m2sv" path="res://scripts/menu/settings_menu.gd" id="1_s2d1y"]
+[ext_resource type="Script" uid="uid://d5cmtqt47mye" path="res://addons/transitionmanager/trans_mgr.gd" id="4_da10i"]
+[ext_resource type="PackedScene" uid="uid://cmvvmnv37bmya" path="res://scenes/transicion/transition_scene.tscn" id="5_jjfif"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -38,6 +40,7 @@ theme = ExtResource("1_7i3iu")
 text = "BUT_BACK"
 script = ExtResource("1_hayap")
 next_scene_path = "res://scenes/menus/main_menu.tscn"
+has_transition = true
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
 
 [node name="Lang" type="Label" parent="."]
@@ -73,6 +76,15 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 theme = ExtResource("1_7i3iu")
 text = "BUT_EN"
+
+[node name="TransitionManager" type="AnimationPlayer" parent="." node_paths=PackedStringArray("transition_scene")]
+script = ExtResource("4_da10i")
+has_fadein = true
+transition_scene = NodePath("../TransitionScene")
+metadata/_custom_type_script = "uid://d5cmtqt47mye"
+
+[node name="TransitionScene" parent="." instance=ExtResource("5_jjfif")]
+layout_mode = 1
 
 [connection signal="pressed" from="Es" to="." method="_on_es_pressed"]
 [connection signal="pressed" from="En" to="." method="_on_en_pressed"]

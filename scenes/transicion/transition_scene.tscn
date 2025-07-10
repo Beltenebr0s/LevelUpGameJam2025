@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmvvmnv37bmya"]
+[gd_scene load_steps=9 format=3 uid="uid://cmvvmnv37bmya"]
 
 [ext_resource type="Script" uid="uid://dtghof543544s" path="res://scripts/transicion/fade_in.gd" id="1_mmc71"]
 [ext_resource type="Texture2D" uid="uid://c3d6jvfcr1k6s" path="res://images/puerta_ascensor.png" id="2_csdcn"]
@@ -29,22 +29,10 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(540, 0)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Fondo:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 718)]
-}
 
 [sub_resource type="Animation" id="Animation_0p1dc"]
 resource_name = "fade_in"
-length = 2.5
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -52,10 +40,10 @@ tracks/0/path = NodePath("PuertaI:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.2, 1.39167, 2.46667),
-"transitions": PackedFloat32Array(1, 4.43828, 0.517633, 1),
+"times": PackedFloat32Array(0.03333, 0.225, 0.7),
+"transitions": PackedFloat32Array(4.43828, 0.517633, 1),
 "update": 0,
-"values": [Vector2(0, 720), Vector2(0, 0), Vector2(0, 0), Vector2(-270, 0)]
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-270, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -64,27 +52,15 @@ tracks/1/path = NodePath("PuertaD:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.2, 1.39167, 2.46667),
-"transitions": PackedFloat32Array(1, 4.43828, 0.517633, 1),
+"times": PackedFloat32Array(0.03333, 0.225, 0.7),
+"transitions": PackedFloat32Array(4.43828, 0.517633, 1),
 "update": 0,
-"values": [Vector2(0, 720), Vector2(0, 0), Vector2(0, 0), Vector2(270, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Fondo:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.2, 1.36667, 2.46667),
-"transitions": PackedFloat32Array(1, 4.43828, 0.517633, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -720), Vector2(0, -720), Vector2(0, -720)]
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(270, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_fl2dd"]
 resource_name = "fade_out"
-length = 3.0
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -92,10 +68,10 @@ tracks/0/path = NodePath("PuertaI:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.966667, 1.23333, 2.5, 3),
-"transitions": PackedFloat32Array(3.03144, 1, 4.5948, 1, 1),
+"times": PackedFloat32Array(0, 0.433333, 0.699996),
+"transitions": PackedFloat32Array(3.03144, 1, 4.5948),
 "update": 0,
-"values": [Vector2(-270, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, -720), Vector2(0, -720)]
+"values": [Vector2(-270, 0), Vector2(0, 0), Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -104,22 +80,10 @@ tracks/1/path = NodePath("PuertaD:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.966667, 1.23333, 2.5, 3),
-"transitions": PackedFloat32Array(3.03144, 1, 4.5948, 1, 1),
+"times": PackedFloat32Array(0, 0.433333, 0.699996),
+"transitions": PackedFloat32Array(3.03144, 1, 4.5948),
 "update": 0,
-"values": [Vector2(270, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, -720), Vector2(0, -720)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Fondo:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.966667, 1.23333, 2.5, 3),
-"transitions": PackedFloat32Array(1, 1, 4.5948, 1, 1),
-"update": 0,
-"values": [Vector2(0, 720), Vector2(0, 720), Vector2(0, 720), Vector2(0, 0), Vector2(0, 0)]
+"values": [Vector2(270, 0), Vector2(0, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0p1dc"]
@@ -134,9 +98,6 @@ texture = ExtResource("2_csdcn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ixpny"]
 texture = ExtResource("2_csdcn")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csdcn"]
-bg_color = Color(0.321728, 0.321728, 0.321728, 1)
 
 [node name="TransitionScene" type="Control"]
 process_mode = 3
@@ -172,12 +133,3 @@ offset_bottom = 720.0
 scale = Vector2(-1, 1)
 pivot_offset = Vector2(270, -2)
 theme_override_styles/panel = SubResource("StyleBoxTexture_ixpny")
-
-[node name="Fondo" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_csdcn")

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://brb6eh8flsoep"]
+[gd_scene load_steps=6 format=3 uid="uid://brb6eh8flsoep"]
 
 [ext_resource type="Theme" uid="uid://cjq5vt88wa8x" path="res://ui/menu_theme.tres" id="1_2vgk8"]
 [ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_rgnid"]
 [ext_resource type="PackedScene" uid="uid://b2h8ok8yfc7wb" path="res://addons/silent_wolf/Scores/Leaderboard.tscn" id="2_m0327"]
+[ext_resource type="Script" uid="uid://d5cmtqt47mye" path="res://addons/transitionmanager/trans_mgr.gd" id="4_7ym6b"]
+[ext_resource type="PackedScene" uid="uid://cmvvmnv37bmya" path="res://scenes/transicion/transition_scene.tscn" id="5_v4uom"]
 
 [node name="RankingMenu" type="Control"]
 layout_mode = 3
@@ -54,4 +56,14 @@ theme = ExtResource("1_2vgk8")
 text = "BUT_BACK"
 script = ExtResource("1_rgnid")
 next_scene_path = "res://scenes/menus/main_menu.tscn"
+has_transition = true
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
+
+[node name="TransitionManager" type="AnimationPlayer" parent="." node_paths=PackedStringArray("transition_scene")]
+script = ExtResource("4_7ym6b")
+has_fadein = true
+transition_scene = NodePath("../TransitionScene")
+metadata/_custom_type_script = "uid://d5cmtqt47mye"
+
+[node name="TransitionScene" parent="." instance=ExtResource("5_v4uom")]
+layout_mode = 1
