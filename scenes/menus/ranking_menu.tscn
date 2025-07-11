@@ -39,7 +39,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Leaderboard" parent="." instance=ExtResource("2_m0327")]
-position = Vector2(-220, 34)
+position = Vector2(-220, 175)
 scale = Vector2(0.5, 0.5)
 
 [node name="NavigationButton" type="Button" parent="."]
@@ -66,4 +66,5 @@ transition_scene = NodePath("../TransitionScene")
 metadata/_custom_type_script = "uid://d5cmtqt47mye"
 
 [node name="TransitionScene" parent="." instance=ExtResource("5_v4uom")]
+visible = false
 layout_mode = 1

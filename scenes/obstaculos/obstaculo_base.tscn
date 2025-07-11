@@ -9,6 +9,8 @@ shader = ExtResource("1_enybo")
 
 [node name="ObstaculoBase" type="Area2D"]
 y_sort_enabled = true
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_qtk8b")
 
 [node name="Collider" type="CollisionPolygon2D" parent="."]
