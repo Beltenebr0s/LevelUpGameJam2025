@@ -48,7 +48,7 @@ func _physics_process(delta):
 	
 func restore_collider():
 	set_collision_layer_value(4, false)
-	set_collision_layer_value(1, false)
+	set_collision_layer_value(1, true)
 
 
 func _on_dash_cooldown_timer_timeout():
