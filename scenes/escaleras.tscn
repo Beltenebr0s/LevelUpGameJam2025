@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cknqw6jsupawj"]
+[gd_scene load_steps=5 format=3 uid="uid://cknqw6jsupawj"]
 
 [ext_resource type="Script" uid="uid://pbpcflo50d7t" path="res://scripts/escaleras.gd" id="1_v22oq"]
 [ext_resource type="Texture2D" uid="uid://casuhap670iut" path="res://images/Escaleras.jpg" id="2_vyb2l"]

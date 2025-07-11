@@ -9,10 +9,11 @@ _data = {
 point_count = 21
 
 [node name="PathSpawn" type="Path2D"]
+y_sort_enabled = true
 curve = SubResource("Curve2D_auhge")
 script = ExtResource("1_48w1d")
 
 [node name="SpawnLocation" type="PathFollow2D" parent="."]
-position = Vector2(235.69, 115.923)
+position = Vector2(235.691, 115.923)
 rotation = -2.13329
 progress = 658.608
