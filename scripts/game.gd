@@ -29,12 +29,9 @@ func jugador_chocado():
 	$PauseButton.hide()
 	$TransitionManager.play_fadeout_animation(game_over_scene_path)
 
-func _on_niveles_nivel_cambiado(nuevo_nivel : int):
+func _on_niveles_nivel_cambiado(nuevo_nivel : NivelResource):
 	$SpawnController.actualizar_dificultad(nuevo_nivel)
-	GlobalVars.mult *= 1.1
-	pass
-	
-
+	GlobalVars.mult = nuevo_nivel.multVelocidad
 
 func _on_transition_scene_transition_finished():
 	$PauseButton.show()

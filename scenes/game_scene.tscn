@@ -15,8 +15,6 @@
 y_sort_enabled = true
 script = ExtResource("1_bw6k5")
 
-[node name="Niveles" parent="." instance=ExtResource("2_mw25s")]
-
 [node name="Escaleras" parent="." instance=ExtResource("1_onqr8")]
 z_index = -1
 
@@ -25,6 +23,8 @@ y_sort_enabled = true
 position = Vector2(259, 188)
 
 [node name="SpawnController" parent="." instance=ExtResource("4_utbpp")]
+
+[node name="Niveles" parent="." instance=ExtResource("2_mw25s")]
 
 [node name="TransitionManager" type="AnimationPlayer" parent="." node_paths=PackedStringArray("transition_scene")]
 root_node = NodePath("../Play")

@@ -1,15 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dm2gef2pr12t8"]
+[gd_scene load_steps=3 format=3 uid="uid://dm2gef2pr12t8"]
 
 [ext_resource type="PackedScene" uid="uid://1ga6ufyqjdpg" path="res://scenes/spawn_controller.tscn" id="1_2vvb7"]
 [ext_resource type="PackedScene" uid="uid://cknqw6jsupawj" path="res://scenes/escaleras.tscn" id="1_jgmbi"]
-[ext_resource type="PackedScene" uid="uid://7auvomxkllwa" path="res://scenes/spawn.tscn" id="2_jgmbi"]
 
 [node name="SpawnTest" type="Node2D"]
 
 [node name="Escaleras" parent="." instance=ExtResource("1_jgmbi")]
+position = Vector2(33, 0)
 
 [node name="SpawnController" parent="." instance=ExtResource("1_2vvb7")]
 intervalo_spawns = 0.2
 
 [node name="Spawn" parent="SpawnController" instance=ExtResource("2_jgmbi")]
 position = Vector2(264, 40)
+intervalo_spawns = 0.5

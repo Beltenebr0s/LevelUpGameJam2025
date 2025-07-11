@@ -1,11 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://1ga6ufyqjdpg"]
+[gd_scene load_steps=3 format=3 uid="uid://1ga6ufyqjdpg"]
 
 [ext_resource type="Script" uid="uid://c42ephqy4r3hj" path="res://scripts/spawn_controller.gd" id="1_gkhyp"]
 [ext_resource type="PackedScene" uid="uid://7auvomxkllwa" path="res://scenes/spawn.tscn" id="2_pip1s"]
-[ext_resource type="PackedScene" uid="uid://btv867av8wwp8" path="res://scenes/obstaculos/desc_gatete.tscn" id="3_pbdmg"]
-[ext_resource type="PackedScene" uid="uid://dpnj3vojdm5v2" path="res://scenes/obstaculos/desc_vecino_y_mascota.tscn" id="4_45cs7"]
-[ext_resource type="PackedScene" uid="uid://da23cebour86w" path="res://scenes/obstaculos/asc_vecino_normal.tscn" id="5_hdn5e"]
-[ext_resource type="PackedScene" uid="uid://bry00ywvtt5km" path="res://scenes/obstaculos/asc_vecinas_blabla.tscn" id="6_3pr3l"]
 
 [node name="SpawnController" type="Node2D"]
 y_sort_enabled = true
@@ -13,12 +9,16 @@ script = ExtResource("1_gkhyp")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="SpawnArriba" parent="." instance=ExtResource("2_pip1s")]
-position = Vector2(0, -154)
-vecinos_totales = Array[PackedScene]([ExtResource("3_pbdmg"), ExtResource("4_45cs7")])
+[node name="SpawnsArriba" type="Node2D" parent="."]
+y_sort_enabled = true
 
-[node name="SpawnAbajo" parent="." instance=ExtResource("2_pip1s")]
+[node name="SpawnArriba1" parent="SpawnsArriba" instance=ExtResource("2_pip1s")]
+position = Vector2(0, -154)
+
+[node name="SpawnsAbajo" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="SpawnAbajo1" parent="SpawnsAbajo" instance=ExtResource("2_pip1s")]
 position = Vector2(0, 739)
-vecinos_totales = Array[PackedScene]([ExtResource("5_hdn5e"), ExtResource("6_3pr3l")])
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
