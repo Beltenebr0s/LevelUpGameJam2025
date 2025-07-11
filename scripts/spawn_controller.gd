@@ -1,7 +1,6 @@
 extends Node
 
 @export var intervalo_spawns : float = 2
-@export var numero_spawns : int = 1
 
 var spawn_points : Array
 
@@ -18,8 +17,7 @@ func timer_stop():
 
 func _on_timer_timeout():
 	spawn_points.shuffle()
-	for spawner in  spawn_points.slice(0, numero_spawns):
-		spawner.spawn()
+	spawn_points[0].spawn()
 	timer_start()
 
 func actualizar_dificultad(nuevo_invel):

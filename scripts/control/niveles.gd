@@ -21,14 +21,3 @@ func _on_timer_timeout():
 		nivel_actual += 1
 		nivel_cambiado.emit(nivel_actual)
 	
-	#nivel_actual += 1
-	#if nivel_actual < len(niveles):
-		#$Timer.start(niveles[nivel_actual].duracion)
-		#nivel_cambiado.emit(niveles[nivel_actual])
-		#
-	#else:
-		#$Timer.start(duracion_inf)
-		#ultimo_nivel.intervaloSpawns *= mult_int_inf
-		#ultimo_nivel.multVelocidad *= mult_vel_inf
-		#nivel_cambiado.emit(ultimo_nivel)
-	#print(		"Nivel ", nivel_actual)
