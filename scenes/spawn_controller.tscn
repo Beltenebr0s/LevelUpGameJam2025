@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bry00ywvtt5km" path="res://scenes/obstaculos/asc_vecinas_blabla.tscn" id="6_3pr3l"]
 
 [node name="SpawnController" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_gkhyp")
 
 [node name="Timer" type="Timer" parent="."]

@@ -12,13 +12,16 @@
 [ext_resource type="PackedScene" uid="uid://y11mdjs23286" path="res://scenes/hud.tscn" id="17_s76x2"]
 
 [node name="GameScene" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_bw6k5")
 
 [node name="Niveles" parent="." instance=ExtResource("2_mw25s")]
 
 [node name="Escaleras" parent="." instance=ExtResource("1_onqr8")]
+z_index = -1
 
 [node name="Jugador" parent="." instance=ExtResource("5_liy57")]
+y_sort_enabled = true
 position = Vector2(259, 188)
 
 [node name="SpawnController" parent="." instance=ExtResource("4_utbpp")]
@@ -38,11 +41,14 @@ offset_bottom = 90.0
 texture_normal = ExtResource("17_mwyo0")
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_mwyo0")]
+z_index = 1
 scale = Vector2(1.00245, 0.995503)
 
 [node name="HUD" parent="." instance=ExtResource("17_s76x2")]
+z_index = 1
 
 [node name="TransitionScene" parent="." instance=ExtResource("11_rvs2r")]
+z_index = 1
 offset_right = 540.0
 offset_bottom = 720.0
 metadata/_edit_use_anchors_ = true
