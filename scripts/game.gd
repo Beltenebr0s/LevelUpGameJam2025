@@ -5,6 +5,7 @@ extends Node2D
 
 func _ready():
 	GlobalVars.is_first_game = false
+	GlobalVars.mult = 1
 	conectar_spawns()
 	score = 0
 	$PauseMenu.visible = false
