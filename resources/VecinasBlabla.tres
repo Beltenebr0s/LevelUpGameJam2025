@@ -24,5 +24,6 @@ variablidadVelocidadMax = 0.0
 velocidadHorizontal = 0
 variacionHorizontal = 30
 peso = 1.0
+nivel_dificultad_minimo = 1
 desbloqueado = false
 metadata/_custom_type_script = "uid://de0m2dpfd8tdn"

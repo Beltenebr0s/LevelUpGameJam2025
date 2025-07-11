@@ -1,44 +1,35 @@
 class_name Spawn
-extends Marker2D
+extends Path2D
 
-@export var activated : bool = false
-@export var vecinos : Array[PackedScene]
+@export var vecinos_totales : Array[PackedScene]
 
-var lista_pesos : Array[float]
+var vecinos_disponibles : Array[PackedScene]
+var nivel_actual = 0
 
 signal obstaculo_creado(nuevo_obstaculo : Obstaculo)
 
 func _ready():
-	crear_lista_pesos()
+	crear_lista_vecinos_disponibles()
 	
-func spawn_obstacle():
-	var escena_obstaculo = escoger_vecino()
-	var obstaculo : Obstaculo = escena_obstaculo.instantiate()
-	obstaculo_creado.emit(obstaculo)
-	add_child(obstaculo)
-	print(		"Spawneado ", obstaculo.name, " en el nodo ", name, " en ", obstaculo.position)
-
-func crear_lista_pesos():
-	var peso_max = 0
-	var vecino_instanciado : Obstaculo
-	for vecino in vecinos:
-		vecino_instanciado = vecino.instantiate()
-		peso_max += vecino_instanciado.obstacleResource.peso
-		vecino_instanciado.free()
-	for vecino in vecinos:
-		vecino_instanciado = vecino.instantiate()
-		if len(lista_pesos) == 0:
-			lista_pesos.append(vecino_instanciado.obstacleResource.peso / peso_max)
-		else:
-			lista_pesos.append(lista_pesos[len(lista_pesos) - 1] + vecino_instanciado.obstacleResource.peso / peso_max)
-		vecino_instanciado.free()
-	print(lista_pesos)
-
-func escoger_vecino():
-	var i = 0
-	var random = randf()
-	for valor in lista_pesos:
-		if random <= valor:
-			print(random, " - ", vecinos[i])
-			return vecinos[i]
-		i += 1
+func crear_lista_vecinos_disponibles():
+	vecinos_disponibles = []
+	for vecinito in vecinos_totales:
+		var instancia : Obstaculo = vecinito.instantiate()
+		if nivel_actual >= instancia.obstacleResource.nivel_dificultad_minimo:
+			vecinos_disponibles.append(vecinito)
+		instancia.free()
+	
+func spawn():
+	var escena_vecino = elegir_vecino()
+	if escena_vecino != null:
+		var vecino_instanciado = escena_vecino.instantiate()
+		var spawn_location = get_node("SpawnLocation")
+		spawn_location.progress_ratio = randf()
+		vecino_instanciado.position = spawn_location.position
+		obstaculo_creado.emit(vecino_instanciado)
+		add_child(vecino_instanciado)
+	else:
+		print("Spawn sin vecinos disponibles")
+	
+func elegir_vecino() -> PackedScene:
+	return vecinos_disponibles.pick_random()
