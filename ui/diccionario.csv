@@ -25,3 +25,6 @@ LEDIT_SCORE, Introduce un nombre, Enter name
 LBL_MSG_SUCCESS, ¡Hecho!, Done!
 LBL_MSG_FAIL, Algo ha ido mal..., Something went wrong...
 LBL_FLOOR, PISO, FLOOR
+LBL_CODE, PROGRAMACIÓN, CODE
+LBL_ART, ARTE, ART
+LBL_SOUND, SONIDO, SOUND

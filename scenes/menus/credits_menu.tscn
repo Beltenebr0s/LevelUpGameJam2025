@@ -54,6 +54,111 @@ next_scene_path = "res://scenes/menus/main_menu.tscn"
 has_transition = true
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
 
+[node name="Codigo" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 32.0
+offset_top = 255.0
+offset_right = 261.0
+offset_bottom = 425.0
+
+[node name="Label" type="Label" parent="Codigo"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 22.0
+grow_horizontal = 2
+theme = ExtResource("1_536xp")
+theme_override_font_sizes/font_size = 15
+text = "LBL_CODE"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Codigo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Codigo/VBoxContainer"]
+layout_mode = 2
+text = "Darío de Benito Padilla"
+
+[node name="Label2" type="Label" parent="Codigo/VBoxContainer"]
+layout_mode = 2
+text = "Alejandro Garatea Alcázar"
+
+[node name="Label3" type="Label" parent="Codigo/VBoxContainer"]
+layout_mode = 2
+text = "Beatriz Lago Pérez"
+
+[node name="Arte" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 280.0
+offset_top = 255.0
+offset_right = 509.0
+offset_bottom = 425.0
+
+[node name="Label" type="Label" parent="Arte"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 22.0
+grow_horizontal = 2
+theme = ExtResource("1_536xp")
+theme_override_font_sizes/font_size = 15
+text = "LBL_ART"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Arte"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Arte/VBoxContainer"]
+layout_mode = 2
+text = "Ruby Agamez Castillo"
+
+[node name="Sonido" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 176.0
+offset_top = 533.0
+offset_right = 405.0
+offset_bottom = 703.0
+
+[node name="Label" type="Label" parent="Sonido"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 22.0
+grow_horizontal = 2
+theme = ExtResource("1_536xp")
+theme_override_font_sizes/font_size = 15
+text = "LBL_SOUND"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sonido"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Sonido/VBoxContainer"]
+layout_mode = 2
+text = "Aquí habrá que poner enlace a donde sea que saquemos el sonido"
+autowrap_mode = 2
+
 [node name="TransitionManager" type="AnimationPlayer" parent="." node_paths=PackedStringArray("transition_scene")]
 script = ExtResource("3_d74go")
 has_fadein = true
