@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dq7n45cxgiq3t"]
+[gd_scene load_steps=22 format=3 uid="uid://dq7n45cxgiq3t"]
 
 [ext_resource type="Script" uid="uid://dxykayybwmndo" path="res://scripts/menu/main_menu.gd" id="1_imvie"]
 [ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_l6cm7"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://dashhf707dgs2" path="res://ui/Puerta.png" id="11_uxao6"]
 [ext_resource type="Texture2D" uid="uid://bop3ci1c00ni1" path="res://ui/Loguito-03-03.png" id="12_vr0hv"]
 [ext_resource type="Texture2D" uid="uid://c6wn8ecinfgb5" path="res://ui/Lampara.png" id="13_25m6f"]
-[ext_resource type="Texture2D" uid="uid://cfpfvelqeqlg1" path="res://ui/image.png" id="15_a3hrp"]
 
 [sub_resource type="Gradient" id="Gradient_nkawv"]
 colors = PackedColorArray(0.960784, 0.921569, 0.627451, 1, 1, 1, 1, 0)
@@ -283,7 +282,6 @@ offset_bottom = 720.0
 
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(-564, 376)
-texture = ExtResource("15_a3hrp")
 
 [connection signal="mouse_entered" from="Play" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="Play" to="." method="_on_play_mouse_exited"]

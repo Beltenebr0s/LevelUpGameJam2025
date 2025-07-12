@@ -1,8 +1,5 @@
 extends Node
 
-@export var vol_min : float = -20
-@export var vol_max : float = 10
-
 var porcentaje_master : float = 66
 var porcentaje_musica : float = 44
 var porcentaje_sfx : float = 44
@@ -25,28 +22,27 @@ var tween : Tween
 @export var ascensor : AudioStreamPlayer
 
 func _ready():
-	ratio = (abs(vol_max) + abs(vol_min))/100
 	change_master_volume(porcentaje_master)
 	change_music_volume(porcentaje_musica)
 	change_sfx_volume(porcentaje_sfx)
 
 func change_master_volume(_volumen : float):
 	porcentaje_master = _volumen
-	AudioServer.set_bus_volume_db(master_bus, vol_min + porcentaje_master * ratio)
+	AudioServer.set_bus_volume_db(master_bus, linear_to_db(porcentaje_master/100))
 func mute_master(_toggled_on : bool):
 	master_muted = _toggled_on
 	AudioServer.set_bus_mute(master_bus, master_muted)
 
 func change_music_volume(_volumen : float):
 	porcentaje_musica = _volumen
-	AudioServer.set_bus_volume_db(music_bus, vol_min + porcentaje_musica * ratio)
+	AudioServer.set_bus_volume_db(music_bus, linear_to_db(porcentaje_musica/100))
 func mute_music(_toggled_on : bool):
 	musica_muted = _toggled_on
 	AudioServer.set_bus_mute(music_bus, musica_muted)
 
 func change_sfx_volume(_volumen : float):
 	porcentaje_sfx = _volumen
-	AudioServer.set_bus_volume_db(sfx_bus, vol_min + porcentaje_sfx * ratio)
+	AudioServer.set_bus_volume_db(sfx_bus, linear_to_db(porcentaje_sfx/100))
 func mute_sfx(_toggled_on : bool):
 	sfx_muted = _toggled_on
 	AudioServer.set_bus_mute(sfx_bus, sfx_muted)
