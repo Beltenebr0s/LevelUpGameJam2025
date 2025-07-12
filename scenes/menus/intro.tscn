@@ -1,0 +1,197 @@
+[gd_scene load_steps=10 format=3 uid="uid://cgueribaii15n"]
+
+[ext_resource type="Script" uid="uid://dhyo0g43mr7h2" path="res://scripts/menu/intro.gd" id="1_lrvpo"]
+[ext_resource type="Script" uid="uid://d5cmtqt47mye" path="res://addons/transitionmanager/trans_mgr.gd" id="2_yvc7l"]
+[ext_resource type="Theme" uid="uid://cjq5vt88wa8x" path="res://ui/menu_theme.tres" id="3_h821h"]
+[ext_resource type="Texture2D" uid="uid://b3rjhbjt5syii" path="res://images/jugador.png" id="4_k4v2k"]
+[ext_resource type="Texture2D" uid="uid://dh8gam4lp8ywh" path="res://images/ui/flecha.png" id="5_qy05o"]
+[ext_resource type="Texture2D" uid="uid://daerbxolshgbw" path="res://images/ui/awsd.png" id="6_6arpb"]
+[ext_resource type="Texture2D" uid="uid://cihw82bactmy7" path="res://images/ui/space.png" id="7_ya4me"]
+[ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="8_f5h0p"]
+[ext_resource type="PackedScene" uid="uid://cmvvmnv37bmya" path="res://scenes/transicion/transition_scene.tscn" id="9_h63tf"]
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lrvpo")
+
+[node name="TransitionManager" type="AnimationPlayer" parent="." node_paths=PackedStringArray("transition_scene")]
+script = ExtResource("2_yvc7l")
+has_fadein = true
+transition_scene = NodePath("../TransitionScene")
+metadata/_custom_type_script = "uid://d5cmtqt47mye"
+
+[node name="Pagina1" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_h821h")
+
+[node name="jugador" type="TextureRect" parent="Pagina1"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 8.0
+offset_right = 255.0
+offset_bottom = 385.0
+theme = ExtResource("3_h821h")
+texture = ExtResource("4_k4v2k")
+expand_mode = 1
+
+[node name="flecha" type="TextureRect" parent="Pagina1"]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 156.0
+offset_right = 518.0
+offset_bottom = 400.0
+rotation = 0.577749
+theme = ExtResource("3_h821h")
+texture = ExtResource("5_qy05o")
+expand_mode = 1
+
+[node name="intro1" type="Label" parent="Pagina1"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 127.0
+offset_right = 535.0
+offset_bottom = 176.0
+rotation = 0.510113
+theme = ExtResource("3_h821h")
+text = "LBL_INTRO_1"
+
+[node name="goal" type="Label" parent="Pagina1"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 397.0
+offset_right = 268.0
+offset_bottom = 432.0
+theme = ExtResource("3_h821h")
+theme_override_font_sizes/font_size = 25
+text = "LBL_INTRO_2_TITLE"
+
+[node name="Label" type="Label" parent="Pagina1/goal"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 45.0
+offset_right = 216.0
+offset_bottom = 177.0
+theme = ExtResource("3_h821h")
+theme_override_font_sizes/font_size = 20
+text = "LBL_INTRO_2_TXT"
+horizontal_alignment = 1
+
+[node name="goal2" type="Label" parent="Pagina1"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 521.0
+offset_right = 485.0
+offset_bottom = 556.0
+theme = ExtResource("3_h821h")
+theme_override_font_sizes/font_size = 25
+text = "LBL_INTRO_3_TITLE"
+
+[node name="Label" type="Label" parent="Pagina1/goal2"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 51.0
+offset_right = 220.0
+offset_bottom = 183.0
+theme = ExtResource("3_h821h")
+theme_override_font_sizes/font_size = 20
+text = "LBL_INTRO_3_TXT"
+horizontal_alignment = 1
+
+[node name="Next" type="Button" parent="Pagina1"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 629.0
+offset_right = 172.0
+offset_bottom = 700.0
+theme = ExtResource("3_h821h")
+text = "BUT_NEXT"
+
+[node name="Pagina2" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_h821h")
+
+[node name="AWSD" type="TextureRect" parent="Pagina2"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 35.0
+offset_right = 283.0
+offset_bottom = 275.0
+theme = ExtResource("3_h821h")
+texture = ExtResource("6_6arpb")
+expand_mode = 1
+
+[node name="label_awsd" type="Label" parent="Pagina2/AWSD"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = -11.0
+offset_right = 156.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("3_h821h")
+text = "LBL_INTRO_AWSD"
+
+[node name="Space" type="TextureRect" parent="Pagina2"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 297.0
+offset_right = 283.0
+offset_bottom = 537.0
+theme = ExtResource("3_h821h")
+texture = ExtResource("7_ya4me")
+expand_mode = 1
+
+[node name="label_space" type="Label" parent="Pagina2/Space"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = -11.0
+offset_right = 156.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("3_h821h")
+text = "LBL_INTRO_DASH"
+
+[node name="Play" type="Button" parent="Pagina2"]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 599.0
+offset_right = 472.0
+offset_bottom = 670.0
+theme = ExtResource("3_h821h")
+text = "BUT_PLAY"
+script = ExtResource("8_f5h0p")
+next_scene_path = "res://scenes/game_scene.tscn"
+has_transition = true
+metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
+
+[node name="TransitionScene" parent="." instance=ExtResource("9_h63tf")]
+layout_mode = 1
+
+[connection signal="pressed" from="Pagina1/Next" to="." method="_on_next_pressed"]

@@ -13,7 +13,6 @@
 [ext_resource type="Resource" uid="uid://c48i8cf7le3o7" path="res://resources/VecinoYMascota.tres" id="8_3w8rc"]
 [ext_resource type="Resource" uid="uid://cjfa3k1n2tckg" path="res://resources/VecinoDibujo.tres" id="8_bh4e2"]
 
-
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -69,10 +68,6 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 theme = ExtResource("2_2o76q")
 text = "BUT_PLAY"
-script = ExtResource("1_l6cm7")
-next_scene_path = "res://scenes/game_scene.tscn"
-has_transition = true
-metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
 
 [node name="Ranking" type="Button" parent="Botones"]
 layout_mode = 2
@@ -130,3 +125,5 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 offset_right = 540.0
 offset_bottom = 720.0
+
+[connection signal="pressed" from="Botones/Play" to="." method="_on_play_pressed"]
