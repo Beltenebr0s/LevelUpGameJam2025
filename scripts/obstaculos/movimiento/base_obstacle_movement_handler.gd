@@ -9,13 +9,13 @@ func move(cuerpo_obstaculo : Area2D, obstaculo : ObstacleResource , delta : floa
 
 func calcular_movV_desc(obstaculo : ObstacleResource):
 	var dirV = Vector2.DOWN
-	dirV *= obstaculo.velocidad * GlobalVars.mult
+	dirV *= obstaculo.velocidad #* GlobalVars.mult
 	dirV *= 1 + random_mult * obstaculo.variablidadVelocidadMax
 	return dirV
 
 func calcular_movV_asc(obstaculo : ObstacleResource):
 	var dirV = Vector2.UP
-	dirV *= obstaculo.velocidad * GlobalVars.mult
+	dirV *= obstaculo.velocidad #* GlobalVars.mult
 	dirV *= 1 + random_mult * obstaculo.variablidadVelocidadMax
 	return dirV
 

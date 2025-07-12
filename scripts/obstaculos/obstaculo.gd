@@ -7,6 +7,7 @@ signal collided_with_player
 func _ready():
 	$AnimatedSprite.sprite_frames = obstacleResource.animacion
 	$AnimatedSprite.set_instance_shader_parameter("hue_shift", randf_range(0.0, 0.25))
+	$AnimatedSprite.play()
 	scale.x = [1, -1].pick_random()
 	#position += Vector2.RIGHT * obstacleResource.variacionHorizontal * randfn(0, 0.3)
 	

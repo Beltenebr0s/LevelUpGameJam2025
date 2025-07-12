@@ -2,11 +2,13 @@ extends Node2D
 
 @onready var score = 0
 @export var game_over_scene_path : String = "res://scenes/menus/game_over_menu.tscn"
+@export var initial_scroll_speed : float = 100
 
 func _ready():
 	AudioManager.play_game_music()
 	GlobalVars.is_first_game = false
 	GlobalVars.mult = 1
+	GlobalVars.scroll_speed = initial_scroll_speed
 	conectar_spawns()
 	score = 0
 	$PauseMenu.visible = false
@@ -39,7 +41,6 @@ func _on_transition_scene_transition_finished():
 
 
 func _on_niveles_piso_cambiado(nuevo_piso):
-	GlobalVars.mult += 0.01
 	$HUD.next_level(nuevo_piso)
 
 func _on_jugador_actualizar_ui_dash(b_enable):

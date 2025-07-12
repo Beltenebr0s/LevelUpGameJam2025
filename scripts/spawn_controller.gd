@@ -31,6 +31,5 @@ func actualizar_dificultad(nuevo_nivel : NivelResource):
 	intervalo_spawns = nuevo_nivel.intervaloSpawns
 	for spawner in spawn_points_arriba:
 		spawner.vecinos_disponibles = nuevo_nivel.vecinosDes
-		print(		"Spawn ", spawner, " spawnea: ", spawner.vecinos_disponibles)
 	for spawner in spawn_points_abajo:
 		spawner.vecinos_disponibles = nuevo_nivel.vecinosAsc

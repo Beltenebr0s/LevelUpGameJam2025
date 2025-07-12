@@ -22,6 +22,8 @@ func _ready():
 func _on_timer_timeout():
 	piso_actual -= 1
 	piso_cambiado.emit(piso_actual)
+	GlobalVars.scroll_speed *= 1.02
+	print(		"Velocidad escaleras: ",GlobalVars.scroll_speed)
 	
 	if (piso_nivel_anterior - piso_actual == nivel_actual.duracion):
 		piso_nivel_anterior = piso_actual

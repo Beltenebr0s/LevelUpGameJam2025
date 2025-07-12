@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="ObstacleResource" load_steps=6 format=3 uid="uid://cjfa3k1n2tckg"]
+
+[ext_resource type="Script" uid="uid://de0m2dpfd8tdn" path="res://scripts/recursos/ObstacleResource.gd" id="1_ilpfm"]
+[ext_resource type="Texture2D" uid="uid://diyno44p1dq0p" path="res://images/sprite_sheets/vecinito_amarillo_spritesheet.png" id="1_lp2fj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi526"]
+atlas = ExtResource("1_lp2fj")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_doc7q"]
+atlas = ExtResource("1_lp2fj")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gi526"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi526")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_doc7q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default_1",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("1_ilpfm")
+animacion = SubResource("SpriteFrames_gi526")
+velocidad = 100
+variablidadVelocidadMax = 1.0
+velocidadHorizontal = 0
+variacionHorizontal = 10
+peso = 0.1
+nivel_dificultad_minimo = 0
+desbloqueado = false
+nombre = ""
+metadata/_custom_type_script = "uid://de0m2dpfd8tdn"

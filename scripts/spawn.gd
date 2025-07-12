@@ -18,8 +18,6 @@ func spawn():
 		vecino_instanciado.position = spawn_location.position
 		obstaculo_creado.emit(vecino_instanciado)
 		add_child(vecino_instanciado)
-	else:
-		print("Spawn sin vecinos disponibles")
 
 func movimiento_por_el_loop(delta):
 	$SpawnLocation.progress_ratio += delta * 0.2
