@@ -18,7 +18,7 @@ var sfx_bus = AudioServer.get_bus_index("SFX")
 
 var tween : Tween
 
-@export var menu_principal : AudioStreamPlayer
+@export var gameplay_music : AudioStreamPlayer
 @export var boton_select : AudioStreamPlayer
 @export var boton_down  : AudioStreamPlayer
 @export var boton_pressed : AudioStreamPlayer
@@ -26,7 +26,6 @@ var tween : Tween
 
 func _ready():
 	ratio = (abs(vol_max) + abs(vol_min))/100
-	
 	change_master_volume(porcentaje_master)
 	change_music_volume(porcentaje_musica)
 	change_sfx_volume(porcentaje_sfx)
@@ -52,8 +51,10 @@ func mute_sfx(_toggled_on : bool):
 	sfx_muted = _toggled_on
 	AudioServer.set_bus_mute(sfx_bus, sfx_muted)
 
+func play_game_music():
+	gameplay_music.play()
+
 func play_boton_select():
-	print("FUI SELECCIONADO")
 	boton_select.play()
 
 func play_boton_down():
@@ -62,5 +63,9 @@ func play_boton_down():
 func play_boton_pressed():
 	boton_pressed.play()
 
-func play_ascensor():
+func play_menu_music():
 	ascensor.play()
+
+func stop_music():
+	ascensor.stop()
+	gameplay_music.stop()

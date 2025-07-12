@@ -4,6 +4,7 @@ extends Node2D
 @export var game_over_scene_path : String = "res://scenes/menus/game_over_menu.tscn"
 
 func _ready():
+	AudioManager.play_game_music()
 	GlobalVars.is_first_game = false
 	GlobalVars.mult = 1
 	conectar_spawns()

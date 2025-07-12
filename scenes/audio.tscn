@@ -1,25 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbafi1t0g56b6"]
+[gd_scene load_steps=7 format=3 uid="uid://cbafi1t0g56b6"]
 
 [ext_resource type="Script" uid="uid://6n15hklxcwc7" path="res://scripts/globals/audio.gd" id="1_6n3bj"]
 [ext_resource type="AudioStream" uid="uid://dj66fl3sy7enb" path="res://sound/elevator_music.mp3" id="2_hlm5c"]
+[ext_resource type="AudioStream" uid="uid://djfytj21loxw3" path="res://sound/musica.mp3" id="3_dl6it"]
 [ext_resource type="AudioStream" uid="uid://bofcx4252i3rv" path="res://sound/button_hover.mp3" id="3_wdljl"]
 [ext_resource type="AudioStream" uid="uid://duij71qm5lfvo" path="res://sound/button_click.mp3" id="4_dl6it"]
 
 [sub_resource type="AudioStream" id="AudioStream_bwtr5"]
 
-[node name="Audio" type="Node" node_paths=PackedStringArray("menu_principal", "boton_select", "boton_down", "boton_pressed", "ascensor")]
+[node name="Audio" type="Node" node_paths=PackedStringArray("gameplay_music", "boton_select", "boton_down", "boton_pressed", "ascensor")]
 process_mode = 3
 script = ExtResource("1_6n3bj")
-menu_principal = NodePath("Musica/MenuPrincipal")
+gameplay_music = NodePath("Musica/Gameplay")
 boton_select = NodePath("SFX/Menus/BotonSelect")
 boton_down = NodePath("SFX/Menus/BotonDown")
 boton_pressed = NodePath("SFX/Menus/BotonPressed")
-ascensor = NodePath("Musica/MenuPrincipal")
+ascensor = NodePath("Musica/Ascensor")
 
 [node name="Musica" type="Node" parent="."]
 
-[node name="MenuPrincipal" type="AudioStreamPlayer" parent="Musica"]
+[node name="Ascensor" type="AudioStreamPlayer" parent="Musica"]
 stream = ExtResource("2_hlm5c")
+parameters/looping = true
+
+[node name="Gameplay" type="AudioStreamPlayer" parent="Musica"]
+stream = ExtResource("3_dl6it")
+parameters/looping = true
 
 [node name="SFX" type="Node" parent="."]
 

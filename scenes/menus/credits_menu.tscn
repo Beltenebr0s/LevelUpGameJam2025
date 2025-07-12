@@ -154,10 +154,25 @@ offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Sonido/VBoxContainer"]
+[node name="Label" type="LinkButton" parent="Sonido/VBoxContainer"]
 layout_mode = 2
-text = "Aquí habrá que poner enlace a donde sea que saquemos el sonido"
-autowrap_mode = 2
+text = "LBL_BUT_HOVER"
+uri = "https://pixabay.com/sound-effects/ui-click-43196/"
+
+[node name="Label2" type="LinkButton" parent="Sonido/VBoxContainer"]
+layout_mode = 2
+text = "LBL_BUT_CLICK"
+uri = "https://pixabay.com/sound-effects/beep-6-96243/"
+
+[node name="Label3" type="LinkButton" parent="Sonido/VBoxContainer"]
+layout_mode = 2
+text = "LBL_MUSIC_MENU"
+uri = "https://pixabay.com/music/traditional-jazz-lounge-jazz-elevator-music-324902/"
+
+[node name="Label4" type="LinkButton" parent="Sonido/VBoxContainer"]
+layout_mode = 2
+text = "LBL_MUSIC_GAME"
+uri = "https://pixabay.com/music/comedy-comedy-music-background-364205/"
 
 [node name="TransitionManager" type="AnimationPlayer" parent="." node_paths=PackedStringArray("transition_scene")]
 script = ExtResource("3_d74go")
@@ -166,4 +181,5 @@ transition_scene = NodePath("../TransitionScene")
 metadata/_custom_type_script = "uid://d5cmtqt47mye"
 
 [node name="TransitionScene" parent="." instance=ExtResource("4_325oc")]
+visible = false
 layout_mode = 1

@@ -28,3 +28,7 @@ LBL_FLOOR, PISO, FLOOR
 LBL_CODE, PROGRAMACIÓN, CODE
 LBL_ART, ARTE, ART
 LBL_SOUND, SONIDO, SOUND
+LBL_BUT_HOVER, Sonido de hover del botón, Button hover sound
+LBL_BUT_CLICK, Sonido de click del botón, Button click sound
+LBL_MUSIC_MENU, Música del menú, Menu music
+LBL_MUSIC_GAME, Música del juego, Game music
