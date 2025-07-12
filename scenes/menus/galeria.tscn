@@ -98,22 +98,23 @@ texture_pressed = ExtResource("4_tfxpd")
 stretch_mode = 0
 flip_h = true
 
-[node name="NumVecinos" type="Label" parent="."]
+[node name="NombreVecinos" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -133.0
-offset_top = 199.0
-offset_right = 133.0
-offset_bottom = 249.0
+offset_left = -164.0
+offset_top = 223.0
+offset_right = 165.0
+offset_bottom = 303.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_wq206")
+theme_override_font_sizes/font_size = 21
 horizontal_alignment = 1
-vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

@@ -10,3 +10,4 @@ extends Resource
 @export var peso : float
 @export var nivel_dificultad_minimo : int
 @export var desbloqueado : bool = false
+@export var nombre : String

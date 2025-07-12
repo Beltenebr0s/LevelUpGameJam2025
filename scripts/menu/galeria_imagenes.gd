@@ -12,9 +12,10 @@ func colocar_vecino():
 	var vecino = GlobalVars.lista_vecinos[indice_vecino]
 	if vecino.desbloqueado:
 		foto_vecino.texture = vecino.textura_ui
+		$NombreVecinos.text = tr(vecino.nombre)
 	else:
 		foto_vecino.texture = vecino_bloqueado
-	$NumVecinos.text = str(indice_vecino + 1) + "/" + str(vecinos_totales)
+		$NombreVecinos.text = "?????"
 
 
 func _on_back_pressed():
