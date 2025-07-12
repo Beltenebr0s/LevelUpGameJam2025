@@ -1,88 +1,30 @@
-[gd_scene load_steps=22 format=3 uid="uid://fqhpfxc8csob"]
+[gd_scene load_steps=11 format=3 uid="uid://fqhpfxc8csob"]
 
 [ext_resource type="Script" uid="uid://cjmn721f77ha2" path="res://scripts/game.gd" id="1_bw6k5"]
-[ext_resource type="PackedScene" uid="uid://c2ji84bo7mt61" path="res://scenes/escaleras.tscn" id="1_onqr8"]
+[ext_resource type="PackedScene" uid="uid://cknqw6jsupawj" path="res://scenes/escaleras.tscn" id="1_onqr8"]
 [ext_resource type="PackedScene" uid="uid://dnvwnpc2r1rhl" path="res://scenes/niveles.tscn" id="2_mw25s"]
-[ext_resource type="Script" uid="uid://cms7i7o53f5hh" path="res://scripts/recursos/NivelResource.gd" id="3_tqxxy"]
-[ext_resource type="PackedScene" uid="uid://7auvomxkllwa" path="res://scenes/spawn.tscn" id="3_ycayy"]
 [ext_resource type="PackedScene" uid="uid://1ga6ufyqjdpg" path="res://scenes/spawn_controller.tscn" id="4_utbpp"]
 [ext_resource type="PackedScene" uid="uid://bhi1ycdhp8w1b" path="res://scenes/jugador.tscn" id="5_liy57"]
-[ext_resource type="PackedScene" uid="uid://dpnj3vojdm5v2" path="res://scenes/obstaculos/desc_vecino_y_mascota.tscn" id="8_rvs2r"]
-[ext_resource type="PackedScene" uid="uid://cv705y01obmlf" path="res://scenes/obstaculos/desc_vecino_dibujo.tscn" id="9_5ay1a"]
-[ext_resource type="PackedScene" uid="uid://dhy8gr8gs1f10" path="res://scenes/obstaculos/asc_vecino_y_mascota.tscn" id="9_tqxxy"]
-[ext_resource type="PackedScene" uid="uid://btv867av8wwp8" path="res://scenes/obstaculos/desc_gatete.tscn" id="10_ldkr4"]
 [ext_resource type="Script" uid="uid://d5cmtqt47mye" path="res://addons/transitionmanager/trans_mgr.gd" id="10_tcjrq"]
-[ext_resource type="PackedScene" uid="uid://da23cebour86w" path="res://scenes/obstaculos/asc_vecino_normal.tscn" id="10_tqxxy"]
-[ext_resource type="PackedScene" uid="uid://bry00ywvtt5km" path="res://scenes/obstaculos/asc_vecinas_blabla.tscn" id="11_ldkr4"]
 [ext_resource type="PackedScene" uid="uid://cmvvmnv37bmya" path="res://scenes/transicion/transition_scene.tscn" id="11_rvs2r"]
 [ext_resource type="PackedScene" uid="uid://bvgjlparf85st" path="res://scenes/menus/pause_menu.tscn" id="16_mwyo0"]
 [ext_resource type="Texture2D" uid="uid://b6nn2qfjm32v8" path="res://images/ui/pausa.png" id="17_mwyo0"]
 [ext_resource type="PackedScene" uid="uid://y11mdjs23286" path="res://scenes/hud.tscn" id="17_s76x2"]
 
-[sub_resource type="Resource" id="Resource_5ay1a"]
-script = ExtResource("3_tqxxy")
-id_nivel = 100
-duracion = 15.0
-numSpawns = 1
-intervaloSpawns = 5.0
-multVelocidad = 1.0
-metadata/_custom_type_script = "uid://cms7i7o53f5hh"
-
-[sub_resource type="Resource" id="Resource_tqxxy"]
-script = ExtResource("3_tqxxy")
-id_nivel = 99
-duracion = 15.0
-numSpawns = 1
-intervaloSpawns = 3.0
-multVelocidad = 1.2
-metadata/_custom_type_script = "uid://cms7i7o53f5hh"
-
-[sub_resource type="Resource" id="Resource_ldkr4"]
-script = ExtResource("3_tqxxy")
-id_nivel = 98
-duracion = 15.0
-numSpawns = 3
-intervaloSpawns = 5.0
-multVelocidad = 1.2
-metadata/_custom_type_script = "uid://cms7i7o53f5hh"
-
 [node name="GameScene" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_bw6k5")
 
-[node name="Niveles" parent="." instance=ExtResource("2_mw25s")]
-niveles = Array[ExtResource("3_tqxxy")]([SubResource("Resource_5ay1a"), SubResource("Resource_tqxxy"), SubResource("Resource_ldkr4")])
-
 [node name="Escaleras" parent="." instance=ExtResource("1_onqr8")]
+z_index = -1
 
 [node name="Jugador" parent="." instance=ExtResource("5_liy57")]
+y_sort_enabled = true
 position = Vector2(259, 188)
 
 [node name="SpawnController" parent="." instance=ExtResource("4_utbpp")]
 
-[node name="SpawnUL" parent="SpawnController" instance=ExtResource("3_ycayy")]
-position = Vector2(156, -125)
-vecinos = Array[PackedScene]([ExtResource("8_rvs2r"), ExtResource("9_5ay1a"), ExtResource("10_ldkr4")])
-
-[node name="SpawnUC" parent="SpawnController" instance=ExtResource("3_ycayy")]
-position = Vector2(260, -150)
-vecinos = Array[PackedScene]([ExtResource("8_rvs2r")])
-
-[node name="SpawnUR" parent="SpawnController" instance=ExtResource("3_ycayy")]
-position = Vector2(364, -125)
-gizmo_extents = 15.0
-vecinos = Array[PackedScene]([ExtResource("10_ldkr4"), ExtResource("9_tqxxy")])
-
-[node name="SpawnDL" parent="SpawnController" instance=ExtResource("3_ycayy")]
-position = Vector2(156, 845)
-vecinos = Array[PackedScene]([ExtResource("9_tqxxy"), ExtResource("11_ldkr4")])
-
-[node name="SpawnDC" parent="SpawnController" instance=ExtResource("3_ycayy")]
-position = Vector2(260, 870)
-vecinos = Array[PackedScene]([ExtResource("10_tqxxy")])
-
-[node name="SpawnDR" parent="SpawnController" instance=ExtResource("3_ycayy")]
-position = Vector2(364, 845)
-vecinos = Array[PackedScene]([ExtResource("9_tqxxy")])
+[node name="Niveles" parent="." instance=ExtResource("2_mw25s")]
 
 [node name="TransitionManager" type="AnimationPlayer" parent="." node_paths=PackedStringArray("transition_scene")]
 root_node = NodePath("../Play")
@@ -91,9 +33,6 @@ has_fadein = true
 transition_scene = NodePath("../TransitionScene")
 metadata/_custom_type_script = "uid://d5cmtqt47mye"
 
-[node name="PauseMenu" parent="." instance=ExtResource("16_mwyo0")]
-scale = Vector2(1.00245, 0.995503)
-
 [node name="PauseButton" type="TextureButton" parent="."]
 offset_left = 495.0
 offset_top = 50.0
@@ -101,13 +40,20 @@ offset_right = 535.0
 offset_bottom = 90.0
 texture_normal = ExtResource("17_mwyo0")
 
+[node name="PauseMenu" parent="." instance=ExtResource("16_mwyo0")]
+z_index = 1
+scale = Vector2(1.00245, 0.995503)
+
 [node name="HUD" parent="." instance=ExtResource("17_s76x2")]
+z_index = 1
 
 [node name="TransitionScene" parent="." instance=ExtResource("11_rvs2r")]
+z_index = 1
 offset_right = 540.0
 offset_bottom = 720.0
 metadata/_edit_use_anchors_ = true
 
 [connection signal="nivel_cambiado" from="Niveles" to="." method="_on_niveles_nivel_cambiado"]
+[connection signal="piso_cambiado" from="Niveles" to="." method="_on_niveles_piso_cambiado"]
 [connection signal="pressed" from="PauseButton" to="PauseMenu" method="_on_pause_button_pressed"]
 [connection signal="transition_finished" from="TransitionScene" to="." method="_on_transition_scene_transition_finished"]

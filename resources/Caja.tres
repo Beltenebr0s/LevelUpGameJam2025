@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="ObstacleResource" load_steps=4 format=3 uid="uid://vb2kfm7xgpbd"]
+
+[ext_resource type="Texture2D" uid="uid://ig3lcofp18tk" path="res://images/original colours/Caja.png" id="1_d6ryn"]
+[ext_resource type="Script" uid="uid://de0m2dpfd8tdn" path="res://scripts/recursos/ObstacleResource.gd" id="2_t68mf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gf108"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d6ryn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_t68mf")
+animacion = SubResource("SpriteFrames_gf108")
+velocidad = 0
+variablidadVelocidadMax = 0.0
+velocidadHorizontal = 0
+variacionHorizontal = 40
+peso = 1.0
+nivel_dificultad_minimo = 4
+desbloqueado = false
+metadata/_custom_type_script = "uid://de0m2dpfd8tdn"

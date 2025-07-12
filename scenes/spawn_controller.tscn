@@ -1,10 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://1ga6ufyqjdpg"]
+[gd_scene load_steps=3 format=3 uid="uid://1ga6ufyqjdpg"]
 
 [ext_resource type="Script" uid="uid://c42ephqy4r3hj" path="res://scripts/spawn_controller.gd" id="1_gkhyp"]
+[ext_resource type="PackedScene" uid="uid://7auvomxkllwa" path="res://scenes/spawn.tscn" id="2_pip1s"]
 
 [node name="SpawnController" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_gkhyp")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="SpawnsArriba" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="SpawnArriba1" parent="SpawnsArriba" instance=ExtResource("2_pip1s")]
+position = Vector2(0, -154)
+
+[node name="SpawnsAbajo" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="SpawnAbajo1" parent="SpawnsAbajo" instance=ExtResource("2_pip1s")]
+position = Vector2(0, 739)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

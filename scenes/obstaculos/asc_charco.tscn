@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://78164a0o1tmh"]
+
+[ext_resource type="PackedScene" uid="uid://7xj0vk0ffsjl" path="res://scenes/obstaculos/obstaculo_base.tscn" id="1_hl8k6"]
+[ext_resource type="Resource" uid="uid://pt0waqigr3yf" path="res://resources/Charco.tres" id="2_71c04"]
+[ext_resource type="Texture2D" uid="uid://5rgvr7pdaucp" path="res://images/original colours/Charco.png" id="3_uj3qk"]
+[ext_resource type="Script" uid="uid://cn0ky0vdxpsr5" path="res://scripts/obstaculos/movimiento/movimiento_estatico.gd" id="4_a31po"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e7a10"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uj3qk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ascCharco" instance=ExtResource("1_hl8k6")]
+obstacleResource = ExtResource("2_71c04")
+
+[node name="Collider" parent="." index="0"]
+polygon = PackedVector2Array(-24, -8, -14, -11, 4, -12, 21, -10, 23, -7, 20, 0, 21, 9, 19, 13, 15, 12, 8, 7, 6, -1, -12, -1, -13, 3, -16, 4, -18, -1, -25, -2, -26, -5)
+
+[node name="AnimatedSprite" parent="." index="1"]
+scale = Vector2(0.212121, 0.212121)
+sprite_frames = SubResource("SpriteFrames_e7a10")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
+position = Vector2(-29, -15)
+scale = Vector2(2.85, 1.6)
+
+[node name="MovementHandler" parent="." index="3"]
+script = ExtResource("4_a31po")

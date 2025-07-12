@@ -1,10 +1,99 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnvwnpc2r1rhl"]
+[gd_scene load_steps=17 format=3 uid="uid://dnvwnpc2r1rhl"]
 
 [ext_resource type="Script" uid="uid://ln34kwjuxe8q" path="res://scripts/control/niveles.gd" id="1_2swb6"]
+[ext_resource type="Script" uid="uid://cms7i7o53f5hh" path="res://scripts/recursos/NivelResource.gd" id="2_xixph"]
+[ext_resource type="PackedScene" uid="uid://drf30oajha1py" path="res://scenes/obstaculos/asc_caja.tscn" id="3_3ckpt"]
+[ext_resource type="PackedScene" uid="uid://bry00ywvtt5km" path="res://scenes/obstaculos/asc_vecinas_blabla.tscn" id="3_imf2o"]
+[ext_resource type="PackedScene" uid="uid://btv867av8wwp8" path="res://scenes/obstaculos/desc_gatete.tscn" id="4_cpb1v"]
+[ext_resource type="PackedScene" uid="uid://da23cebour86w" path="res://scenes/obstaculos/asc_vecino_normal.tscn" id="4_imf2o"]
+[ext_resource type="PackedScene" uid="uid://dpnj3vojdm5v2" path="res://scenes/obstaculos/desc_vecino_y_mascota.tscn" id="7_acxrc"]
+[ext_resource type="PackedScene" uid="uid://dhy8gr8gs1f10" path="res://scenes/obstaculos/asc_vecino_y_mascota.tscn" id="8_2bp2t"]
+
+[sub_resource type="Resource" id="Resource_i4tc2"]
+script = ExtResource("2_xixph")
+idNivel = 0
+duracion = 5
+vecinosAsc = Array[PackedScene]([ExtResource("3_3ckpt")])
+vecinosDes = Array[PackedScene]([])
+intervaloSpawns = 1.5
+multVelocidad = 1.0
+metadata/_custom_type_script = "uid://cms7i7o53f5hh"
+
+[sub_resource type="Resource" id="Resource_3luua"]
+script = ExtResource("2_xixph")
+idNivel = 1
+duracion = 5
+vecinosAsc = Array[PackedScene]([ExtResource("3_3ckpt"), ExtResource("4_imf2o")])
+vecinosDes = Array[PackedScene]([])
+intervaloSpawns = 1.3
+multVelocidad = 1.0
+metadata/_custom_type_script = "uid://cms7i7o53f5hh"
+
+[sub_resource type="Resource" id="Resource_lti75"]
+script = ExtResource("2_xixph")
+idNivel = 2
+duracion = 5
+vecinosAsc = Array[PackedScene]([ExtResource("3_3ckpt")])
+vecinosDes = Array[PackedScene]([ExtResource("7_acxrc")])
+intervaloSpawns = 1.3
+multVelocidad = 1.0
+metadata/_custom_type_script = "uid://cms7i7o53f5hh"
+
+[sub_resource type="Resource" id="Resource_dk2jl"]
+script = ExtResource("2_xixph")
+idNivel = 3
+duracion = 5
+vecinosAsc = Array[PackedScene]([ExtResource("3_imf2o")])
+vecinosDes = Array[PackedScene]([])
+intervaloSpawns = 1.3
+multVelocidad = 1.0
+metadata/_custom_type_script = "uid://cms7i7o53f5hh"
+
+[sub_resource type="Resource" id="Resource_lypuj"]
+script = ExtResource("2_xixph")
+idNivel = 4
+duracion = 10
+vecinosAsc = Array[PackedScene]([ExtResource("3_imf2o")])
+vecinosDes = Array[PackedScene]([])
+intervaloSpawns = 0.75
+multVelocidad = 1.0
+metadata/_custom_type_script = "uid://cms7i7o53f5hh"
+
+[sub_resource type="Resource" id="Resource_la1yu"]
+script = ExtResource("2_xixph")
+idNivel = 5
+duracion = 5
+vecinosAsc = Array[PackedScene]([ExtResource("7_acxrc")])
+vecinosDes = Array[PackedScene]([])
+intervaloSpawns = 1.0
+multVelocidad = 1.0
+metadata/_custom_type_script = "uid://cms7i7o53f5hh"
+
+[sub_resource type="Resource" id="Resource_cqxmp"]
+script = ExtResource("2_xixph")
+idNivel = 6
+duracion = 5
+vecinosAsc = Array[PackedScene]([ExtResource("7_acxrc")])
+vecinosDes = Array[PackedScene]([])
+intervaloSpawns = 1.0
+multVelocidad = 1.5
+metadata/_custom_type_script = "uid://cms7i7o53f5hh"
+
+[sub_resource type="Resource" id="Resource_xakpu"]
+script = ExtResource("2_xixph")
+idNivel = 7
+duracion = 5
+vecinosAsc = Array[PackedScene]([ExtResource("4_imf2o"), ExtResource("8_2bp2t")])
+vecinosDes = Array[PackedScene]([ExtResource("4_cpb1v")])
+intervaloSpawns = 2.0
+multVelocidad = 1.0
+metadata/_custom_type_script = "uid://cms7i7o53f5hh"
 
 [node name="Niveles" type="Node"]
 script = ExtResource("1_2swb6")
+lista_niveles = Array[ExtResource("2_xixph")]([SubResource("Resource_i4tc2"), SubResource("Resource_3luua"), SubResource("Resource_lti75"), SubResource("Resource_dk2jl"), SubResource("Resource_lypuj"), SubResource("Resource_la1yu"), SubResource("Resource_cqxmp"), SubResource("Resource_xakpu")])
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
