@@ -1,31 +1,150 @@
-[gd_scene load_steps=5 format=3 uid="uid://cknqw6jsupawj"]
+[gd_scene load_steps=9 format=3 uid="uid://c2ji84bo7mt61"]
 
-[ext_resource type="Script" uid="uid://pbpcflo50d7t" path="res://scripts/escaleras.gd" id="1_v22oq"]
-[ext_resource type="Texture2D" uid="uid://casuhap670iut" path="res://images/Escaleras.jpg" id="2_vyb2l"]
+[ext_resource type="Texture2D" uid="uid://cacenus6s4q1v" path="res://images/Fondo.png" id="2_tmkjx"]
+[ext_resource type="Script" uid="uid://d1m2jr3y30838" path="res://scripts/escaleras_paralax.gd" id="3_e85j5"]
+[ext_resource type="Texture2D" uid="uid://b6epqgpoxc6e3" path="res://images/Escaleras.png" id="4_tmkjx"]
+[ext_resource type="Texture2D" uid="uid://pqog74c3gxan" path="res://images/Lampara.png" id="6_cbshw"]
+
+[sub_resource type="Gradient" id="Gradient_nkawv"]
+colors = PackedColorArray(0.960784, 0.921569, 0.627451, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e85j5"]
+gradient = SubResource("Gradient_nkawv")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.230769, 0.217949)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybuyh"]
 size = Vector2(85, 732)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgs6j"]
-size = Vector2(546, 74)
+size = Vector2(546, 101)
 
 [node name="Escaleras" type="Node2D"]
-script = ExtResource("1_v22oq")
 
-[node name="Fondo1" type="Sprite2D" parent="."]
-position = Vector2(254, 319)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_vyb2l")
+[node name="Escaleras" type="ParallaxBackground" parent="."]
+script = ExtResource("3_e85j5")
 
-[node name="Fondo2" type="Sprite2D" parent="."]
-position = Vector2(254, 958)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_vyb2l")
+[node name="Fondo" type="Sprite2D" parent="Escaleras"]
+position = Vector2(264, 373.25)
+scale = Vector2(1, 1.66211)
+texture = ExtResource("2_tmkjx")
 
-[node name="Fondo3" type="Sprite2D" parent="."]
-position = Vector2(254, 1597)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_vyb2l")
+[node name="ParallaxEscaleras" type="ParallaxLayer" parent="Escaleras"]
+position = Vector2(0, 1)
+motion_mirroring = Vector2(0, 1166.84)
+
+[node name="Escaleras1" type="Sprite2D" parent="Escaleras/ParallaxEscaleras"]
+texture_repeat = 2
+position = Vector2(264, 283)
+scale = Vector2(0.273929, 0.273929)
+texture = ExtResource("4_tmkjx")
+region_enabled = true
+region_rect = Rect2(19, 0, 1543, 2130)
+
+[node name="Escaleras2" type="Sprite2D" parent="Escaleras/ParallaxEscaleras"]
+texture_repeat = 2
+position = Vector2(264, 866.47)
+scale = Vector2(0.273929, 0.273929)
+texture = ExtResource("4_tmkjx")
+region_enabled = true
+region_rect = Rect2(19, 0, 1543, 2130)
+
+[node name="ParallaxLuces" type="ParallaxLayer" parent="Escaleras"]
+position = Vector2(0, 1)
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(0, 1166.84)
+
+[node name="Lampara1" type="Sprite2D" parent="Escaleras/ParallaxLuces"]
+position = Vector2(488, 71)
+scale = Vector2(0.334, 0.334)
+texture = ExtResource("6_cbshw")
+
+[node name="Lampara2" type="Sprite2D" parent="Escaleras/ParallaxLuces"]
+position = Vector2(48, 367)
+scale = Vector2(-0.334, 0.334)
+texture = ExtResource("6_cbshw")
+
+[node name="Lampara3" type="Sprite2D" parent="Escaleras/ParallaxLuces"]
+position = Vector2(488, 655)
+scale = Vector2(0.334, 0.334)
+texture = ExtResource("6_cbshw")
+
+[node name="Lampara4" type="Sprite2D" parent="Escaleras/ParallaxLuces"]
+position = Vector2(48, 951)
+rotation = 3.14159
+scale = Vector2(0.334, -0.334)
+texture = ExtResource("6_cbshw")
+
+[node name="Luces" type="Node2D" parent="Escaleras/ParallaxLuces"]
+
+[node name="Lampara1" type="PointLight2D" parent="Escaleras/ParallaxLuces/Luces"]
+position = Vector2(475.722, 42.054)
+scale = Vector2(0.866312, 0.845437)
+energy = 1.4
+range_layer_min = -100
+range_layer_max = -10
+texture = SubResource("GradientTexture2D_e85j5")
+
+[node name="Lampara2" type="PointLight2D" parent="Escaleras/ParallaxLuces/Luces"]
+position = Vector2(60.722, 338.054)
+rotation = 3.14159
+scale = Vector2(0.866313, -0.845437)
+energy = 1.4
+range_layer_min = -100
+range_layer_max = -10
+texture = SubResource("GradientTexture2D_e85j5")
+
+[node name="Lampara3" type="PointLight2D" parent="Escaleras/ParallaxLuces/Luces"]
+position = Vector2(475.722, 626.054)
+scale = Vector2(0.866312, 0.845437)
+energy = 1.4
+range_layer_min = -100
+range_layer_max = -10
+texture = SubResource("GradientTexture2D_e85j5")
+
+[node name="Lampara4" type="PointLight2D" parent="Escaleras/ParallaxLuces/Luces"]
+position = Vector2(55.102, 918.054)
+rotation = -3.14159
+scale = Vector2(0.866313, -0.845437)
+energy = 1.4
+range_layer_min = -100
+range_layer_max = -10
+texture = SubResource("GradientTexture2D_e85j5")
+
+[node name="Lampara5" type="PointLight2D" parent="Escaleras/ParallaxLuces/Luces"]
+position = Vector2(475.722, 1209.11)
+scale = Vector2(0.866312, 0.845437)
+energy = 1.4
+range_layer_min = -100
+range_layer_max = -10
+texture = SubResource("GradientTexture2D_e85j5")
+
+[node name="Lampara6" type="PointLight2D" parent="Escaleras/ParallaxLuces/Luces"]
+position = Vector2(55.102, 1505.11)
+rotation = 3.14159
+scale = Vector2(0.866313, -0.845437)
+energy = 1.4
+range_layer_min = -100
+range_layer_max = -10
+texture = SubResource("GradientTexture2D_e85j5")
+
+[node name="Lampara7" type="PointLight2D" parent="Escaleras/ParallaxLuces/Luces"]
+position = Vector2(475.722, 1793.11)
+scale = Vector2(0.866312, 0.845437)
+energy = 1.4
+range_layer_min = -100
+range_layer_max = -10
+texture = SubResource("GradientTexture2D_e85j5")
+
+[node name="Lampara8" type="PointLight2D" parent="Escaleras/ParallaxLuces/Luces"]
+position = Vector2(55.102, 2085.11)
+rotation = -3.14159
+scale = Vector2(0.866313, -0.845437)
+energy = 1.4
+range_layer_min = -100
+range_layer_max = -10
+texture = SubResource("GradientTexture2D_e85j5")
 
 [node name="coliders" type="StaticBody2D" parent="."]
 collision_layer = 4
@@ -40,7 +159,7 @@ position = Vector2(494, 354)
 shape = SubResource("RectangleShape2D_ybuyh")
 
 [node name="colider_arriba" type="CollisionShape2D" parent="coliders"]
-position = Vector2(263, -32)
+position = Vector2(263, -18.5)
 shape = SubResource("RectangleShape2D_kgs6j")
 
 [node name="colider_abajo" type="CollisionShape2D" parent="coliders"]
