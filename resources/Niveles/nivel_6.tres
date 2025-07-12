@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="NivelResource" load_steps=3 format=3 uid="uid://daabpxct8ftj"]
+
+[ext_resource type="Script" uid="uid://cms7i7o53f5hh" path="res://scripts/recursos/NivelResource.gd" id="1_7nku6"]
+[ext_resource type="PackedScene" uid="uid://btv867av8wwp8" path="res://scenes/obstaculos/desc_gatete.tscn" id="2_slulk"]
+
+[resource]
+script = ExtResource("1_7nku6")
+idNivel = 5
+duracion = 10
+vecinosAsc = Array[PackedScene]([])
+vecinosDes = Array[PackedScene]([ExtResource("2_slulk")])
+intervaloSpawns = 1.0
+multVelocidad = 1.0
+metadata/_custom_type_script = "uid://cms7i7o53f5hh"

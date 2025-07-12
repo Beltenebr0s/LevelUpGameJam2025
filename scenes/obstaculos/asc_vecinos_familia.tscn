@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://hsks5kmy36lg"]
+
+[ext_resource type="PackedScene" uid="uid://7xj0vk0ffsjl" path="res://scenes/obstaculos/obstaculo_base.tscn" id="1_60pk6"]
+[ext_resource type="Resource" uid="uid://br1wry5q8jwdo" path="res://resources/VecinosFamilia.tres" id="2_vc405"]
+[ext_resource type="Texture2D" uid="uid://cb7ruu3ju7hma" path="res://images/original colours/Vecinos_familia.png" id="3_j4lyi"]
+[ext_resource type="Script" uid="uid://cn0ky0vdxpsr5" path="res://scripts/obstaculos/movimiento/movimiento_estatico.gd" id="4_q6an2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fhcyy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_j4lyi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ascVecinosFamilia" instance=ExtResource("1_60pk6")]
+obstacleResource = ExtResource("2_vc405")
+
+[node name="Collider" parent="." index="0"]
+polygon = PackedVector2Array(-18, -64, -5, -56, -3, -46, -6, -37, -16, -27, -12, -23, 9, -26, 16, -32, 23, -34, 23, -38, 30, -38, 39, -36, 39, -31, 44, -16, 45, -7, 52, 1, 56, 13, 58, 13, 64, 20, 69, 29, 76, 60, 74, 64, 69, 65, 55, 62, 56, 97, 57, 103, 55, 107, -61, 107, -61, 102, -58, 97, -60, 60, -66, 58, -64, 46, -64, 41, -63, 22, -67, 17, -75, 12, -75, 5, -73, 0, -72, -5, -70, -10, -55, -29, -49, -34, -38, -35, -40, -38, -40, -41, -38, -44, -38, -58, -33, -58, -31, -62, -26, -61)
+
+[node name="AnimatedSprite" parent="." index="1"]
+scale = Vector2(0.174569, 0.173498)
+sprite_frames = SubResource("SpriteFrames_fhcyy")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
+position = Vector2(-82, -70)
+scale = Vector2(8.35, 9.05)
+
+[node name="MovementHandler" parent="." index="3"]
+script = ExtResource("4_q6an2")

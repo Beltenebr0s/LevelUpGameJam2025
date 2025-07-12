@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="NivelResource" load_steps=3 format=3 uid="uid://bw1aujhp0yb0j"]
+
+[ext_resource type="Script" uid="uid://cms7i7o53f5hh" path="res://scripts/recursos/NivelResource.gd" id="1_kua5x"]
+[ext_resource type="PackedScene" uid="uid://bry00ywvtt5km" path="res://scenes/obstaculos/asc_vecinas_blabla.tscn" id="2_dt8er"]
+
+[resource]
+script = ExtResource("1_kua5x")
+idNivel = 3
+duracion = 5
+vecinosAsc = Array[PackedScene]([ExtResource("2_dt8er")])
+vecinosDes = Array[PackedScene]([])
+intervaloSpawns = 1.3
+multVelocidad = 1.0
+metadata/_custom_type_script = "uid://cms7i7o53f5hh"
