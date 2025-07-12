@@ -13,12 +13,12 @@ script = ExtResource("1_gkhyp")
 y_sort_enabled = true
 
 [node name="SpawnArriba1" parent="SpawnsArriba" instance=ExtResource("2_pip1s")]
-position = Vector2(0, -154)
+position = Vector2(0, -260)
 
 [node name="SpawnsAbajo" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="SpawnAbajo1" parent="SpawnsAbajo" instance=ExtResource("2_pip1s")]
-position = Vector2(0, 739)
+position = Vector2(0, 841)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

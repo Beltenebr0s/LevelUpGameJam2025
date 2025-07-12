@@ -7,18 +7,18 @@
 
 [sub_resource type="AudioStream" id="AudioStream_bwtr5"]
 
-[node name="Audio" type="Node" node_paths=PackedStringArray("musica", "boton_select", "boton_down", "boton_pressed", "ascensor")]
+[node name="Audio" type="Node" node_paths=PackedStringArray("menu_principal", "boton_select", "boton_down", "boton_pressed", "ascensor")]
 process_mode = 3
 script = ExtResource("1_6n3bj")
-musica = NodePath("Musica")
+menu_principal = NodePath("Musica/MenuPrincipal")
 boton_select = NodePath("SFX/Menus/BotonSelect")
 boton_down = NodePath("SFX/Menus/BotonDown")
 boton_pressed = NodePath("SFX/Menus/BotonPressed")
-ascensor = NodePath("Ascensor")
+ascensor = NodePath("Musica/MenuPrincipal")
 
 [node name="Musica" type="Node" parent="."]
 
-[node name="Ascensor" type="AudioStreamPlayer" parent="."]
+[node name="MenuPrincipal" type="AudioStreamPlayer" parent="Musica"]
 stream = ExtResource("2_hlm5c")
 
 [node name="SFX" type="Node" parent="."]

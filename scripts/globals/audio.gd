@@ -18,7 +18,7 @@ var sfx_bus = AudioServer.get_bus_index("SFX")
 
 var tween : Tween
 
-@export var musica : Node
+@export var menu_principal : AudioStreamPlayer
 @export var boton_select : AudioStreamPlayer
 @export var boton_down  : AudioStreamPlayer
 @export var boton_pressed : AudioStreamPlayer
