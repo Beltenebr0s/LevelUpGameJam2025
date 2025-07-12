@@ -10,10 +10,17 @@ func _ready():
 	$Botones/Salir.visible = OS.get_name() != "Web"
 	for vecino in censoVecinos:
 		GlobalVars.add_vecino(vecino)
+	$Background/Lamp1/PointLight2D.visible = false
+	$Background/Lamp2/PointLight2D.visible = false
+	await $TransitionScene/AnimationPlayer.animation_finished
 	$Background/Lucecitas.play("light")
+	$Background/Lamp1/PointLight2D.visible = true
+	$Background/Lamp2/PointLight2D.visible = true
 
 
 func _on_play_pressed():
+	$Background/Lamp1/PointLight2D.visible = false
+	$Background/Lamp2/PointLight2D.visible = false
 	if GlobalVars.is_first_game:
 		$TransitionManager.play_fadeout_animation(intro_scene_path)
 	else:

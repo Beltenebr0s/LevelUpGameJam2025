@@ -4,6 +4,7 @@ extends Control
 @onready var player = $AnimationPlayer
 signal transition_finished
 func _enter_tree():
+	visible = true
 	player = get_child(0)
 
 func play_anim(animation_name : String):

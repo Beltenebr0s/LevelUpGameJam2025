@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=83 format=4 uid="uid://cjq5vt88wa8x"]
+[gd_resource type="Theme" load_steps=85 format=4 uid="uid://cjq5vt88wa8x"]
 
 [ext_resource type="Texture2D" uid="uid://bq3hw4u0df32i" path="res://images/ui/bola_slider.png" id="1_3ymh7"]
 [ext_resource type="FontFile" uid="uid://cnqn3r6vhp6y5" path="res://ui/HKGroteskWide_2020D/OTF/HKGroteskWide-Bold.otf" id="1_ena0y"]
+[ext_resource type="FontFile" uid="uid://dlabgvlfhqfkh" path="res://ui/HKGroteskWide_2020D/OTF/HKGroteskWide-Medium.otf" id="3_sojpq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iao85"]
 bg_color = Color(0.0235294, 0.360784, 0.34902, 1)
@@ -93,6 +94,8 @@ corner_radius_bottom_left = 15
 bg_color = Color(0.858824, 0.278431, 0.0745098, 1)
 corner_radius_top_left = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sojpq"]
 
 [sub_resource type="Image" id="Image_ww0eg"]
 data = {
@@ -6208,7 +6211,7 @@ cache/0/32/3/glyphs/22/size = Vector2(20, 27)
 cache/0/32/3/glyphs/22/uv_rect = Rect2(17, 1, 20, 27)
 cache/0/32/3/glyphs/22/texture_idx = 0
 
-[sub_resource type="Image" id="Image_ena0y"]
+[sub_resource type="Image" id="Image_w02rl"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////YP///2D///8A////AP///wD///8A////AP///wD///8A////AP///2D///9g////AP///wD///8A////YP///7////+/////YP///wD///8A////AP///wD///8A////AP///2D///+/////v////2D///8A////AP///2D///+/////v////7////9g////AP///wD///8A////AP///2D///+/////v////7////9g////AP///wD///8A////YP///7////+/////v////2D///8A////AP///2D///+/////v////7////9g////AP///wD///8A////AP///wD///9g////v////7////+/////YP///2D///+/////v////7////9g////AP///wD///8A////AP///wD///8A////AP///2D///+/////v////7////+/////v////7////9g////AP///wD///8A////AP///wD///8A////AP///wD///8A////YP///7////+/////v////7////9g////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///2D///+/////v////7////+/////YP///wD///8A////AP///wD///8A////AP///wD///8A////AP///2D///+/////v////7////+/////v////7////9g////AP///wD///8A////AP///wD///8A////AP///2D///+/////v////7////9g////YP///7////+/////v////2D///8A////AP///wD///8A////AP///2D///+/////v////7////9g////AP///wD///9g////v////7////+/////YP///wD///8A////AP///2D///+/////v////7////9g////AP///wD///8A////AP///2D///+/////v////7////9g////AP///wD///9g////v////7////9g////AP///wD///8A////AP///wD///8A////YP///7////+/////YP///wD///8A////AP///2D///9g////AP///wD///8A////AP///wD///8A////AP///wD///9g////YP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
 "format": "RGBA8",
@@ -6218,7 +6221,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_rvv35"]
-image = SubResource("Image_ena0y")
+image = SubResource("Image_w02rl")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfq6d"]
 bg_color = Color(0.0235294, 0.360784, 0.34902, 1)
@@ -6308,9 +6311,22 @@ ButtonPlay/styles/pressed = SubResource("StyleBoxFlat_il8ly")
 HSlider/icons/grabber = ExtResource("1_3ymh7")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_ena0y")
 Label/colors/font_color = Color(0.854902, 0.278431, 0.0745098, 1)
-Label/colors/font_outline_color = Color(0.858824, 0.211765, 0.0705882, 1)
-Label/constants/outline_size = 3
+Label/colors/font_outline_color = Color(0.960784, 0.921569, 0.627451, 1)
+Label/constants/outline_size = 15
 Label/font_sizes/font_size = 35
+Label/fonts/font = ExtResource("1_ena0y")
+LabelText/base_type = &"Label"
+LabelText/colors/font_color = Color(0.854902, 0.278431, 0.0745098, 1)
+LabelText/colors/font_outline_color = Color(0.960784, 0.921569, 0.627451, 1)
+LabelText/colors/font_shadow_color = Color(0, 0, 0, 1)
+LabelText/constants/line_spacing = 0
+LabelText/constants/outline_size = 8
+LabelText/constants/shadow_offset_x = 0
+LabelText/constants/shadow_offset_y = 0
+LabelText/constants/shadow_outline_size = 0
+LabelText/font_sizes/font_size = 21
+LabelText/fonts/font = ExtResource("3_sojpq")
+LabelText/styles/normal = SubResource("StyleBoxEmpty_sojpq")
 LineEdit/colors/caret_color = Color(0.95, 0.95, 0.95, 1)
 LineEdit/colors/clear_button_color = Color(0.875, 0.875, 0.875, 1)
 LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)
@@ -6329,6 +6345,12 @@ LineEdit/icons/clear = SubResource("ImageTexture_rvv35")
 LineEdit/styles/focus = SubResource("StyleBoxFlat_cfq6d")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_0k23a")
 LineEdit/styles/read_only = SubResource("StyleBoxFlat_5dppm")
+LinkButton/colors/font_color = Color(0.854902, 0.278431, 0.0745098, 1)
+LinkButton/colors/font_hover_color = Color(0.960784, 0.921569, 0.627451, 1)
+LinkButton/colors/font_outline_color = Color(0.960784, 0.921569, 0.627451, 1)
+LinkButton/colors/font_pressed_color = Color(0.854902, 0.278431, 0.0745098, 1)
+LinkButton/constants/outline_size = 6
+LinkButton/fonts/font = ExtResource("3_sojpq")
 Panel/styles/panel = SubResource("StyleBoxFlat_ww0eg")
 RichTextLabel/colors/default_color = Color(0.854902, 0.278431, 0.0745098, 1)
 RichTextLabel/colors/font_outline_color = Color(0.858824, 0.211765, 0.0705882, 1)

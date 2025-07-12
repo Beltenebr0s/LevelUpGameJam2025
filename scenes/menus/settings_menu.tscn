@@ -104,7 +104,6 @@ transition_scene = NodePath("../TransitionScene")
 metadata/_custom_type_script = "uid://d5cmtqt47mye"
 
 [node name="TransitionScene" parent="." instance=ExtResource("5_jjfif")]
-visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="Es" to="." method="_on_es_pressed"]

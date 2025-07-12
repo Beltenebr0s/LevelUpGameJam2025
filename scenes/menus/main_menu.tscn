@@ -27,6 +27,33 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.230769, 0.217949)
 
+[sub_resource type="Animation" id="Animation_8hoqd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lamp1/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lamp2/PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.4]
+}
+
 [sub_resource type="Animation" id="Animation_287l7"]
 resource_name = "light"
 loop_mode = 1
@@ -53,33 +80,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [1.78, 1.4, 1.53, 1.15, 1.65]
-}
-
-[sub_resource type="Animation" id="Animation_8hoqd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Lamp1/PointLight2D:energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.4]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Lamp2/PointLight2D:energy")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.4]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_555wk"]
@@ -274,7 +274,6 @@ theme_type_variation = &"ButtonPlay"
 text = "BUT_PLAY"
 
 [node name="TransitionScene" parent="." instance=ExtResource("2_6bivr")]
-visible = false
 layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0

@@ -56,19 +56,22 @@ metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
 
 [node name="Codigo" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 32.0
-offset_top = 255.0
-offset_right = 261.0
-offset_bottom = 425.0
+offset_left = 176.0
+offset_top = 394.0
+offset_right = 405.0
+offset_bottom = 564.0
 
 [node name="Label" type="Label" parent="Codigo"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 22.0
+offset_left = -13.0
+offset_top = -22.0
+offset_right = -13.0
+offset_bottom = 24.0
 grow_horizontal = 2
 theme = ExtResource("1_536xp")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 30
 text = "LBL_CODE"
 horizontal_alignment = 1
 
@@ -84,31 +87,43 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Codigo/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_536xp")
+theme_type_variation = &"LabelText"
+theme_override_font_sizes/font_size = 16
 text = "Darío de Benito Padilla"
 
 [node name="Label2" type="Label" parent="Codigo/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_536xp")
+theme_type_variation = &"LabelText"
+theme_override_font_sizes/font_size = 16
 text = "Alejandro Garatea Alcázar"
 
 [node name="Label3" type="Label" parent="Codigo/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_536xp")
+theme_type_variation = &"LabelText"
+theme_override_font_sizes/font_size = 16
 text = "Beatriz Lago Pérez"
 
 [node name="Arte" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 280.0
-offset_top = 255.0
-offset_right = 509.0
-offset_bottom = 425.0
+offset_left = 46.0
+offset_top = 286.0
+offset_right = 275.0
+offset_bottom = 456.0
 
 [node name="Label" type="Label" parent="Arte"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 22.0
+offset_left = -1.0
+offset_top = -19.0
+offset_right = -1.0
+offset_bottom = 21.0
 grow_horizontal = 2
 theme = ExtResource("1_536xp")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 30
 text = "LBL_ART"
 horizontal_alignment = 1
 
@@ -124,14 +139,17 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Arte/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_536xp")
+theme_type_variation = &"LabelText"
+theme_override_font_sizes/font_size = 16
 text = "Ruby Agamez Castillo"
 
 [node name="Sonido" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 176.0
-offset_top = 533.0
-offset_right = 405.0
-offset_bottom = 703.0
+offset_left = 273.0
+offset_top = 529.0
+offset_right = 502.0
+offset_bottom = 699.0
 
 [node name="Label" type="Label" parent="Sonido"]
 layout_mode = 1
@@ -140,7 +158,7 @@ anchor_right = 1.0
 offset_bottom = 22.0
 grow_horizontal = 2
 theme = ExtResource("1_536xp")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 30
 text = "LBL_SOUND"
 horizontal_alignment = 1
 
@@ -149,28 +167,34 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 31.0
-offset_bottom = 40.0
+offset_left = 19.0
+offset_top = 44.0
+offset_right = 19.0
+offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="LinkButton" parent="Sonido/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_536xp")
 text = "LBL_BUT_HOVER"
 uri = "https://pixabay.com/sound-effects/ui-click-43196/"
 
 [node name="Label2" type="LinkButton" parent="Sonido/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_536xp")
 text = "LBL_BUT_CLICK"
 uri = "https://pixabay.com/sound-effects/beep-6-96243/"
 
 [node name="Label3" type="LinkButton" parent="Sonido/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_536xp")
 text = "LBL_MUSIC_MENU"
 uri = "https://pixabay.com/music/traditional-jazz-lounge-jazz-elevator-music-324902/"
 
 [node name="Label4" type="LinkButton" parent="Sonido/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_536xp")
 text = "LBL_MUSIC_GAME"
 uri = "https://pixabay.com/music/comedy-comedy-music-background-364205/"
 
@@ -181,5 +205,4 @@ transition_scene = NodePath("../TransitionScene")
 metadata/_custom_type_script = "uid://d5cmtqt47mye"
 
 [node name="TransitionScene" parent="." instance=ExtResource("4_325oc")]
-visible = false
 layout_mode = 1
