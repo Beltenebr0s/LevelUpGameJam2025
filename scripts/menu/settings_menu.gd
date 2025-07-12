@@ -1,5 +1,8 @@
 extends Control
 
+func _ready():
+	$Volume.value = AudioManager.porcentaje_master
+	$Volume_button.button_pressed = AudioManager.master_muted
 
 func no_destruir_escena():
 	var navigation_button_list = []
@@ -18,3 +21,11 @@ func _on_es_pressed():
 
 func _on_en_pressed():
 	TranslationServer.set_locale("en")
+
+
+func _on_volume_value_changed(value: float) -> void:
+	AudioManager.change_master_volume(value)
+
+
+func _on_volume_button_toggled(toggled_on: bool) -> void:
+	AudioManager.mute_master(toggled_on)

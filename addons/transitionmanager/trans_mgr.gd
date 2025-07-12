@@ -19,7 +19,6 @@ func connect_all_nav_buttons():
 func play_fadeout_animation(nextScene : String):
 	transition_scene.play_anim("fade_out")
 	await transition_scene.transition_finished
-	AudioManager.stop_music()
 	SceneManager.change_to_scene(nextScene)
 	
 func play_fadein_animation():

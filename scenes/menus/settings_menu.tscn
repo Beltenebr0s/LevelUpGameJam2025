@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://boqjwieb36yip"]
+[gd_scene load_steps=8 format=3 uid="uid://boqjwieb36yip"]
 
 [ext_resource type="Theme" uid="uid://cjq5vt88wa8x" path="res://ui/menu_theme.tres" id="1_7i3iu"]
 [ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_hayap"]
 [ext_resource type="Script" uid="uid://dwr2cbex0m2sv" path="res://scripts/menu/settings_menu.gd" id="1_s2d1y"]
 [ext_resource type="Script" uid="uid://d5cmtqt47mye" path="res://addons/transitionmanager/trans_mgr.gd" id="4_da10i"]
 [ext_resource type="PackedScene" uid="uid://cmvvmnv37bmya" path="res://scenes/transicion/transition_scene.tscn" id="5_jjfif"]
+[ext_resource type="Texture2D" uid="uid://b8iwe4iyqgxi2" path="res://images/ui/sonido.png" id="6_jjfif"]
+[ext_resource type="Texture2D" uid="uid://b0laom8cshkmq" path="res://images/ui/sonido_mute.png" id="7_kffdn"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -77,6 +79,23 @@ size_flags_vertical = 6
 theme = ExtResource("1_7i3iu")
 text = "BUT_EN"
 
+[node name="Volume" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 480.0
+offset_right = 482.0
+offset_bottom = 496.0
+
+[node name="Volume_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 438.0
+offset_right = 192.0
+offset_bottom = 538.0
+toggle_mode = true
+texture_normal = ExtResource("6_jjfif")
+texture_pressed = ExtResource("7_kffdn")
+
 [node name="TransitionManager" type="AnimationPlayer" parent="." node_paths=PackedStringArray("transition_scene")]
 script = ExtResource("4_da10i")
 has_fadein = true
@@ -88,3 +107,5 @@ layout_mode = 1
 
 [connection signal="pressed" from="Es" to="." method="_on_es_pressed"]
 [connection signal="pressed" from="En" to="." method="_on_en_pressed"]
+[connection signal="value_changed" from="Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="Volume_button" to="." method="_on_volume_button_toggled"]

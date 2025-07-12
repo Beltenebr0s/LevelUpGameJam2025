@@ -52,7 +52,9 @@ func mute_sfx(_toggled_on : bool):
 	AudioServer.set_bus_mute(sfx_bus, sfx_muted)
 
 func play_game_music():
-	gameplay_music.play()
+	ascensor.stop()
+	if not gameplay_music.playing:
+		gameplay_music.play()
 
 func play_boton_select():
 	boton_select.play()
@@ -64,7 +66,9 @@ func play_boton_pressed():
 	boton_pressed.play()
 
 func play_menu_music():
-	ascensor.play()
+	gameplay_music.stop()
+	if not ascensor.playing:
+		ascensor.play()
 
 func stop_music():
 	ascensor.stop()
