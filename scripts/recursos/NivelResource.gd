@@ -6,4 +6,3 @@ extends Resource
 @export var vecinosAsc : Array[PackedScene]
 @export var vecinosDes : Array[PackedScene]
 @export var intervaloSpawns : float = 1
-@export var multVelocidad : float = 1

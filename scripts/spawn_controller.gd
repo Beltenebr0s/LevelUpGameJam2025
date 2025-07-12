@@ -11,9 +11,6 @@ func _ready():
 	spawn_points_abajo = $SpawnsAbajo.find_children("*", "Spawn")
 	spawn_points.append_array(spawn_points_arriba)
 	spawn_points.append_array(spawn_points_abajo)
-	print(		"--Spawn Points Arriba:", spawn_points_arriba)
-	print(		"--Spawn Points Abajo:", spawn_points_abajo)
-	print(		"--Spawn Points:", spawn_points)
 	timer_start()
 
 func timer_start():
@@ -24,7 +21,9 @@ func timer_stop():
 
 func _on_timer_timeout():
 	spawn_points.shuffle()
-	spawn_points[0].spawn()
+	for spawn in spawn_points:
+		if spawn.spawn():
+			break
 	timer_start()
 
 func actualizar_dificultad(nuevo_nivel : NivelResource):

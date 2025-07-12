@@ -34,11 +34,9 @@ func jugador_chocado():
 
 func _on_niveles_nivel_cambiado(nuevo_nivel : NivelResource):
 	$SpawnController.actualizar_dificultad(nuevo_nivel)
-	GlobalVars.mult = nuevo_nivel.multVelocidad
 
 func _on_transition_scene_transition_finished():
 	$PauseButton.show()
-
 
 func _on_niveles_piso_cambiado(nuevo_piso):
 	$HUD.next_level(nuevo_piso)
