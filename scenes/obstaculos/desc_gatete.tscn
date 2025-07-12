@@ -1,30 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://btv867av8wwp8"]
+[gd_scene load_steps=8 format=3 uid="uid://btv867av8wwp8"]
 
 [ext_resource type="PackedScene" uid="uid://7xj0vk0ffsjl" path="res://scenes/obstaculos/obstaculo_base.tscn" id="1_c2225"]
 [ext_resource type="Resource" uid="uid://bbhwwqf6uw3a0" path="res://resources/Gatete.tres" id="2_nr346"]
-[ext_resource type="Texture2D" uid="uid://dufyj8e7uonj1" path="res://images/ui/ui_gatete.png" id="3_nr346"]
+[ext_resource type="Texture2D" uid="uid://btvugs0i3l0db" path="res://images/obstaculos/sprite_sheets/gatete_spritesheet.png" id="3_nr346"]
 [ext_resource type="Script" uid="uid://bdav6o5ethxi1" path="res://scripts/obstaculos/movimiento/movimiento_zigzag_desc.gd" id="4_nr346"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_nr346"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vqqv"]
+atlas = ExtResource("3_nr346")
+region = Rect2(0, 0, 423, 706)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uypus"]
+atlas = ExtResource("3_nr346")
+region = Rect2(423, 0, 423, 706)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s251c"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_nr346")
+"texture": SubResource("AtlasTexture_5vqqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uypus")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [node name="descGatete" instance=ExtResource("1_c2225")]
 obstacleResource = ExtResource("2_nr346")
 
 [node name="Collider" parent="." index="0"]
-polygon = PackedVector2Array(-4, -32, -6, -24, 0, -24, 3, -23, 5, -17, 10, -1, 9, 9, 12, 14, 11, 20, 5, 31, -3, 31, -9, 19, -9, 14, -7, 8, -7, -1, -2, -17, -4, -22, -7, -22, -8, -27, -6, -32)
+polygon = PackedVector2Array(-4, -30, -6, -24, 0, -24, 3, -23, 5, -17, 9, -1, 9, 7, 11, 13, 10, 19, 5, 29, -5, 28, -9, 18, -10, 12, -8, 7, -8, -1, -4, -16, -2, -17, -3, -20, -8, -20, -9, -25, -7, -30)
 
 [node name="AnimatedSprite" parent="." index="1"]
-scale = Vector2(0.191176, 0.191176)
-sprite_frames = SubResource("SpriteFrames_nr346")
+scale = Vector2(0.0992908, 0.0992908)
+sprite_frames = SubResource("SpriteFrames_s251c")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="2"]
 position = Vector2(-18, -33)

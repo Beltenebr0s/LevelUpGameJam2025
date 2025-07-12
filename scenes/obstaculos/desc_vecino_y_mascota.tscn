@@ -1,34 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpnj3vojdm5v2"]
+[gd_scene load_steps=8 format=3 uid="uid://dpnj3vojdm5v2"]
 
 [ext_resource type="PackedScene" uid="uid://7xj0vk0ffsjl" path="res://scenes/obstaculos/obstaculo_base.tscn" id="1_dibcn"]
 [ext_resource type="Resource" uid="uid://c48i8cf7le3o7" path="res://resources/VecinoYMascota.tres" id="2_38d4o"]
-[ext_resource type="Texture2D" uid="uid://b8sb8k8tb7vwb" path="res://images/original colours/vecino_y_mascota.png" id="3_dibcn"]
+[ext_resource type="Texture2D" uid="uid://cs4durw7bocsc" path="res://images/obstaculos/sprite_sheets/vecino_y_mascota_spritesheet.png" id="3_dibcn"]
 [ext_resource type="Script" uid="uid://cfjmh8pxcsvja" path="res://scripts/obstaculos/movimiento/movimiento_descendente.gd" id="4_8irkt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38d4o"]
+atlas = ExtResource("3_dibcn")
+region = Rect2(0, 0, 1105, 1329)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdj8g"]
+atlas = ExtResource("3_dibcn")
+region = Rect2(1105, 0, 1105, 1329)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dibcn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_dibcn")
+"texture": SubResource("AtlasTexture_38d4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdj8g")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [node name="descVecinoYMascota" instance=ExtResource("1_dibcn")]
 obstacleResource = ExtResource("2_38d4o")
 
 [node name="Collider" parent="." index="0"]
-polygon = PackedVector2Array(-44, -36, -34, -36, -27, -20, -26, 11, -25, 16, -12, 27, 3, 27, 14, 20, 23, 7, 31, -21, 40, -35, 33, -49, 33, -52, 36, -48, 41, -52, 48, -50, 51, -42, 59, -49, 48, -34, 54, -24, 54, -18, 51, -9, 51, -9, 49, -2, 46, -1, 42, -4, 39, -11, 36, -21, 33, -20, 24, 8, 15, 21, 3, 29, -12, 28, -26, 18, -23, 26, -24, 48, -21, 54, -24, 63, -33, 63, -41, 76, -49, 76, -52, 70, -56, 44, -56, 25, -53, 15, -59, 1, -59, -6, -55, -14, -49, -15, -51, -20)
+polygon = PackedVector2Array(-44, -36, -34, -36, -27, -20, -26, 11, -22, 17, -12, 29, 1, 32, 13, 28, 21, 19, 25, 9, 27, -20, 40, -35, 33, -49, 33, -53, 36, -48, 41, -52, 48, -50, 51, -42, 59, -51, 60, -49, 48, -34, 54, -24, 54, -18, 51, -9, 51, -9, 49, -2, 46, -1, 42, -4, 39, -11, 36, -21, 30, -19, 29, 9, 22, 25, 14, 32, 0, 36, -15, 32, -26, 18, -23, 26, -24, 48, -21, 54, -24, 63, -26, 76, -49, 76, -52, 70, -56, 44, -56, 25, -53, 15, -59, 1, -59, -6, -55, -14, -49, -15, -51, -20)
 
 [node name="AnimatedSprite" parent="." index="1"]
-scale = Vector2(0.118217, 0.118217)
+scale = Vector2(0.117647, 0.117647)
 sprite_frames = SubResource("SpriteFrames_dibcn")
+frame = 1
+frame_progress = 0.439081
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="2"]
-position = Vector2(-60, -54)
-scale = Vector2(6.1, 6.55)
+position = Vector2(-62, -56.1475)
+scale = Vector2(6.3, 6.76475)
 
 [node name="MovementHandler" parent="." index="3"]
 script = ExtResource("4_8irkt")

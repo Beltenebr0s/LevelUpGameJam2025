@@ -1,18 +1,29 @@
-[gd_resource type="Resource" script_class="ObstacleResource" load_steps=5 format=3 uid="uid://c48i8cf7le3o7"]
+[gd_resource type="Resource" script_class="ObstacleResource" load_steps=7 format=3 uid="uid://c48i8cf7le3o7"]
 
-[ext_resource type="Texture2D" uid="uid://b8sb8k8tb7vwb" path="res://images/original colours/vecino_y_mascota.png" id="1_843fj"]
+[ext_resource type="Texture2D" uid="uid://cs4durw7bocsc" path="res://images/obstaculos/sprite_sheets/vecino_y_mascota_spritesheet.png" id="1_843fj"]
 [ext_resource type="Script" uid="uid://de0m2dpfd8tdn" path="res://scripts/recursos/ObstacleResource.gd" id="1_y588m"]
 [ext_resource type="Texture2D" uid="uid://1h4c52nanoep" path="res://images/ui/ui_vecino_y_mascota.png" id="3_843fj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddug5"]
+atlas = ExtResource("1_843fj")
+region = Rect2(0, 0, 1105, 1329)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7mde"]
+atlas = ExtResource("1_843fj")
+region = Rect2(1105, 0, 1105, 1329)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y588m"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_843fj")
+"texture": SubResource("AtlasTexture_ddug5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7mde")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [resource]

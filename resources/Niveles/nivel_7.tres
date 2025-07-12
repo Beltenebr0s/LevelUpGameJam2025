@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cms7i7o53f5hh" path="res://scripts/recursos/NivelResource.gd" id="1_bkgsl"]
 [ext_resource type="PackedScene" uid="uid://hsks5kmy36lg" path="res://scenes/obstaculos/asc_vecinos_familia.tscn" id="2_h6das"]
-[ext_resource type="PackedScene" path="res://scenes/obstaculos/asc_charco.tscn" id="3_0nvmn"]
+[ext_resource type="PackedScene" uid="uid://dtyrk2ka5j6vw" path="res://scenes/obstaculos/asc_charco.tscn" id="3_0nvmn"]
 
 [resource]
 script = ExtResource("1_bkgsl")
@@ -11,5 +11,4 @@ duracion = 10
 vecinosAsc = Array[PackedScene]([ExtResource("2_h6das"), ExtResource("3_0nvmn")])
 vecinosDes = Array[PackedScene]([])
 intervaloSpawns = 1.0
-multVelocidad = 1.0
 metadata/_custom_type_script = "uid://cms7i7o53f5hh"

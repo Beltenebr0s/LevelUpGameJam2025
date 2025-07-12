@@ -1,18 +1,29 @@
-[gd_resource type="Resource" script_class="ObstacleResource" load_steps=5 format=3 uid="uid://bbhwwqf6uw3a0"]
+[gd_resource type="Resource" script_class="ObstacleResource" load_steps=7 format=3 uid="uid://bbhwwqf6uw3a0"]
 
-[ext_resource type="Texture2D" uid="uid://w4fq1hwvb4gi" path="res://images/original colours/Gatete.png" id="1_av8lk"]
+[ext_resource type="Texture2D" uid="uid://btvugs0i3l0db" path="res://images/obstaculos/sprite_sheets/gatete_spritesheet.png" id="1_av8lk"]
 [ext_resource type="Script" uid="uid://de0m2dpfd8tdn" path="res://scripts/recursos/ObstacleResource.gd" id="1_gf108"]
 [ext_resource type="Texture2D" uid="uid://dufyj8e7uonj1" path="res://images/ui/ui_gatete.png" id="3_av8lk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5men8"]
+atlas = ExtResource("1_av8lk")
+region = Rect2(0, 0, 423, 706)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7gmv"]
+atlas = ExtResource("1_av8lk")
+region = Rect2(423, 0, 423, 706)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gf108"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_av8lk")
+"texture": SubResource("AtlasTexture_5men8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7gmv")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [resource]

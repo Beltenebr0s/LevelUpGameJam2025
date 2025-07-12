@@ -1,13 +1,24 @@
-[gd_resource type="Resource" script_class="ObstacleResource" load_steps=4 format=3 uid="uid://br1wry5q8jwdo"]
+[gd_resource type="Resource" script_class="ObstacleResource" load_steps=6 format=3 uid="uid://br1wry5q8jwdo"]
 
-[ext_resource type="Texture2D" uid="uid://cb7ruu3ju7hma" path="res://images/original colours/Vecinos_familia.png" id="1_fcaya"]
+[ext_resource type="Texture2D" uid="uid://ct3xf85ltc53y" path="res://images/obstaculos/sprite_sheets/vecinos_familia_spritesheet.png" id="1_fcaya"]
 [ext_resource type="Script" uid="uid://de0m2dpfd8tdn" path="res://scripts/recursos/ObstacleResource.gd" id="2_ju3q7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrvax"]
+atlas = ExtResource("1_fcaya")
+region = Rect2(0, 0, 944, 1123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju3q7"]
+atlas = ExtResource("1_fcaya")
+region = Rect2(944, 0, 944, 1123)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jk0p2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_fcaya")
+"texture": SubResource("AtlasTexture_vrvax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju3q7")
 }],
 "loop": true,
 "name": &"default",
