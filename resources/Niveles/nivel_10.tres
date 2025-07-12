@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NivelResource" load_steps=3 format=3 uid="uid://dx5n08fpb2cdb"]
+
+[ext_resource type="Script" uid="uid://cms7i7o53f5hh" path="res://scripts/recursos/NivelResource.gd" id="1_h1r5p"]
+[ext_resource type="PackedScene" uid="uid://cv705y01obmlf" path="res://scenes/obstaculos/desc_vecino_dibujo.tscn" id="2_fpay3"]
+
+[resource]
+script = ExtResource("1_h1r5p")
+idNivel = 10
+duracion = 5
+vecinosAsc = Array[PackedScene]([])
+vecinosDes = Array[PackedScene]([ExtResource("2_fpay3")])
+intervaloSpawns = 1.0
+metadata/_custom_type_script = "uid://cms7i7o53f5hh"

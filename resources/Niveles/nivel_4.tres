@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_kua5x")
 idNivel = 3
-duracion = 5
+duracion = 10
 vecinosAsc = Array[PackedScene]([ExtResource("2_dt8er")])
 vecinosDes = Array[PackedScene]([])
 intervaloSpawns = 1.3
