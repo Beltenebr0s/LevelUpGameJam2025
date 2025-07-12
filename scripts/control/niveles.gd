@@ -4,12 +4,12 @@ extends Node
 @export var mult_intervalo_endless : float = 0.9
 @export var mult_velocidad_endless : float = 1.1
 @export var lista_niveles : Array[NivelResource]
+@export var ultimo_nivel : NivelResource
 signal nivel_cambiado(nuevo_nivel : NivelResource)
 signal piso_cambiado(nuevo_piso : int)
 
 var num_nivel_actual : int = 0
 var nivel_actual : NivelResource
-var ultimo_nivel : NivelResource
 var piso_actual : int = 100
 
 var piso_nivel_anterior : int = 100

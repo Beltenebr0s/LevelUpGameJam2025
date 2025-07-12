@@ -9,6 +9,6 @@ idNivel = 4
 duracion = 10
 vecinosAsc = Array[PackedScene]([ExtResource("2_r1unx")])
 vecinosDes = Array[PackedScene]([])
-intervaloSpawns = 0.75
+intervaloSpawns = 0.9
 multVelocidad = 1.0
 metadata/_custom_type_script = "uid://cms7i7o53f5hh"

@@ -20,15 +20,17 @@ animations = [{
 obstacleResource = ExtResource("2_7f5u1")
 
 [node name="Collider" parent="." index="0"]
-polygon = PackedVector2Array(-11, -57, 8, -83, 26, -89, 53, -66, 36, -38, 36, -38, 50, -11, 58, 75, 68, 77, 71, 87, -46, 88, -51, 55, -68, 19, -55, -25, -19, -43)
+position = Vector2(0, -1)
+scale = Vector2(0.805279, 0.805279)
+polygon = PackedVector2Array(-9, -54, 8, -80, 27, -84, 50, -62, 36, -38, 36, -38, 49, -10, 58, 75, 68, 77, 71, 87, -46, 88, -51, 55, -59, 21, -50, -22, -19, -43)
 
 [node name="AnimatedSprite" parent="." index="1"]
-scale = Vector2(0.136015, 0.136015)
+scale = Vector2(0.109195, 0.109195)
 sprite_frames = SubResource("SpriteFrames_170t8")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="2"]
-position = Vector2(-70, -90)
-scale = Vector2(7.05, 8.9)
+position = Vector2(-66, -72)
+scale = Vector2(7.15, 7.35)
 
 [node name="MovementHandler" parent="." index="3"]
 script = ExtResource("4_7f5u1")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnvwnpc2r1rhl"]
+[gd_scene load_steps=12 format=3 uid="uid://dnvwnpc2r1rhl"]
 
 [ext_resource type="Script" uid="uid://ln34kwjuxe8q" path="res://scripts/control/niveles.gd" id="1_2swb6"]
 [ext_resource type="Script" uid="uid://cms7i7o53f5hh" path="res://scripts/recursos/NivelResource.gd" id="2_xixph"]
@@ -10,10 +10,12 @@
 [ext_resource type="Resource" uid="uid://daabpxct8ftj" path="res://resources/Niveles/nivel_6.tres" id="8_lypuj"]
 [ext_resource type="Resource" uid="uid://buv2bsbeqq4rx" path="res://resources/Niveles/nivel_7.tres" id="9_la1yu"]
 [ext_resource type="Resource" uid="uid://hg1nb2ypx5kt" path="res://resources/Niveles/nivel_8.tres" id="10_cqxmp"]
+[ext_resource type="Resource" uid="uid://djeiiq516bnor" path="res://resources/Niveles/nivel_base.tres" id="11_acxrc"]
 
 [node name="Niveles" type="Node"]
 script = ExtResource("1_2swb6")
 lista_niveles = Array[ExtResource("2_xixph")]([ExtResource("3_0s6js"), ExtResource("4_acxrc"), ExtResource("5_2bp2t"), ExtResource("6_lti75"), ExtResource("7_dk2jl"), ExtResource("8_lypuj"), ExtResource("9_la1yu"), ExtResource("10_cqxmp")])
+ultimo_nivel = ExtResource("11_acxrc")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
