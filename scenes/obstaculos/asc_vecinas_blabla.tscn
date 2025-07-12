@@ -28,6 +28,7 @@ animations = [{
 }]
 
 [node name="ascVecinasBlabla" instance=ExtResource("1_hc17s")]
+collision_mask = 7
 obstacleResource = ExtResource("2_7f5u1")
 
 [node name="Collider" parent="." index="0"]

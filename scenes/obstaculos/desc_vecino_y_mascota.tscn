@@ -28,6 +28,7 @@ animations = [{
 }]
 
 [node name="descVecinoYMascota" instance=ExtResource("1_dibcn")]
+collision_mask = 7
 obstacleResource = ExtResource("2_38d4o")
 
 [node name="Collider" parent="." index="0"]

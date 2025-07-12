@@ -28,6 +28,7 @@ animations = [{
 }]
 
 [node name="descGatete" instance=ExtResource("1_c2225")]
+collision_mask = 7
 obstacleResource = ExtResource("2_nr346")
 
 [node name="Collider" parent="." index="0"]
