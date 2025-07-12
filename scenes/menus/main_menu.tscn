@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dq7n45cxgiq3t"]
+[gd_scene load_steps=23 format=3 uid="uid://dq7n45cxgiq3t"]
 
 [ext_resource type="Script" uid="uid://dxykayybwmndo" path="res://scripts/menu/main_menu.gd" id="1_imvie"]
 [ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_l6cm7"]
@@ -12,6 +12,81 @@
 [ext_resource type="Resource" uid="uid://begiit13dgxek" path="res://resources/VecinasBlabla.tres" id="7_bh4e2"]
 [ext_resource type="Resource" uid="uid://c48i8cf7le3o7" path="res://resources/VecinoYMascota.tres" id="8_3w8rc"]
 [ext_resource type="Resource" uid="uid://cjfa3k1n2tckg" path="res://resources/VecinoDibujo.tres" id="8_bh4e2"]
+[ext_resource type="Texture2D" uid="uid://d284wt0xtt5nq" path="res://ui/Escaleras.png" id="11_a3hrp"]
+[ext_resource type="Texture2D" uid="uid://dashhf707dgs2" path="res://ui/Puerta.png" id="11_uxao6"]
+[ext_resource type="Texture2D" uid="uid://bop3ci1c00ni1" path="res://ui/Loguito-03-03.png" id="12_vr0hv"]
+[ext_resource type="Texture2D" uid="uid://c6wn8ecinfgb5" path="res://ui/Lampara.png" id="13_25m6f"]
+[ext_resource type="Texture2D" uid="uid://cfpfvelqeqlg1" path="res://ui/image.png" id="15_a3hrp"]
+
+[sub_resource type="Gradient" id="Gradient_nkawv"]
+colors = PackedColorArray(0.960784, 0.921569, 0.627451, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w32d4"]
+gradient = SubResource("Gradient_nkawv")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.230769, 0.217949)
+
+[sub_resource type="Animation" id="Animation_287l7"]
+resource_name = "light"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lamp1/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.466667, 0.81, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.4, 1.9, 0.9, 1.9, 1.15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lamp2/PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.78, 1.4, 1.53, 1.15, 1.65]
+}
+
+[sub_resource type="Animation" id="Animation_8hoqd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lamp1/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lamp2/PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_555wk"]
+_data = {
+&"RESET": SubResource("Animation_8hoqd"),
+&"light": SubResource("Animation_287l7")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -38,36 +113,104 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_2o76q")
 
-[node name="Title" type="Label" parent="."]
+[node name="Escaleras" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -189.0
+offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("11_a3hrp")
+expand_mode = 1
+
+[node name="Puerta" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_right = -54.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_uxao6")
+expand_mode = 1
+
+[node name="Lamp1" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -151.0
+offset_right = 34.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("13_25m6f")
+expand_mode = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="Background/Lamp1"]
+position = Vector2(55, 43)
+scale = Vector2(2.59375, 2.53125)
+energy = 1.4
+texture = SubResource("GradientTexture2D_w32d4")
+
+[node name="Lamp2" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -574.0
+offset_top = -151.0
+offset_right = -447.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("13_25m6f")
+expand_mode = 1
+flip_h = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Background/Lamp2"]
+position = Vector2(76, 43)
+scale = Vector2(2.59375, 2.53125)
+energy = 1.4
+texture = SubResource("GradientTexture2D_w32d4")
+
+[node name="Lucecitas" type="AnimationPlayer" parent="Background"]
+libraries = {
+&"": SubResource("AnimationLibrary_555wk")
+}
+
+[node name="Title" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -260.0
-offset_top = 100.0
-offset_right = 261.0
-offset_bottom = 244.0
+offset_left = -207.0
+offset_top = 21.0
+offset_right = 208.0
+offset_bottom = 177.0
 grow_horizontal = 2
 theme = ExtResource("2_2o76q")
-text = "WIN_MAIN"
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("12_vr0hv")
+expand_mode = 1
 
 [node name="Botones" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 152.0
-offset_top = 242.0
+offset_top = 342.0
 offset_right = 370.0
-offset_bottom = 631.0
+offset_bottom = 632.0
 theme = ExtResource("2_2o76q")
 alignment = 1
-
-[node name="Play" type="Button" parent="Botones"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
-theme = ExtResource("2_2o76q")
-text = "BUT_PLAY"
 
 [node name="Ranking" type="Button" parent="Botones"]
 layout_mode = 2
@@ -118,7 +261,20 @@ script = ExtResource("1_l6cm7")
 next_scene_path = "exitgame"
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
 
+[node name="Play" type="Button" parent="."]
+layout_mode = 2
+offset_left = 135.0
+offset_top = 217.0
+offset_right = 391.0
+offset_bottom = 324.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme = ExtResource("2_2o76q")
+theme_type_variation = &"ButtonPlay"
+text = "BUT_PLAY"
+
 [node name="TransitionScene" parent="." instance=ExtResource("2_6bivr")]
+visible = false
 layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
@@ -126,4 +282,10 @@ anchor_bottom = 0.0
 offset_right = 540.0
 offset_bottom = 720.0
 
-[connection signal="pressed" from="Botones/Play" to="." method="_on_play_pressed"]
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(-564, 376)
+texture = ExtResource("15_a3hrp")
+
+[connection signal="mouse_entered" from="Play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="Play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

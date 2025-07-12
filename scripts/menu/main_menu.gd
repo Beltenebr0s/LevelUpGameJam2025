@@ -10,6 +10,7 @@ func _ready():
 	$Botones/Salir.visible = OS.get_name() != "Web"
 	for vecino in censoVecinos:
 		GlobalVars.add_vecino(vecino)
+	$Background/Lucecitas.play("light")
 
 
 func _on_play_pressed():
@@ -17,3 +18,10 @@ func _on_play_pressed():
 		$TransitionManager.play_fadeout_animation(intro_scene_path)
 	else:
 		$TransitionManager.play_fadeout_animation(game_scene_path)
+
+
+func _on_play_mouse_entered():
+	$Play.rotation_degrees = 5.0
+
+func _on_play_mouse_exited():
+	$Play.rotation_degrees = 0.0
