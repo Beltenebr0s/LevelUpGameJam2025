@@ -5,6 +5,8 @@ var dash_speed : float = 300.0
 @onready var dash_enabled : bool = true
 var dash_direction : Vector2
 
+signal actualizar_ui_dash(b_enable : bool)
+
 func game_over():
 	$AnimationPlayer.play("fall")
 	await $AnimationPlayer.animation_finished
@@ -27,7 +29,7 @@ func _physics_process(delta):
 		direction.y -= 1
 	if Input.is_action_just_pressed("dash") and dash_enabled:
 		dash_enabled = false
-		#$CollisionShape2D.disabled = true
+		actualizar_ui_dash.emit(dash_enabled)
 		$AnimationPlayer.play("Dash")
 		$DashCooldownTimer.start()
 		dash_direction = direction
@@ -54,3 +56,4 @@ func restore_collider():
 func _on_dash_cooldown_timer_timeout():
 	print("Dash enabled")
 	dash_enabled = true
+	actualizar_ui_dash.emit(dash_enabled)

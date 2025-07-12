@@ -40,3 +40,6 @@ func _on_transition_scene_transition_finished():
 func _on_niveles_piso_cambiado(nuevo_piso):
 	GlobalVars.mult += 0.01
 	$HUD.next_level(nuevo_piso)
+
+func _on_jugador_actualizar_ui_dash(b_enable):
+	$HUD.set_dash_visibility(b_enable)

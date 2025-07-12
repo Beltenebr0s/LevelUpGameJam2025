@@ -53,6 +53,7 @@ offset_right = 540.0
 offset_bottom = 720.0
 metadata/_edit_use_anchors_ = true
 
+[connection signal="actualizar_ui_dash" from="Jugador" to="." method="_on_jugador_actualizar_ui_dash"]
 [connection signal="nivel_cambiado" from="Niveles" to="." method="_on_niveles_nivel_cambiado"]
 [connection signal="piso_cambiado" from="Niveles" to="." method="_on_niveles_piso_cambiado"]
 [connection signal="pressed" from="PauseButton" to="PauseMenu" method="_on_pause_button_pressed"]
