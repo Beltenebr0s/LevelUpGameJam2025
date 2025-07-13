@@ -39,10 +39,6 @@ func _physics_process(delta):
 	if $AnimationPlayer.current_animation == "Dash":
 		speed += dash_speed
 		direction = dash_direction
-		
-	if Input.is_action_just_pressed("invincible"):
-		print("invencible")
-		$CollisionShape2D.disabled = true
 
 	direction = direction.normalized()
 	velocity = direction * speed
