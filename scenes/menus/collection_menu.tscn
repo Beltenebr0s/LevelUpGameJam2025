@@ -29,9 +29,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -260.0
-offset_top = 100.0
+offset_top = 3.0
 offset_right = 261.0
-offset_bottom = 244.0
+offset_bottom = 147.0
 grow_horizontal = 2
 theme = ExtResource("1_ol3b5")
 text = "WIN_COLLECTION"
@@ -57,8 +57,8 @@ metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
 
 [node name="Galeria" parent="." instance=ExtResource("3_c0v2r")]
 layout_mode = 1
-offset_top = -123.0
-offset_bottom = 245.0
+offset_top = -210.0
+offset_bottom = 158.0
 
 [node name="TransitionManager" type="AnimationPlayer" parent="." node_paths=PackedStringArray("transition_scene")]
 script = ExtResource("4_jk3h3")
@@ -67,4 +67,5 @@ transition_scene = NodePath("../TransitionScene")
 metadata/_custom_type_script = "uid://d5cmtqt47mye"
 
 [node name="TransitionScene" parent="." instance=ExtResource("5_ehaqg")]
+visible = false
 layout_mode = 1
