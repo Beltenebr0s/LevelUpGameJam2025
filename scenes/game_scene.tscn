@@ -1,22 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://fqhpfxc8csob"]
+[gd_scene load_steps=11 format=3 uid="uid://fqhpfxc8csob"]
 
 [ext_resource type="Script" uid="uid://cjmn721f77ha2" path="res://scripts/game.gd" id="1_bw6k5"]
 [ext_resource type="PackedScene" uid="uid://c2ji84bo7mt61" path="res://scenes/escaleras.tscn" id="1_onqr8"]
 [ext_resource type="PackedScene" uid="uid://dnvwnpc2r1rhl" path="res://scenes/niveles.tscn" id="2_mw25s"]
 [ext_resource type="PackedScene" uid="uid://1ga6ufyqjdpg" path="res://scenes/spawn_controller.tscn" id="4_utbpp"]
 [ext_resource type="PackedScene" uid="uid://bhi1ycdhp8w1b" path="res://scenes/jugador.tscn" id="5_liy57"]
-[ext_resource type="Script" uid="uid://cms7i7o53f5hh" path="res://scripts/recursos/NivelResource.gd" id="6_ro0ie"]
-[ext_resource type="Resource" uid="uid://pel8vq5bbpcq" path="res://resources/Niveles/nivel_cajas.tres" id="9_85lt4"]
 [ext_resource type="Script" uid="uid://d5cmtqt47mye" path="res://addons/transitionmanager/trans_mgr.gd" id="10_tcjrq"]
-[ext_resource type="Resource" uid="uid://bnbt1unl5y8mo" path="res://resources/Niveles/nivel_cajas_y_vecino.tres" id="10_xgstd"]
 [ext_resource type="PackedScene" uid="uid://cmvvmnv37bmya" path="res://scenes/transicion/transition_scene.tscn" id="11_rvs2r"]
-[ext_resource type="Resource" uid="uid://dn3brbxrpp1og" path="res://resources/Niveles/nivel_cajas_y_perro.tres" id="11_ttvoq"]
-[ext_resource type="Resource" uid="uid://b8yvtdqoo27r6" path="res://resources/Niveles/nivel_viejas.tres" id="12_rw4oa"]
-[ext_resource type="Resource" uid="uid://bxq0l6x86t0xu" path="res://resources/Niveles/nivel_cajas_y_gatos.tres" id="13_r47aq"]
-[ext_resource type="Resource" uid="uid://dxek64jrwcbwx" path="res://resources/Niveles/nivel_familia_y_charcos.tres" id="14_6irsn"]
-[ext_resource type="Resource" uid="uid://b7f2jf52xo1yh" path="res://resources/Niveles/nivel_gatos_y_viejas.tres" id="15_gqftm"]
-[ext_resource type="Resource" uid="uid://br2olmektmfpj" path="res://resources/Niveles/nivel_chiquito.tres" id="16_5dk4p"]
-[ext_resource type="Resource" uid="uid://djeiiq516bnor" path="res://resources/Niveles/nivel_base.tres" id="16_103ce"]
 [ext_resource type="PackedScene" uid="uid://bvgjlparf85st" path="res://scenes/menus/pause_menu.tscn" id="16_mwyo0"]
 [ext_resource type="Texture2D" uid="uid://b6nn2qfjm32v8" path="res://images/ui/pausa.png" id="17_mwyo0"]
 [ext_resource type="PackedScene" uid="uid://y11mdjs23286" path="res://scenes/hud.tscn" id="17_s76x2"]
@@ -35,7 +25,6 @@ position = Vector2(259, 188)
 [node name="SpawnController" parent="." instance=ExtResource("4_utbpp")]
 
 [node name="Niveles" parent="." instance=ExtResource("2_mw25s")]
-lista_niveles = Array[ExtResource("6_ro0ie")]([ExtResource("9_85lt4"), ExtResource("10_xgstd"), ExtResource("11_ttvoq"), ExtResource("12_rw4oa"), ExtResource("13_r47aq"), ExtResource("14_6irsn"), ExtResource("15_gqftm"), ExtResource("16_5dk4p"), ExtResource("16_103ce"), ExtResource("16_103ce")])
 
 [node name="TransitionManager" type="AnimationPlayer" parent="." node_paths=PackedStringArray("transition_scene")]
 root_node = NodePath("../Play")
