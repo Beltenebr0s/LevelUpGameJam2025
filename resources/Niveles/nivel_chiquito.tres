@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="NivelResource" load_steps=5 format=3 uid="uid://br2olmektmfpj"]
+
+[ext_resource type="Script" uid="uid://cms7i7o53f5hh" path="res://scripts/recursos/NivelResource.gd" id="1_ljh50"]
+[ext_resource type="PackedScene" uid="uid://bry00ywvtt5km" path="res://scenes/obstaculos/asc_vecinas_blabla.tscn" id="2_6xe4h"]
+[ext_resource type="PackedScene" uid="uid://da23cebour86w" path="res://scenes/obstaculos/asc_vecino_normal.tscn" id="3_871hm"]
+[ext_resource type="PackedScene" uid="uid://dpnj3vojdm5v2" path="res://scenes/obstaculos/desc_vecino_y_mascota.tscn" id="4_ran6a"]
+
+[resource]
+script = ExtResource("1_ljh50")
+idNivel = 7
+duracion = 5
+vecinosAsc = Array[PackedScene]([ExtResource("2_6xe4h"), ExtResource("3_871hm")])
+vecinosDes = Array[PackedScene]([ExtResource("4_ran6a")])
+intervaloSpawns = 1.0
+metadata/_custom_type_script = "uid://cms7i7o53f5hh"

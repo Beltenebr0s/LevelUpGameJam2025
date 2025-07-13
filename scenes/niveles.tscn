@@ -2,19 +2,19 @@
 
 [ext_resource type="Script" uid="uid://ln34kwjuxe8q" path="res://scripts/control/niveles.gd" id="1_2swb6"]
 [ext_resource type="Script" uid="uid://cms7i7o53f5hh" path="res://scripts/recursos/NivelResource.gd" id="2_xixph"]
-[ext_resource type="Resource" uid="uid://d3e17hjb7u4wk" path="res://resources/Niveles/nivel_1.tres" id="3_0s6js"]
-[ext_resource type="Resource" uid="uid://df60cgd27lsfe" path="res://resources/Niveles/nivel_2.tres" id="4_acxrc"]
-[ext_resource type="Resource" uid="uid://csho1kie1df6e" path="res://resources/Niveles/nivel_3.tres" id="5_2bp2t"]
-[ext_resource type="Resource" uid="uid://bw1aujhp0yb0j" path="res://resources/Niveles/nivel_4.tres" id="6_lti75"]
-[ext_resource type="Resource" uid="uid://d1b0qmn64idbs" path="res://resources/Niveles/nivel_5.tres" id="7_dk2jl"]
-[ext_resource type="Resource" uid="uid://daabpxct8ftj" path="res://resources/Niveles/nivel_6.tres" id="8_lypuj"]
-[ext_resource type="Resource" uid="uid://buv2bsbeqq4rx" path="res://resources/Niveles/nivel_7.tres" id="9_la1yu"]
-[ext_resource type="Resource" uid="uid://hg1nb2ypx5kt" path="res://resources/Niveles/nivel_8.tres" id="10_cqxmp"]
+[ext_resource type="Resource" uid="uid://pel8vq5bbpcq" path="res://resources/Niveles/nivel_cajas.tres" id="3_acxrc"]
+[ext_resource type="Resource" uid="uid://bnbt1unl5y8mo" path="res://resources/Niveles/nivel_cajas_y_vecino.tres" id="4_2bp2t"]
+[ext_resource type="Resource" uid="uid://dn3brbxrpp1og" path="res://resources/Niveles/nivel_cajas_y_perro.tres" id="5_lti75"]
+[ext_resource type="Resource" uid="uid://b8yvtdqoo27r6" path="res://resources/Niveles/nivel_viejas.tres" id="6_dk2jl"]
+[ext_resource type="Resource" uid="uid://bxq0l6x86t0xu" path="res://resources/Niveles/nivel_cajas_y_gatos.tres" id="7_lypuj"]
+[ext_resource type="Resource" uid="uid://dxek64jrwcbwx" path="res://resources/Niveles/nivel_familia_y_charcos.tres" id="8_la1yu"]
+[ext_resource type="Resource" uid="uid://b7f2jf52xo1yh" path="res://resources/Niveles/nivel_gatos_y_viejas.tres" id="9_cqxmp"]
+[ext_resource type="Resource" uid="uid://br2olmektmfpj" path="res://resources/Niveles/nivel_chiquito.tres" id="10_xakpu"]
 [ext_resource type="Resource" uid="uid://djeiiq516bnor" path="res://resources/Niveles/nivel_base.tres" id="11_acxrc"]
 
 [node name="Niveles" type="Node"]
 script = ExtResource("1_2swb6")
-lista_niveles = Array[ExtResource("2_xixph")]([ExtResource("3_0s6js"), ExtResource("4_acxrc"), ExtResource("5_2bp2t"), ExtResource("6_lti75"), ExtResource("7_dk2jl"), ExtResource("8_lypuj"), ExtResource("9_la1yu"), ExtResource("10_cqxmp")])
+lista_niveles = Array[ExtResource("2_xixph")]([ExtResource("3_acxrc"), ExtResource("4_2bp2t"), ExtResource("5_lti75"), ExtResource("6_dk2jl"), ExtResource("7_lypuj"), ExtResource("8_la1yu"), ExtResource("9_cqxmp"), ExtResource("10_xakpu")])
 ultimo_nivel = ExtResource("11_acxrc")
 
 [node name="Timer" type="Timer" parent="."]
