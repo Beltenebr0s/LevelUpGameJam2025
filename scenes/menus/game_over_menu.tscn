@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpa7kkgbgn27h"]
+[gd_scene load_steps=7 format=3 uid="uid://bpa7kkgbgn27h"]
 
 [ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_7ldfy"]
 [ext_resource type="Script" uid="uid://mvjs7jf381kp" path="res://scripts/game_over_menu.gd" id="1_yytlj"]
 [ext_resource type="Script" uid="uid://d5cmtqt47mye" path="res://addons/transitionmanager/trans_mgr.gd" id="2_d38kx"]
 [ext_resource type="Theme" uid="uid://cjq5vt88wa8x" path="res://ui/menu_theme.tres" id="2_ufkiq"]
 [ext_resource type="PackedScene" uid="uid://cmvvmnv37bmya" path="res://scenes/transicion/transition_scene.tscn" id="3_2410i"]
+[ext_resource type="Texture2D" uid="uid://d2glv0afu70yc" path="res://images/Muerte.png" id="4_2410i"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -31,15 +32,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_ufkiq")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 76.0
+offset_right = 554.0
+offset_bottom = 271.0
+rotation = 1.5708
+texture = ExtResource("4_2410i")
+expand_mode = 1
+
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -260.0
-offset_top = 100.0
+offset_top = -3.0
 offset_right = 261.0
-offset_bottom = 244.0
+offset_bottom = 141.0
 grow_horizontal = 2
 theme = ExtResource("2_ufkiq")
 text = "WIN_GAMEOVER"
@@ -156,6 +167,7 @@ theme = ExtResource("2_ufkiq")
 placeholder_text = "LEDIT_SCORE"
 
 [node name="TransitionScene" parent="." instance=ExtResource("3_2410i")]
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="Submit" to="." method="_on_submit_pressed"]
