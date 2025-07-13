@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dytwwjwue0hul"]
+[gd_scene load_steps=9 format=3 uid="uid://dytwwjwue0hul"]
 
 [ext_resource type="Theme" uid="uid://cjq5vt88wa8x" path="res://ui/menu_theme.tres" id="1_536xp"]
 [ext_resource type="Script" uid="uid://dk6qgiud5ogi5" path="res://addons/navigationbutton/nav_btn.gd" id="1_fdc8g"]
 [ext_resource type="Script" uid="uid://d5cmtqt47mye" path="res://addons/transitionmanager/trans_mgr.gd" id="3_d74go"]
+[ext_resource type="Texture2D" uid="uid://brjg0hkut6ltk" path="res://ui/buzon2.svg" id="3_fq4y8"]
 [ext_resource type="PackedScene" uid="uid://cmvvmnv37bmya" path="res://scenes/transicion/transition_scene.tscn" id="4_325oc"]
+[ext_resource type="Texture2D" uid="uid://bhii5em4iuymx" path="res://ui/buzon3.svg" id="4_snnwu"]
+[ext_resource type="Texture2D" uid="uid://cdfexqjns6lbf" path="res://ui/buzon4.svg" id="5_xc1f4"]
+[ext_resource type="Texture2D" uid="uid://dn1gtrsahkd8b" path="res://ui/buzon1.svg" id="6_jfhfx"]
 
 [node name="CreditsMenu" type="Control"]
 layout_mode = 3
@@ -27,10 +31,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -260.0
-offset_top = 100.0
-offset_right = 261.0
-offset_bottom = 244.0
+offset_left = -267.0
+offset_top = 8.0
+offset_right = 254.0
+offset_bottom = 152.0
 grow_horizontal = 2
 theme = ExtResource("1_536xp")
 text = "WIN_CREDITS"
@@ -56,62 +60,97 @@ metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
 
 [node name="Codigo" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 176.0
-offset_top = 394.0
-offset_right = 405.0
-offset_bottom = 564.0
+offset_left = 206.0
+offset_top = 216.0
+offset_right = 435.0
+offset_bottom = 386.0
 
 [node name="Label" type="Label" parent="Codigo"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -13.0
-offset_top = -22.0
-offset_right = -13.0
-offset_bottom = 24.0
+offset_left = 64.0
+offset_top = -90.0
+offset_right = 64.0
+offset_bottom = -44.0
 grow_horizontal = 2
 theme = ExtResource("1_536xp")
 theme_override_font_sizes/font_size = 30
 text = "LBL_CODE"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Codigo"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 31.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Buzon2" type="TextureRect" parent="Codigo"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = -44.0
+offset_right = 289.0
+offset_bottom = 137.0
+texture = ExtResource("3_fq4y8")
+expand_mode = 1
 
-[node name="Label" type="Label" parent="Codigo/VBoxContainer"]
-layout_mode = 2
+[node name="Label" type="Label" parent="Codigo/Buzon2"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 99.0
+offset_right = 149.0
+offset_bottom = 142.0
 theme = ExtResource("1_536xp")
-theme_type_variation = &"LabelText"
-theme_override_font_sizes/font_size = 16
-text = "Darío de Benito Padilla"
-
-[node name="Label2" type="Label" parent="Codigo/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_536xp")
-theme_type_variation = &"LabelText"
-theme_override_font_sizes/font_size = 16
-text = "Alejandro Garatea Alcázar"
-
-[node name="Label3" type="Label" parent="Codigo/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_536xp")
-theme_type_variation = &"LabelText"
-theme_override_font_sizes/font_size = 16
+theme_type_variation = &"CreditsLabel"
 text = "Beatriz Lago Pérez"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Buzon4" type="TextureRect" parent="Codigo"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 106.0
+offset_right = 197.0
+offset_bottom = 269.0
+texture = ExtResource("5_xc1f4")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Codigo/Buzon4"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 104.0
+offset_right = 164.0
+offset_bottom = 147.0
+theme = ExtResource("1_536xp")
+theme_type_variation = &"CreditsLabel"
+text = "Alejandro Garatea Alcázar"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Buzon3" type="TextureRect" parent="Codigo"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 247.0
+offset_right = 300.0
+offset_bottom = 403.0
+texture = ExtResource("4_snnwu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Codigo/Buzon3"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 103.0
+offset_right = 175.0
+offset_bottom = 157.0
+theme = ExtResource("1_536xp")
+theme_type_variation = &"CreditsLabel"
+text = "Darío de Benito Padilla"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Arte" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 46.0
-offset_top = 286.0
-offset_right = 275.0
-offset_bottom = 456.0
+offset_left = 9.0
+offset_top = 150.0
+offset_right = 223.0
+offset_bottom = 418.0
 
 [node name="Label" type="Label" parent="Arte"]
 layout_mode = 1
@@ -127,40 +166,49 @@ theme_override_font_sizes/font_size = 30
 text = "LBL_ART"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Arte"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 31.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Buzon" type="TextureRect" parent="Arte"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 37.0
+offset_right = 163.0
+offset_bottom = 215.0
+texture = ExtResource("6_jfhfx")
+expand_mode = 1
 
-[node name="Label" type="Label" parent="Arte/VBoxContainer"]
-layout_mode = 2
+[node name="Label" type="Label" parent="Arte/Buzon"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 61.0
+offset_right = 169.0
+offset_bottom = 115.0
 theme = ExtResource("1_536xp")
-theme_type_variation = &"LabelText"
-theme_override_font_sizes/font_size = 16
+theme_type_variation = &"CreditsLabel"
 text = "Ruby Agamez Castillo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Sonido" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 273.0
-offset_top = 529.0
-offset_right = 502.0
-offset_bottom = 699.0
+offset_left = 9.0
+offset_top = 480.0
+offset_right = 238.0
+offset_bottom = 650.0
 
 [node name="Label" type="Label" parent="Sonido"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 22.0
+offset_top = -46.0
+offset_right = -34.0
+offset_bottom = 40.0
 grow_horizontal = 2
 theme = ExtResource("1_536xp")
 theme_override_font_sizes/font_size = 30
 text = "LBL_SOUND"
 horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Sonido"]
 layout_mode = 1
