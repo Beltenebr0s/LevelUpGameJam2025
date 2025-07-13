@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhi1ycdhp8w1b"]
+[gd_scene load_steps=17 format=3 uid="uid://bhi1ycdhp8w1b"]
 
 [ext_resource type="Script" uid="uid://ccaf80ghnyu68" path="res://scripts/jugador.gd" id="1_g87hm"]
+[ext_resource type="Texture2D" uid="uid://d2glv0afu70yc" path="res://images/Muerte.png" id="2_28edd"]
 [ext_resource type="Texture2D" uid="uid://5k4d1tkogqaw" path="res://images/Prota-spritesheet.png" id="2_lhlt4"]
 
 [sub_resource type="Animation" id="Animation_k64kw"]
@@ -95,10 +96,22 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimatedSprite2D:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"muerte"]
+}
 
 [sub_resource type="Animation" id="Animation_lhlt4"]
 resource_name = "fall"
-length = 0.5
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -118,10 +131,10 @@ tracks/1/path = NodePath("AnimatedSprite2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0333327, 0.1, 0.166666, 0.233333, 0.433333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 0.68302),
+"times": PackedFloat32Array(0, 0.0333327, 0.1, 0.166666, 0.233333, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1.07177),
 "update": 0,
-"values": [0.0, 1.5708, 2.6721, 4.63734, 6.23432, 8.28682]
+"values": [0.0, 1.5708, 2.6721, 4.63734, 6.23432, 7.85398]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -146,6 +159,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(2, 41), Vector2(2, 60), Vector2(2, 70), Vector2(2, 41)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 0.535887),
+"update": 1,
+"values": [&"walking", &"muerte"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_28edd"]
@@ -195,6 +220,14 @@ region = Rect2(2740, 0, 548, 798)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_28edd")
+}],
+"loop": true,
+"name": &"muerte",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_28edd")
 }, {
 "duration": 1.0,
@@ -242,7 +275,7 @@ polygon = PackedVector2Array(-5, -50, 4, -49, 13, -47, 18, -43, 20, -35, 21, -20
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.136861, 0.136861)
 sprite_frames = SubResource("SpriteFrames_l5m57")
-animation = &"walking"
+animation = &"muerte"
 autoplay = "walking"
 
 [node name="DashCooldownTimer" type="Timer" parent="."]
