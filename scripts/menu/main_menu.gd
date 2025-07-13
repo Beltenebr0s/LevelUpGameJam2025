@@ -6,6 +6,11 @@ const intro_scene_path : String = "res://scenes/menus/intro.tscn"
 const game_scene_path : String = "res://scenes/game_scene.tscn"
 
 func _ready():
+	
+	$Play.mouse_entered.connect(AudioManager.play_boton_select)
+	$Play.button_down.connect(AudioManager.play_boton_down)
+	$Play.pressed.connect(AudioManager.play_boton_pressed)
+	
 	AudioManager.play_menu_music()
 	$Botones/Salir.visible = OS.get_name() != "Web"
 	for vecino in censoVecinos:
