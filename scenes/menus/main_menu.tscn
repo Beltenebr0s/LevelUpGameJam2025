@@ -221,6 +221,16 @@ next_scene_path = "res://scenes/menus/ranking_menu.tscn"
 has_transition = true
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
 
+[node name="Coleccion" type="Button" parent="Botones"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_2o76q")
+text = "BUT_COLLECTION"
+script = ExtResource("1_l6cm7")
+next_scene_path = "res://scenes/menus/collection_menu.tscn"
+has_transition = true
+metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
+
 [node name="Settings" type="Button" parent="Botones"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -238,16 +248,6 @@ theme = ExtResource("2_2o76q")
 text = "BUT_CREDITS"
 script = ExtResource("1_l6cm7")
 next_scene_path = "res://scenes/menus/credits_menu.tscn"
-has_transition = true
-metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
-
-[node name="Coleccion" type="Button" parent="Botones"]
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("2_2o76q")
-text = "BUT_COLLECTION"
-script = ExtResource("1_l6cm7")
-next_scene_path = "res://scenes/menus/collection_menu.tscn"
 has_transition = true
 metadata/_custom_type_script = "uid://dk6qgiud5ogi5"
 
@@ -273,6 +273,7 @@ theme_type_variation = &"ButtonPlay"
 text = "BUT_PLAY"
 
 [node name="TransitionScene" parent="." instance=ExtResource("2_6bivr")]
+z_index = 4096
 layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
