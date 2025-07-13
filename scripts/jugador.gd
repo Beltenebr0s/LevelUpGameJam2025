@@ -27,7 +27,7 @@ func _physics_process(delta):
 		direction.y += 1
 	if Input.is_action_pressed("move_up"):
 		direction.y -= 1
-	if Input.is_action_just_pressed("dash") and dash_enabled:
+	if Input.is_action_just_pressed("dash") and dash_enabled and direction != Vector2.ZERO:
 		dash_enabled = false
 		actualizar_ui_dash.emit(dash_enabled)
 		$AnimationPlayer.play("Dash")
