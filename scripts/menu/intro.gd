@@ -13,5 +13,4 @@ func _on_next_pressed():
 	
 func connect_button_sounds(but : Button):
 	but.mouse_entered.connect(AudioManager.play_boton_select)
-	but.button_down.connect(AudioManager.play_boton_down)
 	but.pressed.connect(AudioManager.play_boton_pressed)

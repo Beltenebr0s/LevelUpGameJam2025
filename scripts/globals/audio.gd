@@ -17,7 +17,6 @@ var tween : Tween
 
 @export var gameplay_music : AudioStreamPlayer
 @export var boton_select : AudioStreamPlayer
-@export var boton_down  : AudioStreamPlayer
 @export var boton_pressed : AudioStreamPlayer
 @export var ascensor : AudioStreamPlayer
 
@@ -54,9 +53,6 @@ func play_game_music():
 
 func play_boton_select():
 	boton_select.play()
-
-func play_boton_down():
-	boton_down.play()
 
 func play_boton_pressed():
 	boton_pressed.play()

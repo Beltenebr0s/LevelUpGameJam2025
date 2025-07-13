@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbafi1t0g56b6"]
+[gd_scene load_steps=7 format=3 uid="uid://cbafi1t0g56b6"]
 
 [ext_resource type="Script" uid="uid://6n15hklxcwc7" path="res://scripts/globals/audio.gd" id="1_6n3bj"]
 [ext_resource type="AudioStream" uid="uid://dj66fl3sy7enb" path="res://sound/elevator_music.mp3" id="2_hlm5c"]
@@ -11,14 +11,11 @@ random_pitch = 1.3
 streams_count = 1
 stream_0/stream = ExtResource("3_wdljl")
 
-[sub_resource type="AudioStream" id="AudioStream_bwtr5"]
-
-[node name="Audio" type="Node" node_paths=PackedStringArray("gameplay_music", "boton_select", "boton_down", "boton_pressed", "ascensor")]
+[node name="Audio" type="Node" node_paths=PackedStringArray("gameplay_music", "boton_select", "boton_pressed", "ascensor")]
 process_mode = 3
 script = ExtResource("1_6n3bj")
 gameplay_music = NodePath("Musica/Gameplay")
 boton_select = NodePath("SFX/Menus/BotonSelect")
-boton_down = NodePath("SFX/Menus/BotonDown")
 boton_pressed = NodePath("SFX/Menus/BotonPressed")
 ascensor = NodePath("Musica/Ascensor")
 
@@ -43,10 +40,6 @@ parameters/looping = true
 [node name="BotonSelect" type="AudioStreamPlayer" parent="SFX/Menus"]
 stream = SubResource("AudioStreamRandomizer_wdljl")
 max_polyphony = 3
-bus = &"SFX_int"
-
-[node name="BotonDown" type="AudioStreamPlayer" parent="SFX/Menus"]
-stream = SubResource("AudioStream_bwtr5")
 bus = &"SFX_int"
 
 [node name="BotonPressed" type="AudioStreamPlayer" parent="SFX/Menus"]

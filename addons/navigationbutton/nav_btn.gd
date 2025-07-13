@@ -13,7 +13,6 @@ func _enter_tree():
 	add_to_group("NavButton")
 	pressed.connect(on_button_clicked)
 	mouse_entered.connect(AudioManager.play_boton_select)
-	button_down.connect(AudioManager.play_boton_down)
 	pressed.connect(AudioManager.play_boton_pressed)
 
 func on_button_clicked():

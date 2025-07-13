@@ -12,7 +12,6 @@ func _ready():
 		nav_button.pressed.connect(turn_off_lights)
 			
 	$Play.mouse_entered.connect(AudioManager.play_boton_select)
-	$Play.button_down.connect(AudioManager.play_boton_down)
 	$Play.pressed.connect(AudioManager.play_boton_pressed)
 	
 	AudioManager.play_menu_music()
